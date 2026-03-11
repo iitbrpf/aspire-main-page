@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Team Section</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<style>
+body{
+font-family:Inter,sans-serif
+}
+</style>
+
+</head>
+
+<body class="bg-gray-50">
+
+<div class="max-w-[1200px] mx-auto px-6 py-16">
+
+<!-- HEADER -->
+<!-- HEADER -->
+
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+
+<!-- LEFT SIDE -->
+<div>
+
+<p class="text-sm tracking-widest text-primary font-bold uppercase">
+Our Team
+</p>
+
+<h1 id="teamTitle" class="text-5xl font-black mt-2">
+Faces Behind ASPIRE
+</h1>
+
+<p class="text-gray-500 mt-3 max-w-xl">
+Meet the experts driving strategy, infrastructure and innovation.
+</p>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="flex items-end gap-4">
+
+<!-- NAV BUTTONS -->
+
+<div class="relative w-64">
+
+<label class="text-xs tracking-widest text-gray-400 font-bold uppercase">
+Filter by Department
+</label>
+
+<button id="filterToggle"
+class="w-full mt-1 flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm">
+
+<span id="selectedFilter">
+All Departments
+</span>
+
+<span class="material-symbols-outlined text-pink-500">
+expand_more
+</span>
+
+</button>
+
+<div id="filterMenu"
+class="absolute hidden w-full mt-2 bg-white rounded-xl shadow-xl overflow-hidden border z-50">
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50"
+data-filter="all">
+All Departments
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50"
+data-filter="Finance">
+Finance
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50"
+data-filter="Infrastructure">
+Infrastructure
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50"
+data-filter="Technology">
+Technology
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50"
+data-filter="HOD">
+Head of the Department
+</button>
+
+</div>
+
+</div>
+
+<button id="prevBtn"
+class="w-12 h-12 rounded-full border flex items-center justify-center bg-white hover:bg-gray-50">
+
+<span class="material-symbols-outlined">
+arrow_back
+</span>
+
+</button>
+
+<button id="nextBtn"
+class="w-12 h-12 rounded-full border flex items-center justify-center bg-white hover:bg-gray-50">
+
+<span class="material-symbols-outlined">
+arrow_forward
+</span>
+
+</button>
+
+<!-- FILTER -->
+
+</div>
+
+</div>
+
+<!-- TEAM GRID -->
+
+<div id="teamGrid"
+class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+
+
+<!-- DOTS -->
+
+<div id="dots"
+class="flex justify-center gap-3 mt-14"></div>
+
+
+</div>
+
+
+<script>
+
+/* TEAM DATA */
+
+const teamMembers = [
+
+{
+name:"Sarah Jenkins",
+role:"Chief Financial Officer",
+department:"Finance",
+image:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
+},
+
+{
+name:"Marcus Thorne",
+role:"Head of Treasury",
+department:"Finance",
+image:"https://images.unsplash.com/photo-1560250097-0b93528c311a"
+},
+
+{
+name:"Elena Rodriguez",
+role:"Infrastructure Manager",
+department:"Infrastructure",
+image:"https://images.unsplash.com/photo-1554151228-14d9def656e4"
+},
+
+{
+name:"David Chen",
+role:"Technology Analyst",
+department:"Technology",
+image:"https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+},
+
+{
+name:"Michael Smith",
+role:"Head of the Department",
+department:"HOD",
+image:"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f"
+},
+
+{
+name:"Anna White",
+role:"Infrastructure Engineer",
+department:"Infrastructure",
+image:"https://images.unsplash.com/photo-1580489944761-15a19d654956"
+}
+
+]
+
+
+/* STATE */
+
+let filteredMembers=[...teamMembers]
+
+let currentPage=0
+
+let perPage=4
+
+const grid=document.getElementById("teamGrid")
+
+const dots=document.getElementById("dots")
+
+const title=document.getElementById("teamTitle")
+
+const selectedFilter=document.getElementById("selectedFilter")
+
+
+
+/* RENDER TEAM */
+
+function render(){
+
+grid.innerHTML=""
+
+let start=currentPage*perPage
+
+let end=start+perPage
+
+let members=filteredMembers.slice(start,end)
+
+members.forEach(member=>{
+
+grid.innerHTML+=`
+
+<div class="group flex flex-col gap-4">
+
+<div class="overflow-hidden rounded-2xl aspect-[3/4] bg-gray-100">
+
+<img src="${member.image}"
+class="class="w-full h-full object-cover transition duration-500">
+
+</div>
+
+<div>
+
+<h3 class="text-xl font-bold">${member.name}</h3>
+
+<p class="text-pink-500 text-sm font-medium">${member.role}</p>
+
+</div>
+
+</div>
+
+`
+
+})
+
+renderDots()
+
+}
+
+
+
+/* PAGINATION DOTS */
+
+function renderDots(){
+
+dots.innerHTML=""
+
+let pages=Math.ceil(filteredMembers.length/perPage)
+
+for(let i=0;i<pages;i++){
+
+dots.innerHTML+=`
+
+<span class="w-2 h-2 rounded-full cursor-pointer
+${i===currentPage?'bg-pink-500':'bg-gray-300'}"
+onclick="goPage(${i})"></span>
+
+`
+
+}
+
+}
+
+function goPage(i){
+
+currentPage=i
+
+render()
+
+}
+
+
+
+/* NAVIGATION */
+
+document.getElementById("nextBtn").onclick=()=>{
+
+if((currentPage+1)*perPage<filteredMembers.length){
+
+currentPage++
+
+render()
+
+}
+
+}
+
+document.getElementById("prevBtn").onclick=()=>{
+
+if(currentPage>0){
+
+currentPage--
+
+render()
+
+}
+
+}
+
+
+
+/* FILTER */
+
+document.querySelectorAll(".filterBtn").forEach(btn=>{
+
+btn.onclick=()=>{
+
+let dept=btn.dataset.filter
+
+document.getElementById("filterMenu").classList.add("hidden")
+
+if(dept==="all"){
+
+filteredMembers=[...teamMembers]
+
+title.innerText="Faces Behind ASPIRE"
+
+selectedFilter.innerText="All Departments"
+
+}else{
+
+filteredMembers=teamMembers.filter(m=>m.department===dept)
+
+title.innerText=dept
+
+selectedFilter.innerText=dept
+
+}
+
+currentPage=0
+
+render()
+
+}
+
+})
+
+
+
+/* DROPDOWN TOGGLE */
+
+document.getElementById("filterToggle").onclick=()=>{
+
+document.getElementById("filterMenu").classList.toggle("hidden")
+
+}
+
+
+
+/* CLOSE DROPDOWN OUTSIDE CLICK */
+
+document.addEventListener("click",(e)=>{
+
+if(!e.target.closest("#filterToggle") && !e.target.closest("#filterMenu")){
+
+document.getElementById("filterMenu").classList.add("hidden")
+
+}
+
+})
+
+
+
+/* MOBILE SWIPE */
+
+let startX=0
+
+grid.addEventListener("touchstart",e=>{
+
+startX=e.touches[0].clientX
+
+})
+
+grid.addEventListener("touchend",e=>{
+
+let endX=e.changedTouches[0].clientX
+
+if(startX-endX>50)document.getElementById("nextBtn").click()
+
+if(endX-startX>50)document.getElementById("prevBtn").click()
+
+})
+
+
+/* INIT */
+
+render()
+
+</script>
+
+</body>
+</html>
