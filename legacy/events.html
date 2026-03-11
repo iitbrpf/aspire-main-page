@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventsHub | Professional Event Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#DD4A93",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#292245",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-3xl mb-12">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 opacity-90"></div>
+<div class="absolute inset-0" data-alt="Crowded professional tech conference hall background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8M-YBcN-0-tBm1ypsHuIZYaQtMeOVlVhpU1D5p6E8oWFxVUsUsXCZmdAy13KImLma82rRs1_NJkTP3XokrIy2Mfedowv9Rz0lEV-xZXHIta2z8tLTgpUnnVeGK8x3UxhqozykUgC6s3JSJ3uZhtRiZU5LSL43HXQ9O-48o5ugOEr12wb0xS0eEw366dbe-1B41e-VXoggFRenkRZO_mSn81TsND5IXdH3fcG4zmWYR5Sc34XDyKs2DVFebkOxQuACOjkf-Yct7ZKh'); background-size: cover; background-position: center;"></div>
+<div class="relative py-16 px-8 md:px-16 text-center md:text-left">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                        Your Professional <br/><span class="text-blue-200">Event Hub</span>
+</h1>
+<p class="text-lg text-blue-50 hover:text-white mb-8 leading-relaxed opacity-90">
+                        Discover and manage industry-leading conferences, workshops, and networking sessions with the world's most intuitive event platform.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<button class="px-8 py-4 bg-white text-primary font-bold rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-0.5">Be a Sponsor</button>
+<button class="px-8 py-4 bg-white/20 text-white backdrop-blur-md font-bold rounded-xl hover:bg-white/30 transition-all">Host an Event</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Filtering Row -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+    <div class="flex flex-wrap gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto" role="tablist" aria-label="Organizer filters">
+        <button id="filter-all" data-filter-organizer="all" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white" role="tab" aria-selected="true">All Events</button>
+        <button id="filter-iitb" data-filter-organizer="IIT Bombay" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" role="tab" aria-selected="false">IIT Bombay</button>
+        <button id="filter-aspire" data-filter-organizer="Aspire" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" role="tab" aria-selected="false">Aspire</button>
+    </div>
+    <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+        <button id="resetFilters" class="text-sm font-bold text-slate-400 hover:text-primary transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-lg">restart_alt</span> Reset
+        </button>
+        <div class="relative inline-block text-left">
+            <label for="dateFilter" class="sr-only">Filter by date</label>
+            <select id="dateFilter" class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                <option value="all">All Dates</option>
+                <option value="this-week">This Week</option>
+                <option value="this-month">This Month</option>
+                <option value="custom">Custom Range</option>
+            </select>
+            <input type="hidden" id="customStartDate" />
+            <input type="hidden" id="customEndDate" />
+            <div id="customCalendarPopup" class="hidden absolute right-0 mt-2 w-80 bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800 z-50 p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-semibold text-slate-700 dark:text-slate-200">Select range</span>
+                    <button type="button" id="customCalendarClose" class="text-slate-500 hover:text-slate-700 dark:hover:text-slate-200">✕</button>
+                </div>
+                <div id="customCalendar" class=""></div>
+                <div class="mt-3 flex justify-between items-center">
+                    <div class="text-xs text-slate-500 dark:text-slate-400" id="customDateRangeLabel">No dates selected</div>
+                    <button type="button" id="customApplyBtn" class="px-3 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-opacity-90">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Ongoing Events (LIVE NOW) -->
+<section class="mb-16">
+<div class="flex items-center gap-3 mb-6">
+<div class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+</div>
+<h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Ongoing Events (LIVE NOW)</h2>
+</div>
+<div id="ongoingEventsContainer" class="grid grid-cols-1 gap-8"></div>
+</section>
+<!-- Upcoming Events -->
+<section class="mb-16">
+<h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8">Upcoming Events</h2>
+<div id="upcomingEventsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+</section>
+<!-- Past Events -->
+<section class="mb-16">
+<h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8">Past Events</h2>
+<div id="pastEventsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+</main>
+
+<script>
+(function () {
+  const dataUrl = './data/events/events.json';
+  const section = document.querySelector('#dateFilter');
+  const startInput = document.querySelector('#customStartDate');
+  const endInput = document.querySelector('#customEndDate');
+  const calendarPopup = document.querySelector('#customCalendarPopup');
+  const calendarContainer = document.querySelector('#customCalendar');
+  const dateRangeLabel = document.querySelector('#customDateRangeLabel');
+  const calendarCloseBtn = document.querySelector('#customCalendarClose');
+  const calendarApplyBtn = document.querySelector('#customApplyBtn');
+  const resetBtn = document.querySelector('#resetFilters');
+  const filterButtons = Array.from(document.querySelectorAll('[data-filter-organizer]'));
+  const ongoingContainer = document.querySelector('#ongoingEventsContainer');
+  const upcomingContainer = document.querySelector('#upcomingEventsContainer');
+  const pastContainer = document.querySelector('#pastEventsContainer');
+
+  let eventItems = [];
+  let customRange = { startISO: '', endISO: '' };
+
+  function updateActiveOrganizer(selected) {
+    filterButtons.forEach((btn) => {
+      const isActive = btn.dataset.filterOrganizer === selected;
+      btn.classList.toggle('bg-primary', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('text-slate-600', !isActive);
+      btn.classList.toggle('dark:text-slate-400', !isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+  }
+
+  function getWeekRange(date) {
+    const d = new Date(date);
+    const day = d.getDay();
+    const diff = d.getDate() - day + (day === 0 ? -6 : 1); // Monday as first day
+    const monday = new Date(d.setDate(diff));
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    monday.setHours(0, 0, 0, 0);
+    sunday.setHours(23, 59, 59, 999);
+    return { start: monday, end: sunday };
+  }
+
+  function getMonthRange(date) {
+    const d = new Date(date);
+    const start = new Date(d.getFullYear(), d.getMonth(), 1);
+    const end = new Date(d.getFullYear(), d.getMonth() + 1, 0);
+    start.setHours(0, 0, 0, 0);
+    end.setHours(23, 59, 59, 999);
+    return { start, end };
+  }
+
+  function parseDate(value) {
+    if (!value) return null;
+    const d = new Date(value);
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+
+  function formatDateLabel(dateString) {
+    if (!dateString) return 'Select a date';
+    const d = new Date(dateString);
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+    return d.toLocaleDateString(undefined, options);
+  }
+
+  function formatRangeLabel(range) {
+    if (range.startISO && range.endISO) {
+      return `${formatDateLabel(range.startISO)} — ${formatDateLabel(range.endISO)}`;
+    }
+    if (range.startISO) {
+      return `${formatDateLabel(range.startISO)} — ...`;
+    }
+    return 'No dates selected';
+  }
+
+  function buildCalendarPopup(container, range, onChange) {
+    const today = new Date();
+    const initial = parseDate(range.startISO) || today;
+    const state = {
+      viewDate: new Date(initial.getFullYear(), initial.getMonth(), 1),
+      startISO: range.startISO || '',
+      endISO: range.endISO || '',
+    };
+
+    function render() {
+      container.innerHTML = '';
+      const header = document.createElement('div');
+      header.className = 'flex items-center justify-between mb-3';
+
+      const prevBtn = document.createElement('button');
+      prevBtn.type = 'button';
+      prevBtn.className = 'p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800';
+      prevBtn.textContent = '<';
+      header.appendChild(prevBtn);
+
+      const title = document.createElement('div');
+      title.className = 'text-sm font-semibold text-slate-700 dark:text-slate-200';
+      title.textContent = state.viewDate.toLocaleString(undefined, { month: 'long', year: 'numeric' });
+      header.appendChild(title);
+
+      const nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800';
+      nextBtn.textContent = '>';
+      header.appendChild(nextBtn);
+
+      container.appendChild(header);
+
+      const daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+      const weekHeader = document.createElement('div');
+      weekHeader.className = 'grid grid-cols-7 gap-1 text-xs text-slate-500 dark:text-slate-400 pb-2';
+      daysOfWeek.forEach((d) => {
+        const cell = document.createElement('div');
+        cell.className = 'text-center font-semibold';
+        cell.textContent = d;
+        weekHeader.appendChild(cell);
+      });
+      container.appendChild(weekHeader);
+
+      const daysGrid = document.createElement('div');
+      daysGrid.className = 'grid grid-cols-7 gap-1 text-sm';
+
+      const year = state.viewDate.getFullYear();
+      const month = state.viewDate.getMonth();
+      const firstOfMonth = new Date(year, month, 1);
+      const lastOfMonth = new Date(year, month + 1, 0);
+      const startDay = firstOfMonth.getDay();
+      const daysInMonth = lastOfMonth.getDate();
+
+      for (let i = 0; i < startDay; i++) {
+        const empty = document.createElement('div');
+        daysGrid.appendChild(empty);
+      }
+
+      const todayISO = new Date().toISOString().slice(0, 10);
+      const rangeStart = state.startISO;
+      const rangeEnd = state.endISO;
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const iso = date.toISOString().slice(0, 10);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition';
+        btn.textContent = day;
+
+        const inRange = rangeStart && rangeEnd && iso >= rangeStart && iso <= rangeEnd;
+        const isStart = iso === rangeStart;
+        const isEnd = iso === rangeEnd;
+
+        if (isStart || isEnd) {
+          btn.classList.add('bg-primary', 'text-white');
+        } else if (inRange) {
+          btn.classList.add('bg-primary/20', 'text-primary');
+        } else if (iso === todayISO) {
+          btn.classList.add('text-primary', 'font-semibold');
+        }
+
+        btn.addEventListener('click', () => {
+          if (!state.startISO || (state.startISO && state.endISO)) {
+            state.startISO = iso;
+            state.endISO = '';
+          } else {
+            state.endISO = iso;
+            if (state.endISO < state.startISO) {
+              [state.startISO, state.endISO] = [state.endISO, state.startISO];
+            }
+          }
+          onChange({ startISO: state.startISO, endISO: state.endISO });
+          render();
+        });
+
+        daysGrid.appendChild(btn);
+      }
+
+      container.appendChild(daysGrid);
+
+      prevBtn.addEventListener('click', () => {
+        state.viewDate.setMonth(state.viewDate.getMonth() - 1);
+        render();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        state.viewDate.setMonth(state.viewDate.getMonth() + 1);
+        render();
+      });
+    }
+
+    render();
+  }
+
+  function openCalendarPopup() {
+    closeCalendarPopup();
+    calendarPopup.classList.remove('hidden');
+    buildCalendarPopup(calendarContainer, customRange, (range) => {
+      customRange = range;
+      startInput.value = range.startISO || '';
+      endInput.value = range.endISO || '';
+      dateRangeLabel.textContent = formatRangeLabel(customRange);
+
+    });
+
+    dateRangeLabel.textContent = formatRangeLabel(customRange);
+  }
+
+  function closeCalendarPopup() {
+    calendarPopup.classList.add('hidden');
+  }
+
+  function applyFilters() {
+
+    const activeOrgBtn = filterButtons.find((btn) => btn.getAttribute('aria-selected') === 'true');
+    const activeOrg = activeOrgBtn?.dataset.filterOrganizer ?? 'all';
+    const dateMode = section.value;
+
+    let range = null;
+    const today = new Date();
+
+    if (dateMode === 'this-week') {
+      range = getWeekRange(today);
+    } else if (dateMode === 'this-month') {
+      range = getMonthRange(today);
+    } else if (dateMode === 'custom') {
+      const startDate = parseDate(startInput.value);
+      const endDate = parseDate(endInput.value);
+      if (startDate && endDate && startDate <= endDate) {
+        range = { start: startDate, end: new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate(), 23, 59, 59, 999) };
+      }
+    }
+
+    eventItems.forEach((item) => {
+      const organizer = (item.dataset.organizer || '').trim();
+      const dateVal = item.dataset.date;
+      const eventDate = parseDate(dateVal);
+
+      let visible = true;
+      if (activeOrg && activeOrg !== 'all' && organizer.toLowerCase() !== activeOrg.toLowerCase()) {
+        visible = false;
+      }
+
+      if (visible && range && eventDate) {
+        visible = eventDate >= range.start && eventDate <= range.end;
+      }
+
+      item.classList.toggle('hidden', !visible);
+    });
+  }
+
+  function createOngoingCard(event) {
+    return `
+      <div data-event="true" data-organizer="${event.organizer}" data-date="${event.date}" class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 flex flex-col lg:flex-row">
+        <div class="lg:w-1/2 relative min-h-[300px]">
+          <img alt="${event.title}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${event.image}" />
+          <div class="absolute top-4 left-4">
+            <span class="bg-red-500 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">${event.tag || 'Live'}</span>
+          </div>
+        </div>
+        <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-primary font-bold text-sm tracking-wider uppercase">${event.subtitle || ''}</span>
+              <button class="text-slate-400 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">share</span>
+              </button>
+            </div>
+            <h3 class="text-3xl font-black text-slate-900 dark:text-white mb-4">${event.title}</h3>
+            <div class="flex flex-wrap gap-6 mb-8 text-slate-600 dark:text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">schedule</span>
+                <span class="text-sm font-medium italic">Ending in 4h 20m</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">groups</span>
+                <span class="text-sm font-medium">${event.attendees || ''}</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-yellow-400 fill-current">star</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-white">${event.rating || ''}</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 mb-8">
+              <div class="w-10 h-10 rounded-full bg-slate-200 border-2 border-white" data-alt="Speaker headshot">
+                <img alt="${event.speaker?.name || ''}" class="rounded-full" src="${event.speaker?.avatar || ''}" />
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-medium">Organized by</p>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">${event.organizer}</p>
+              </div>
+            </div>
+          </div>
+          <button class="w-full lg:w-max px-12 py-4 bg-primary text-white font-black rounded-2xl shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all flex items-center justify-center gap-2">
+            Enter Session <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function createUpcomingCard(event) {
+    return `
+      <div data-event="true" data-organizer="${event.organizer}" data-date="${event.date}" class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
+        <div class="h-64 relative overflow-hidden">
+          <img alt="${event.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${event.image}" />
+          <div class="absolute top-4 left-4">
+            <span class="bg-white/90 backdrop-blur-md text-primary text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">${event.category || ''}</span>
+          </div>
+          <div class="absolute top-4 right-4">
+            <button class="bg-white/90 backdrop-blur-md p-2 rounded-lg text-slate-600 hover:text-primary transition-colors">
+              <span class="material-symbols-outlined text-lg">share</span>
+            </button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <div class="text-sm font-bold text-primary">${formatDateDisplay(event.date, event.time)}</div>
+            <div class="flex items-center gap-1 text-xs font-bold ${event.price === 'Free' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'} px-2 py-1 rounded-md">
+              ${event.price || ''}
+            </div>
+          </div>
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 leading-tight">${event.title}</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2">${event.description || ''}</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-slate-100" data-alt="Instructor headshot">
+                <img alt="${event.speaker?.name || ''}" class="rounded-full" src="${event.speaker?.avatar || ''}" />
+              </div>
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">${event.speaker?.name || ''}</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm text-yellow-400 fill-current">star</span>
+              <span class="text-xs font-bold">${event.rating || ''}</span>
+            </div>
+          </div>
+          <button class="w-full mt-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-xl hover:bg-primary hover:text-white transition-all">${event.price === 'Free' ? 'Join Waitlist' : 'Register Now'}</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function createPastCard(event) {
+    return `
+      <div data-event="true" data-organizer="${event.organizer}" data-date="${event.date}" class="bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 grayscale overflow-hidden opacity-80">
+        <div class="h-40 overflow-hidden relative">
+          <img alt="${event.title}" class="w-full h-full object-cover" src="${event.image}" />
+          <div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
+            <span class="text-white text-xs font-black uppercase tracking-widest border-2 border-white px-3 py-1">Concluded</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h4 class="font-bold text-slate-700 dark:text-slate-300 mb-2">${event.title}</h4>
+          <p class="text-xs text-slate-500 mb-4 italic">${formatDateDisplay(event.date)}</p>
+          <button class="w-full py-2 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-sm">play_circle</span> ${event.mediaLink ? 'Watch Recordings' : 'View Details'}
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function formatDateDisplay(date, time) {
+    if (!date) return '';
+    const d = new Date(date);
+    const options = { month: 'short', day: 'numeric' };
+    const formatted = d.toLocaleDateString(undefined, options);
+    return time ? `${formatted} • ${time}` : formatted;
+  }
+
+  function renderEvents(events) {
+    ongoingContainer.innerHTML = '';
+    upcomingContainer.innerHTML = '';
+    pastContainer.innerHTML = '';
+
+    events.forEach((event) => {
+      let html = '';
+      if (event.status === 'ongoing') {
+        html = createOngoingCard(event);
+      } else if (event.status === 'upcoming') {
+        html = createUpcomingCard(event);
+      } else if (event.status === 'past') {
+        html = createPastCard(event);
+      }
+
+      if (!html) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html.trim();
+      const card = wrapper.firstChild;
+
+      if (event.status === 'ongoing') {
+        ongoingContainer.appendChild(card);
+      } else if (event.status === 'upcoming') {
+        upcomingContainer.appendChild(card);
+      } else if (event.status === 'past') {
+        pastContainer.appendChild(card);
+      }
+    });
+
+    eventItems = Array.from(document.querySelectorAll('[data-event]'));
+    applyFilters();
+  }
+
+  async function loadEvents() {
+    try {
+      const res = await fetch(dataUrl);
+      if (!res.ok) {
+        throw new Error(`Failed to load events from ${dataUrl}`);
+      }
+      const events = await res.json();
+      renderEvents(events);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      updateActiveOrganizer(btn.dataset.filterOrganizer);
+      applyFilters();
+    });
+  });
+
+  section.addEventListener('change', () => {
+    const mode = section.value;
+    if (mode === 'custom') {
+      openCalendarPopup();
+    } else {
+      closeCalendarPopup();
+      applyFilters();
+    }
+  });
+
+  calendarCloseBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    closeCalendarPopup();
+  });
+
+  calendarApplyBtn.addEventListener('click', () => {
+    applyFilters();
+    closeCalendarPopup();
+  });
+
+  resetBtn.addEventListener('click', () => {
+    updateActiveOrganizer('all');
+    section.value = 'all';
+    customRange = { startISO: '', endISO: '' };
+    startInput.value = '';
+    endInput.value = '';
+    dateRangeLabel.textContent = formatRangeLabel(customRange);
+    closeCalendarPopup();
+    applyFilters();
+  });
+
+  // Initialize
+  updateActiveOrganizer('all');
+  section.value = 'all';
+  customRange = { startISO: '', endISO: '' };
+  dateRangeLabel.textContent = formatRangeLabel(customRange);
+  closeCalendarPopup();
+  loadEvents();
+})();
+</script>
+
+</body></html>

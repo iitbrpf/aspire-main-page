@@ -1,0 +1,129 @@
+[
+  {
+    "id": "global-tech-summit-2023",
+    "status": "ongoing",
+    "organizer": "Aspire",
+    "date": "2026-03-10",
+    "time": "16:00",
+    "title": "Global Tech Summit 2023",
+    "subtitle": "Annual Convention",
+    "description": "Discover the latest breakthroughs in AI, cloud, and product innovation with industry leaders.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAWWv8grQIVIbwJoKnU0h0VWLwy204aldUC4xtn06XHiMV1PK8oGpbtJjNidHnnNJ1uuyrdajqo7hibgqC9OmCCMCpQpg0_Pc8ytcB02I4oDnNEKO2qQdt4okoCGv5i5tFiNwlVGYgMi4e7ZL_k1x_E5uIIqpaXmeNJx99UO5OH8c7iLPwRUon-t6muhCssiLuZtwZ196LbkLEa62tPlq_QKtqZbmETNnRvp2M39G6tNP-mWdQcdfau7T3krpszq0S25tJSfdSfBBtB",
+    "tag": "Live",
+    "attendees": "12.4k",
+    "rating": "4.9",
+    "speaker": {
+      "name": "TechInnovate Global",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuDrdSH0SW7w4L7xgrBZfbjT8mnhX0CBzykLTCyWD9BxFB6pfIv5fDIRYsA4l9okW7gO8s0spOGFJvTFRALTShJcY0Sfm11Fuowc_pprYiTn_N6blWO0LFhnrPhLY-s4UKct2i4z3I0aj2fCnee1yZRhXkjy1vz2YgoNrolqcbLbASCQfoeUuI1dNp3XvjtF2RH79h2nwxpyb-F1sPHxOlPIGYySmfqAsnVN5_7dOPJ2j9CcCX_UF0trR9icTVOLXV6pHXBsXcFq6AT"
+    }
+  },
+  {
+    "id": "ux-design-mastery-workshop",
+    "status": "upcoming",
+    "organizer": "IIT Bombay",
+    "date": "2026-05-15",
+    "time": "10:00",
+    "title": "UX Design Mastery Workshop: Advanced Prototyping",
+    "category": "Workshop",
+    "description": "Elevate your design workflow with high-fidelity prototyping techniques used by top-tier product teams.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCCSutID9RhNM3hg1Zxxj5a3u1rKrA_R9aRXtB5FyPqz1xbPJyh4g8_2wayDsMbbOlrTvEwG2AR7NTOMA5IRXl4kvnIMthJgwtyDZS3lCcGM2DM2O9eFb0YAzEQUMk_k11NPa62FtYtR29ycn4YzA6WWZdr_nDADk4lL-U6IYLWpCydtFA9sJv3__QR8W43o3blCdhe_YhGsMBH-_HERwCnDT_pTEaamixmwqS5ItazGWo-iEda2tauBWXpoxaFFzWZ1PgHmGlm2-gq",
+    "price": "$149.00",
+    "rating": "4.8",
+    "speaker": {
+      "name": "Sarah Jenkins",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuBf4h3MTaD3iXz9jR9wA4oaxnRvrDBelKYE6B5WaEjihgwI8Z9eC8fYyE5B3cCFOXSWvKFytYKocKGX7EfAvEAo4ACkF76hBZLaD2tGl9BnLmxEa0CCXC5PWwQpZcwvXkNyT-xVbBMCrQQYeMxJDcGaNdrFXcbm7vW3sRL6iFaKf6QgxrUGJFnFrTGzOvYRKWZFcXmt2inOFWxpP8EDTLeBfLYUt1KjCC3s0i_PaAfHusmEqyQ5CJyon_O4CS_u-6ppDaxFnuKWfFSC"
+    }
+  },
+  {
+    "id": "founders-networking-night",
+    "status": "upcoming",
+    "organizer": "Aspire",
+    "date": "2026-05-18",
+    "time": "19:00",
+    "title": "Founder's Networking Night: Series A & Beyond",
+    "category": "Networking",
+    "description": "Exclusive rooftop gathering for founders and venture capitalists to discuss the current landscape of tech funding.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDsm-qbnHtRIG_udfuQBuC2EGAK5nNWyoVSYjsQp_t5PxSiWui_mLNkql6QvZ25g41_9D-21-FxrYyvZSUa7bNQrnvHdA55fu2VaYneu8KvYCL47ApuyhJhtF_95KONmr6wy7hhswH0S5DnrGuC4mDnF2zirAd2VfcBd6BMMwKA9aG5_VUlvJIMbL5r9W0EdJsfLJzD6NsLGVQpo9pYUDY8QFKZO3tvYD3XxQB38dkiT7GdLM5h6i0JK1RtBIl86ZphlwJvXAyZ1LVz",
+    "price": "Free",
+    "rating": "5.0",
+    "speaker": {
+      "name": "Venture Connect",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuDXyX3Jx6g8RbCW_J1yU6azigfRYJV4WHXTcd7kpTzt4e-6aG_ac7gDB7JyXt0VuOAomgiAfTGKEm5ALF4a7VrJiHIBiw8VvgAkHQEc5cK11XSBhTM98llINvHU335oY9HstJX0AdI-XBpc9GKVm46IOqo44ACYnyanDvfbrXOo6TngMmfdvovUFcwk2lteC7DEIk5noGbJJ8EVOcspEc19_-KTLnNA--IkfVw8WbnQeXZ69SkNCrL40ol8DGamGtfO7U-6q9YyB1TO"
+    }
+  },
+  {
+    "id": "digital-marketing-hack-2023",
+    "status": "past",
+    "organizer": "IIT Bombay",
+    "date": "2023-04-02",
+    "title": "Digital Marketing Hack 2023",
+    "description": "A fast-paced hackathon for building modern marketing campaigns with data-driven insights.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDtNcyDDdnIuXI_zQAfMZecHW_psDbyaFwr7hzTZP2RiRAJgWDwDXVmwvR_pP9ETAKQ4j2LnpqYLJSmlqzhs17_5Lf4ZfpdTDKiNd4-JUKUo2-Q0d4NtBfgiCixjg92yN0F3cNMnitFl3psC3oXDszOzsrnfwp9DAOq-cSxKESDF0gKYWPZi2EKsS5zQgjtEXWZiyASKFa3Qjwdnup75dYOik6Kn7Q7fHSsjO2D6dCwHWUyVQba5Jzo399qLbtm6GpkAptVfIufPtfo",
+    "mediaLink": "#"
+  },
+  {
+    "id": "ai-ethics-roundtable",
+    "status": "past",
+    "organizer": "Aspire",
+    "date": "2023-03-15",
+    "title": "AI Ethics Roundtable",
+    "description": "A cross-industry session exploring ethical AI best practices and governance.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAiGQEs10IRqyCweK_HjT_x_SZy3pw0EirsFYMLbQDDNJ7ZATm5MK372xoZaJL97Hokzs426cBfHwdqUikyUyHRMfN4EiyUWsc9Pg6A8Vsn9ES0OiTB2ga_wAqkRdkQROLWY76zRpdm4t8RPA8_XLjyFcknX4OB2HFzoTWD0U1Rru8tD6kWR4oNnbLrI0Vlp5yNvyYr6sB1YP_c3NKlFsDXxOtE_fmd2bM-uxbslwGnf4hmNOCqQNgocyzMvMcfMEdtLbel95DN2KYh",
+    "mediaLink": "#"
+  },
+  {
+    "id": "startup-bootcamp-saas-focus",
+    "status": "past",
+    "organizer": "Aspire",
+    "date": "2023-02-10",
+    "title": "Startup Bootcamp: SaaS Focus",
+    "description": "A hands-on bootcamp for early-stage SaaS founders to validate product-market fit.",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAW1yy7365y8SdgY9YfPuIgVEUx6gCyRNhAnluINFpO2bECNQUKyX0OXf16LJKW1j-pqK71UkEEbik3s02akHBcyfqWE3FaWidz8prkdwyXRt-P8LZv-UM7jUDskRAzg-i7o5WFFAzCaNu2i7oIT5d0jyNEvcNk9dADvk_pCQoGb3M8Yy31twqtHVtVeEMCNrV7hXbluIjgrgTEGlTOlW7G6jpY_IXgUywHISiVhUdesR3cubHViKvwEX95vdkMMR_JuBzZKhOvl8U1",
+    "mediaLink": "#"
+  },
+  {
+    "id": "developer-summit-2026",
+    "status": "ongoing",
+    "organizer": "IIT Bombay",
+    "date": "2026-03-10",
+    "time": "13:00",
+    "title": "Developer Summit 2026",
+    "subtitle": "Live Coding & Workshops",
+    "description": "Join live coding sessions and hands-on workshops with experts in web and cloud development.",
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80",
+    "tag": "Live",
+    "attendees": "5.2k",
+    "rating": "4.7",
+    "speaker": {
+      "name": "CodeCraft Collective",
+      "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80"
+    }
+  },
+  {
+    "id": "future-of-ai-conference",
+    "status": "upcoming",
+    "organizer": "Aspire",
+    "date": "2026-06-05",
+    "time": "09:00",
+    "title": "Future of AI Conference",
+    "category": "Conference",
+    "description": "A two-day conference showcasing breakthroughs in responsible and scalable AI systems.",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
+    "price": "Free",
+    "rating": "4.9",
+    "speaker": {
+      "name": "AI Insights",
+      "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80"
+    }
+  },
+  {
+    "id": "product-design-retreat",
+    "status": "past",
+    "organizer": "IIT Bombay",
+    "date": "2024-11-22",
+    "title": "Product Design Retreat",
+    "description": "A weekend retreat for product teams to collaborate on research-driven design strategies.",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80",
+    "mediaLink": "#"
+  }
+]
