@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brandBackground:'#292728',
+        accent:'#c1598d',
+        lightGray:'#f7f7f7',
+        lightGreen:'#c8d1c9',
+        lightWhite:'#ffffff',
+        lightYellow:'#d9c292',
+      },
+      fontFamily:{
+        display:["Public Sans","sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class="bg-white font-display text-slate-900">
+
+<div class="relative flex flex-col min-h-screen">
+
+<main class="flex-1 flex flex-col items-center">
+
+<!-- Hero Section -->
+<section class="w-full max-w-7xl px-6 md:px-12 lg:px-20 py-16 md:py-24 text-center">
+
+<span class="text-accent font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
+Identity & Purpose
+</span>
+
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 max-w-3xl mx-auto">
+The core principles that
+<span class="text-accent">drive our excellence.</span>
+</h1>
+
+<p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+We believe in a future where technology and design converge to create meaningful impact for every individual globally.
+</p>
+
+</section>
+
+
+<!-- Cards Section -->
+<section class="w-full max-w-7xl px-6 md:px-12 lg:px-20 pb-24">
+
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-5">
+
+<!-- Card 1 -->
+<div class="flex flex-col p-5 md:p-7 bg-lightGray rounded-xl shadow-md hover:shadow-xl transition duration-300">
+
+<div class="size-14 rounded-xl bg-lightYellow flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">target</span>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+
+<ul class="text-slate-600 text-sm md:text-base space-y-2">
+<li>Fostering academia-industry collaboration for research translation.</li>
+<li>Nurturing world-class talent in emerging technology areas.</li>
+<li>Supporting the development of a vibrant deep tech entrepreneurship ecosystem</li>
+</ul>
+
+</div>
+
+
+<!-- Card 2 -->
+<div class="flex flex-col p-5 md:p-7 bg-lightGray rounded-xl shadow-md hover:shadow-xl transition duration-300">
+
+<div class="size-14 rounded-xl bg-accent flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-3xl">visibility</span>
+</div>
+
+<h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+
+<p class="text-slate-600 text-sm md:text-base">
+To be a leading global hub for technology innovation.
+</p>
+
+</div>
+
+
+<!-- Card 3 -->
+<div class="flex flex-col p-5 md:p-7 bg-lightGray rounded-xl shadow-md hover:shadow-xl transition duration-300">
+
+<div class="size-14 rounded-xl bg-lightGreen flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+
+<h3 class="text-2xl font-bold mb-4 text-brandBackground">Our Values</h3>
+
+<p class="text-slate-600 text-sm md:text-base">
+Our ethos is built on integrity, excellence, accountability, transparency, and empathy. We foster academia-industry collaboration while addressing societal needs with compassion.
+</p>
+
+</div>
+
+</div>
+</section>
+
+</main>
+</div>
+
+</body>
+</html>
