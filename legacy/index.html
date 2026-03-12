@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LlamaIndex Inspired Hero Section</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+      
+        brandCard: '#FFFFFF',
+        darkBlue:'#304268',
+        darkPink: '#d94f9a',
+        lightPink: '#eb989a',
+        lightGray: '#f7f7f7',
+        darkGray:'#595656',
+        lightGreen: '#7bc99f',
+        lightWhite: '#ffffff',
+        lightYellow: '#d9c292',
+      },
+      fontFamily: {
+        display: ["Public Sans", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
+    }
+  }
+}
+</script>
+
+<style>
+body{
+font-family:'Inter',sans-serif;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.logo-section{
+overflow:hidden;
+width:100%;
+}
+
+.logo-row{
+display:flex;
+overflow:hidden;
+position:relative;
+}
+
+.logo-track{
+display:flex;
+flex-shrink:0;
+width:max-content;
+gap:3rem;
+padding:20px 0;
+align-items:center;
+}
+
+.logo{
+height:36px;
+opacity:0.9;
+transition:0.3s;
+}
+
+.logo:hover{
+opacity:1;
+transform:scale(1.05);
+}
+
+/* LEFT → RIGHT */
+.scroll-right{
+animation:scrollRight 20s linear infinite;
+}
+
+/* RIGHT → LEFT */
+.scroll-left{
+animation:scrollLeft 20s linear infinite;
+}
+
+@keyframes scrollLeft{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(-50%);
+}
+}
+
+@keyframes scrollRight{
+from{
+transform:translateX(-50%);
+}
+to{
+transform:translateX(0);
+}
+}
+
+
+#teamGrid{
+display:flex;
+gap:2rem;
+overflow-x:auto;
+scroll-behavior:smooth;
+cursor:grab;
+padding-bottom:10px;
+}
+
+#teamGrid:active{
+cursor:grabbing;
+}
+
+#teamGrid::-webkit-scrollbar{
+display:none;
+}
+
+.teamCard{
+min-width:220px;
+max-width:220px;
+flex:0 0 auto;
+}
+
+
+</style>
+
+</head>
+<body class="bg-white text-darkBlue antialiased">
+<!-- BEGIN: Announcement Banner -->
+<div class="bg-black text-white text-xs py-2 px-4 text-center font-medium" data-purpose="announcement-bar">
+    Join our upcoming webinar: Mastering Document Agents for Enterprise RAG. <a class="underline hover:text-lightGray-300 ml-1" href="#">Register now →</a>
+</div>
+<!-- END: Announcement Banner -->
+
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<main class="relative">
+<div class="flex flex-col lg:flex-row min-h-[600px]">
+
+<!-- LEFT SIDE -->
+<section class="flex-1 flex flex-col justify-center px-6 md:px-12 py-16 lg:py-24 max-w-3xl">
+
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-6">
+ASPIRE IITB Research Park Foundation
+</h1>
+
+<h2 class="text-2xl md:text-2xl mb-5 max-w-xl leading-relaxed">
+Applied Science Park for Innovation Research and Entrepreneurship
+</h2>
+
+<p class="text-lg md:text-xl text-darkGray mb-10 max-w-xl leading-relaxed">
+Research Park brings together IIT Bombay’s intellectual strength, world-class R&D ecosystem, and the vibrancy of the tech industry.
+</p>
+
+<!-- STATS -->
+<div class="grid grid-cols-3 gap-10 mb-10 max-w-xl">
+
+<!-- Stat 1 -->
+<div class="stat cursor-pointer">
+<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
+<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+</div>
+
+<!-- Stat 2 -->
+<div class="stat cursor-pointer">
+<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
+<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+</div>
+
+<!-- Stat 3 -->
+<div class="stat cursor-pointer">
+<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
+<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+</div>
+
+<!-- Stat 4 -->
+<div class="stat cursor-pointer">
+<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
+<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+</div>
+
+<!-- Stat 5 -->
+<div class="stat cursor-pointer">
+<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
+<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+</div>
+
+<!-- Stat 6 -->
+<div class="stat cursor-pointer">
+<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
+<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+</div>
+
+</div>
+
+<div class="flex flex-wrap gap-4 mb-12">
+<button class="bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all">
+SIGN UP
+</button>
+
+<button class="bg-white text-darkBlue border-2 border-black px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-100 transition-all">
+CONTACT SALES
+</button>
+</div>
+
+</section>
+
+
+<!-- RIGHT IMAGE -->
+<section class="flex-1 flex items-center justify-center p-8">
+
+<img src="https://iitbresearchpark.com/wp-content/uploads/2026/03/CAP_6740-810x1024-1-1214x1536.jpg"
+class="rounded-xl shadow-xl max-h-[700px] object-cover"/>
+
+</section>
+
+</div>
+
+
+  <!-- BEGIN: Trusted Partners -->
+<section class="py-12 border-y border-gray-100 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<p class="text-center text-[20px] font-bold tracking-[0.2em] uppercase mb-8">
+Our Valued Partners
+</p>
+
+<div class="logo-section">
+
+<!-- ROW 1 (LEFT → RIGHT) -->
+<div class="logo-row">
+
+<div class="logo-track scroll-right">
+
+<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
+<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
+<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
+<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
+<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+
+<!-- duplicate for infinite scroll -->
+
+<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
+<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
+<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
+<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
+<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+
+</div>
+
+</div>
+
+
+<!-- ROW 2 (RIGHT → LEFT) -->
+<div class="logo-row">
+
+<div class="logo-track scroll-left">
+
+<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
+<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
+<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
+<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
+<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+
+<!-- duplicate -->
+
+<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
+<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
+<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
+<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
+<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END: Trusted Partners -->
+
+
+<!-- ABOUT ASPIRE -->
+<section class="bg-[#f7f7f7] py-24 px-6 md:px-12 relative overflow-hidden">
+
+<!-- Decorative background -->
+<div class="absolute top-0 right-0 w-72 h-72 bg-darkPink opacity-5 rounded-full -mr-32 -mt-32"></div>
+
+<div class="max-w-7xl mx-auto">
+
+<div class="grid lg:grid-cols-12 gap-12 items-start">
+
+<!-- LEFT TITLE -->
+<div class="lg:col-span-5">
+
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-darkPink">
+Applied Science Park for Innovation Research & Entrepreneurship (ASPIRE)
+</h2>
+
+</div>
+
+<!-- RIGHT TEXT -->
+<div class="lg:col-span-7">
+
+<div class="grid md:grid-cols-2 gap-8 text-lg text-darkGray leading-relaxed">
+
+<p>
+ASPIRE, the place where the seeds of innovation are sown, nurtured, and cultivated to fruition. Established with the mission to connect research with real-world applications, ASPIRE has evolved into a vibrant platform that accelerates innovation, fosters research-driven collaborations, and transforms ideas into tangible impact.
+</p>
+
+<p>
+The non-profit entity offers a space where academic brilliance converges with industry expertise. This is the story of ASPIRE, a journey that began with a vision to bridge the worlds of academia and industry and has grown into a thriving ecosystem where ideas transform into powerful outcomes.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Mission / Vision / Values -->
+<div class="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- CARD 1 -->
+<div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1">
+
+<div class="w-14 h-14 rounded-xl bg-lightYellow flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">target</span>
+</div>
+
+<h3 class="text-xl font-bold mb-4">Our Mission</h3>
+
+<ul class="text-darkGray text-sm md:text-base space-y-2">
+<li>Fostering academia-industry collaboration for research translation.</li>
+<li>Nurturing world-class talent in emerging technology areas.</li>
+<li>Supporting the development of a vibrant deep tech entrepreneurship ecosystem.</li>
+</ul>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1">
+
+<div class="w-14 h-14 rounded-xl bg-darkPink flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-3xl">visibility</span>
+</div>
+
+<h3 class="text-xl font-bold mb-4">Our Vision</h3>
+
+<p class="text-darkGray text-sm md:text-base">
+To be a leading global hub for technology innovation that connects academia, industry, and entrepreneurship to create meaningful societal impact.
+</p>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1">
+
+<div class="w-14 h-14 rounded-xl bg-lightGreen flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+
+<h3 class="text-xl font-bold mb-4">Our Values</h3>
+
+<p class="text-darkGray text-sm md:text-base">
+Integrity, excellence, accountability, transparency, and empathy guide our mission as we foster collaboration between academia and industry while addressing societal needs.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- Connect collocate section -->
+
+<div class="flex justify-center px-6 lg:px-40 py-20">
+
+<div class="max-w-6xl w-full">
+
+<!-- Header -->
+<div class="flex items-end justify-between border-b pb-8 mb-10">
+
+<div class="max-w-2xl">
+
+<h2 class="text-3xl md:text-4xl font-bold">
+Connect. Collocate. Collaborate
+</h2>
+
+<p class="text-slate-500 mt-4 text-lg">
+Empowering innovation through integrated resources and shared expertise.
+</p>
+
+</div>
+
+<!-- Navigation -->
+<div class="hidden md:flex gap-3">
+
+<button class="swiper-prev p-2.5 rounded-full border hover:bg-white transition">
+
+←
+
+</button>
+
+<button class="swiper-next p-2.5 rounded-full border hover:bg-white transition">
+
+→
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Slider -->
+<div class="swiper featureSlider">
+
+<div class="swiper-wrapper">
+
+
+<!-- CARD 1 -->
+<div class="swiper-slide">
+
+<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
+
+<h3 class="text-lg font-bold mb-3">
+Multidisciplinary expertise
+</h3>
+
+<p class="text-slate-500 text-sm leading-relaxed flex-grow">
+Access a diverse range of academic and professional skills to tackle complex challenges from multiple angles.
+</p>
+
+<a href="#" class="text-darkGray mt-6 font-semibold text-sm">
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="swiper-slide">
+
+<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
+
+<h3 class="text-lg font-bold mb-3">
+Intellectual Capital
+</h3>
+
+<p class="text-slate-500 text-sm leading-relaxed flex-grow">
+Leverage deep knowledge, cutting-edge research capabilities, and proprietary methodologies.
+</p>
+
+<a href="#" class="text-darkGray  mt-6 font-semibold text-sm">
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="swiper-slide">
+
+<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
+
+<h3 class="text-lg font-bold mb-3">
+Library Access
+</h3>
+
+<p class="text-slate-500 text-sm leading-relaxed flex-grow">
+Enjoy comprehensive access to physical collections and vast digital library resources.
+</p>
+
+<a href="#" class="text-darkGray mt-6 font-semibold text-sm">
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- Pagination -->
+<div class="swiper-pagination mt-8"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+const swiper = new Swiper('.featureSlider',{
+
+loop:true,
+
+spaceBetween:24,
+
+autoplay:{
+delay:4000,
+disableOnInteraction:false
+},
+
+navigation:{
+nextEl:'.swiper-next',
+prevEl:'.swiper-prev'
+},
+
+pagination:{
+el:'.swiper-pagination',
+clickable:true
+},
+
+breakpoints:{
+
+0:{
+slidesPerView:1
+},
+
+768:{
+slidesPerView:2
+},
+
+1024:{
+slidesPerView:3
+}
+
+}
+
+})
+
+</script>
+
+<!-- End of Connect collocate -->
+
+
+
+
+<!-- Team Members Section (Optional) -->
+
+<div class="bg-[#f7f7f7]  mx-auto px-6 py-16">
+
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+
+<div>
+
+<p class="text-sm tracking-widest text-primary font-bold uppercase">
+Our Team
+</p>
+
+<h1 id="teamTitle" class="text-5xl font-black mt-2">
+Faces Behind ASPIRE
+</h1>
+
+<p class="text-gray-500 mt-3 max-w-xl">
+Meet the experts driving strategy, infrastructure and innovation.
+</p>
+
+</div>
+
+<div class="flex items-end gap-4">
+
+<div class="relative w-64">
+
+<label class="text-xs tracking-widest text-gray-400 font-bold uppercase">
+Filter by Department
+</label>
+
+<button id="filterToggle"
+class="w-full mt-1 flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm">
+
+<span id="selectedFilter">
+All Departments
+</span>
+
+<span class="material-symbols-outlined text-pink-500">
+expand_more
+</span>
+
+</button>
+
+<div id="filterMenu"
+class="absolute hidden w-full mt-2 bg-white rounded-xl shadow-xl overflow-hidden border z-50">
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="all">
+All Departments
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Board of Director">
+Board of Directors
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Leadership">
+Leadership
+</button>
+
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="HRAdmins">
+HR & Administration
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="IndustryAcademiaEngagement">
+Industry-Academia Engagement
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Information Technology">
+Information Technology
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Infrastructure">
+Infrastructure
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Finance and Accounts">
+Finance & Accounts
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Marketing & Communications">
+Marketing & Communications
+</button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Legal">
+  Legal
+  </button>
+  
+  
+
+
+</div>
+
+</div>
+
+<button id="prevBtn" class="w-12 h-12 rounded-full border flex items-center justify-center bg-white hover:bg-gray-50">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+
+<button id="nextBtn" class="w-12 h-12 rounded-full border flex items-center justify-center bg-white hover:bg-gray-50">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+
+</div>
+
+</div>
+
+<div id="teamGrid"></div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div id="memberModal"
+class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+
+<div id="modalContent" class="bg-white rounded-2xl max-w-lg w-full p-8 relative">
+
+<button id="closeModal"
+class="absolute right-4 top-4 text-gray-400 hover:text-black">
+
+<span class="material-symbols-outlined">close</span>
+
+</button>
+
+<img id="modalImg"
+class="w-32 h-32 rounded-full object-cover mx-auto mb-6">
+
+<h2 id="modalName"
+class="text-2xl font-bold text-center"></h2>
+
+<p id="modalRole"
+class="text-pink-500 text-center mb-4"></p>
+
+<p id="modalBio"
+class="text-gray-600 text-center"></p>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- End of team memebrs section  -->
+<!-- BEGIN: CTASection -->
+<section class="relative min-h-[70vh] flex items-center justify-center bg-grid-pattern px-6 py-24" data-purpose="hero-cta">
+<div class="max-w-4xl w-full text-center">
+<!-- Metadata Tag -->
+
+<!-- Main Headline -->
+<h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-aspireDark mb-6 text-balance leading-tight">
+        Ready to transform your ideas into impact?
+      </h2>
+<!-- Sub-headline -->
+<p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Join a thriving ecosystem where academic brilliance meets industry expertise.
+      </p>
+<!-- Action Button -->
+<div class="flex justify-center">
+<a class="inline-block bg-[#c1598d] text-white font-bold tracking-widest text-sm py-5 px-12 hover:bg-[#a64a78] transition-colors duration-300 hover-lift shadow-lg uppercase" data-purpose="primary-cta-button" href="#">
+          Get Started Now
+        </a>
+</div>
+</div>
+</section>
+<!-- END: CTASection -->
+
+
+</main>
+  
+<script>
+
+/* Stats Data */
+
+const stats = [
+
+[
+{number:"500,000+", label:"Sq. Ft. Research Park Area"},
+{number:"60+", label:"WORKSPACES"}
+],
+
+[
+{number:"50+", label:"ASPIRE member Companies"},
+{number:"9+", label:"Residential Units"}
+],
+
+[
+{number:"Co-located", label:"With IIT Bombay"},
+{number:"15+", label:"Access to IITB Academic Units"}
+],
+[
+{number:"14000+", label:"IITBS's Student Pool"},
+{number:"750+", label:"IITB Faculty Members"}
+],
+[
+{number:"-", label:"Facilities Industry-Academia Partnerships"},
+{number:"-", label:"Enabling Joint Research Technology Pilots and knowledge exchange"}
+],
+[
+{number:"-", label:"State of Art Infrastructure."},
+{number:"-", label:"Tailored Workspasce,meeting Rooms,and ready to use amenities."}
+]
+
+
+
+]
+
+
+const cards=document.querySelectorAll(".stat")
+
+cards.forEach((card,i)=>{
+
+let index=0
+
+const number=card.querySelector(".stat-number")
+const label=card.querySelector(".stat-label")
+
+function update(){
+
+number.innerText=stats[i][index].number
+label.innerText=stats[i][index].label
+
+index++
+if(index>=stats[i].length) index=0
+
+}
+
+update()
+
+setInterval(update,4000)
+
+card.addEventListener("mouseenter",update)
+
+})
+
+</script>
+
+<script>
+
+const teamMembers=[
+
+{
+name:"Prof. Shireesh Kedare",
+role:"Director, IIT Bombay",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/IITB_director-e1725965730815_900x900.jpg",
+email:"",
+bio:"Prof. Shireesh Kedare "
+},
+
+{
+name:"Prof. Ravindra Gudi​",
+role:"Deputy Director (Finance & External Affairs), IIT Bombay​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2026/01/Ravi_Gudi_900.jpeg",
+bio:"Oversees treasury operations."
+},
+
+{
+name:"Prof. Milind Atrey​​",
+role:"Deputy Director (Academics, Research and Translation), IIT Bombay​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Prof.Milind-Atrey-Dean-RD_900x900.png",
+email:"elena@aspire.com",
+bio:"Leads infrastructure planning and development."
+},
+
+{
+name:"Prof. Sachin Patwardhan​",
+role:"Dean (Research & Development), IIT Bombay​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/SachinP_900x900.png",
+email:"david@aspire.com",
+bio:"Technology strategist focusing on innovation."
+},
+
+{
+name:"Prof. Devang Khakhar",
+role:"Professor, Department of Chemical Engineering",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Prof.-Devang-Khakhar-1_900X900.png",
+bio:"Driving leadership and research collaboration."
+},
+
+{
+name:"Dr. Nitin Kareer",
+role:"Additional Chief Secretary, Revenue & Forest Department, Government of Maharashtra",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Nitin-Kareer-900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Prof. Vikram Vishal",
+role:"Professor-in-charge",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_7019.jpg",
+email:"anna@aspire.com",
+bio:"Professor of Department of Earth Sciences, IIT Bombay.Adjunct Senior Lecturer Department of Civil Engineering, Monash University, Australia Associate Faculty Interdisciplinary Programme in Climate Studies, IIT Bombay"
+},
+{
+name:"Mr. Sharad Sanghi",
+role:"Chief Executive Officer, Neysa​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/IMG_Mr_Sharad_Sanghi__900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Ms. Rekha Koita​",
+role:"Co-Founder, Koita Foundation",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Rekha-koita-900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Shri. Aseemkumar Gupta",
+role:"Additional Chief Secretary, Urban Development Department, Government of Maharashtra",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Dr-Aseem-Gupta_900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Dr. Rajappa Tadepalli",
+role:"Chief Executive Officer, ASPIRE",
+department:"Leadership",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/09/CEO_Headshot_Edited_2.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+//LEgal 
+{
+name:"Ms. Faiza Pirani",
+role:"Associate (Legal)",
+department:"Legal",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6977.jpg",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+
+//Marcom
+
+{
+name:"Ms. Deepabali Dasgupta",
+role:"Assistant Manager (Marketing & Communications)",
+department:"Marketing & Communications",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6968-1.jpg",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+{
+name:"Ms. Urvi Khadaria",
+role:"Associate (Marketing & Communications)",
+department:"Marketing & Communications",
+image:"https://iitbresearchpark.com/wp-content/uploads/2026/01/Urvi_headshot_updated.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+
+{
+name:"Mr. Mayank Pandey",
+role:"Web Developer (Marketing & Communications)",
+department:"Marketing & Communications",
+image:"https://iitbresearchpark.com/wp-content/uploads/2026/03/Mayank_Headshot-1.webp",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+
+
+]
+
+let filteredMembers=[...teamMembers]
+
+const grid=document.getElementById("teamGrid")
+const title=document.getElementById("teamTitle")
+const selectedFilter=document.getElementById("selectedFilter")
+
+const modal=document.getElementById("memberModal")
+const modalContent=document.getElementById("modalContent")
+
+
+
+function render(){
+
+grid.innerHTML=""
+
+filteredMembers.forEach((member,index)=>{
+
+grid.innerHTML+=`
+
+<div class="teamCard flex flex-col gap-4 group">
+
+<div class="overflow-hidden rounded-2xl aspect-[3/4] bg-gray-100 cursor-pointer"
+onclick="openModal(${index})">
+
+<img 
+src="${member.image}?auto=format&fit=crop&w=400&q=70"
+loading="lazy"
+class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+</div>
+
+<div>
+
+<h3 class="text-lg font-bold">${member.name}</h3>
+
+<p class="text-pink-500 text-sm font-medium">${member.role}</p>
+
+</div>
+
+<div class="flex gap-3 mt-1">
+
+${member.email ? `
+<a href="mailto:${member.email}"
+class="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>` : ``}
+
+${member.bio ? `
+<button onclick="openModal(${index})"
+class="w-9 h-9 rounded-full border flex items-center justify-center hover:bg-gray-100">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>` : ``}
+
+</div>
+
+</div>
+
+`
+
+})
+
+}
+
+render()
+
+
+
+const scrollAmount=300
+
+document.getElementById("nextBtn").onclick=()=>{
+grid.scrollLeft+=scrollAmount
+}
+
+document.getElementById("prevBtn").onclick=()=>{
+grid.scrollLeft-=scrollAmount
+}
+
+
+
+let isDown=false
+let startX
+let scrollLeft
+
+grid.addEventListener("mousedown",e=>{
+isDown=true
+startX=e.pageX-grid.offsetLeft
+scrollLeft=grid.scrollLeft
+})
+
+grid.addEventListener("mouseleave",()=>isDown=false)
+grid.addEventListener("mouseup",()=>isDown=false)
+
+grid.addEventListener("mousemove",e=>{
+if(!isDown)return
+e.preventDefault()
+const x=e.pageX-grid.offsetLeft
+const walk=(x-startX)*2
+grid.scrollLeft=scrollLeft-walk
+})
+
+
+
+document.querySelectorAll(".filterBtn").forEach(btn=>{
+
+btn.onclick=()=>{
+
+let dept=btn.dataset.filter
+
+document.getElementById("filterMenu").classList.add("hidden")
+
+if(dept==="all"){
+
+filteredMembers=[...teamMembers]
+
+title.innerText="Faces Behind ASPIRE"
+
+selectedFilter.innerText="All Departments"
+
+}else{
+
+filteredMembers=teamMembers.filter(m=>m.department===dept)
+
+title.innerText=dept
+
+selectedFilter.innerText=dept
+
+}
+
+render()
+
+}
+
+})
+
+
+
+document.getElementById("filterToggle").onclick=()=>{
+document.getElementById("filterMenu").classList.toggle("hidden")
+}
+
+
+
+document.addEventListener("click",(e)=>{
+if(!e.target.closest("#filterToggle") && !e.target.closest("#filterMenu")){
+document.getElementById("filterMenu").classList.add("hidden")
+}
+})
+
+
+
+function openModal(index){
+
+let member=filteredMembers[index]
+
+modal.classList.remove("hidden")
+modal.classList.add("flex")
+
+document.getElementById("modalImg").src=member.image
+document.getElementById("modalName").innerText=member.name
+document.getElementById("modalRole").innerText=member.role
+document.getElementById("modalBio").innerText=member.bio || ""
+
+}
+
+
+
+document.getElementById("closeModal").onclick=()=>{
+modal.classList.add("hidden")
+}
+
+
+
+modal.addEventListener("click",(e)=>{
+if(!modalContent.contains(e.target)){
+modal.classList.add("hidden")
+}
+})
+
+
+
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape"){
+modal.classList.add("hidden")
+}
+})
+
+</script>
+
+ 
+</body></html>
