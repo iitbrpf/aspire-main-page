@@ -9,6 +9,9 @@
 <!-- Google Fonts: Inter -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <script>
@@ -399,9 +402,185 @@ Integrity, excellence, accountability, transparency, and empathy guide our missi
 
 
 
+<!-- Connect collocate section -->
+
+<div class="flex justify-center px-6 lg:px-40 py-20">
+
+<div class="max-w-6xl w-full">
+
+<!-- Header -->
+<div class="flex items-end justify-between border-b pb-8 mb-10">
+
+<div class="max-w-2xl">
+
+<h2 class="text-3xl md:text-4xl font-bold">
+Connect, Collocate, Collaborate
+</h2>
+
+<p class="text-slate-500 mt-4 text-lg">
+Empowering innovation through integrated resources and shared expertise.
+</p>
+
+</div>
+
+<!-- Navigation -->
+<div class="hidden md:flex gap-3">
+
+<button class="swiper-prev p-2.5 rounded-full border hover:bg-white transition">
+
+←
+
+</button>
+
+<button class="swiper-next p-2.5 rounded-full border hover:bg-white transition">
+
+→
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Slider -->
+<div class="swiper featureSlider">
+
+<div class="swiper-wrapper">
+
+
+<!-- CARD 1 -->
+<div class="swiper-slide">
+
+<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
+
+<h3 class="text-lg font-bold mb-3">
+Multidisciplinary expertise
+</h3>
+
+<p class="text-slate-500 text-sm leading-relaxed flex-grow">
+Access a diverse range of academic and professional skills to tackle complex challenges from multiple angles.
+</p>
+
+<a href="#" class="text-pink-500 mt-6 font-semibold text-sm">
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="swiper-slide">
+
+<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
+
+<h3 class="text-lg font-bold mb-3">
+Intellectual Capital
+</h3>
+
+<p class="text-slate-500 text-sm leading-relaxed flex-grow">
+Leverage deep knowledge, cutting-edge research capabilities, and proprietary methodologies.
+</p>
+
+<a href="#" class="text-pink-500 mt-6 font-semibold text-sm">
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="swiper-slide">
+
+<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
+
+<h3 class="text-lg font-bold mb-3">
+Library Access
+</h3>
+
+<p class="text-slate-500 text-sm leading-relaxed flex-grow">
+Enjoy comprehensive access to physical collections and vast digital library resources.
+</p>
+
+<a href="#" class="text-pink-500 mt-6 font-semibold text-sm">
+Learn More →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- Pagination -->
+<div class="swiper-pagination mt-8"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+const swiper = new Swiper('.featureSlider',{
+
+loop:true,
+
+spaceBetween:24,
+
+autoplay:{
+delay:4000,
+disableOnInteraction:false
+},
+
+navigation:{
+nextEl:'.swiper-next',
+prevEl:'.swiper-prev'
+},
+
+pagination:{
+el:'.swiper-pagination',
+clickable:true
+},
+
+breakpoints:{
+
+0:{
+slidesPerView:1
+},
+
+768:{
+slidesPerView:2
+},
+
+1024:{
+slidesPerView:3
+}
+
+}
+
+})
+
+</script>
+
+<!-- End of Connect collocate -->
+
+
+
+
 <!-- Team Members Section (Optional) -->
 
-<div class="max-w-[1200px] mx-auto px-6 py-16">
+<div class="bg-[#f7f7f7]  mx-auto px-6 py-16">
 
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
 
@@ -449,21 +628,50 @@ class="absolute hidden w-full mt-2 bg-white rounded-xl shadow-xl overflow-hidden
 All Departments
 </button>
 
-<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Finance">
-Finance
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Board of Director">
+Board of Directors
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Leadership">
+Leadership
+</button>
+
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="HRAdmins">
+HR & Administration
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="IndustryAcademiaEngagement">
+Industry-Academia Engagement
+</button>
+
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Information Technology">
+Information Technology
 </button>
 
 <button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Infrastructure">
 Infrastructure
 </button>
 
-<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Technology">
-Technology
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Finance and Accounts">
+Finance & Accounts
 </button>
 
-<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="HOD">
-Head of the Department
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Marketing & Communications">
+Marketing & Communications
 </button>
+
+<button class="filterBtn w-full text-left px-4 py-3 hover:bg-gray-50" data-filter="Legal">
+  Legal
+  </button>
+  
+  
+
 
 </div>
 
@@ -522,6 +730,28 @@ class="text-gray-600 text-center"></p>
 
 
 <!-- End of team memebrs section  -->
+<!-- BEGIN: CTASection -->
+<section class="relative min-h-[70vh] flex items-center justify-center bg-grid-pattern px-6 py-24" data-purpose="hero-cta">
+<div class="max-w-4xl w-full text-center">
+<!-- Metadata Tag -->
+
+<!-- Main Headline -->
+<h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-aspireDark mb-6 text-balance leading-tight">
+        Ready to transform your ideas into impact?
+      </h2>
+<!-- Sub-headline -->
+<p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Join a thriving ecosystem where academic brilliance meets industry expertise.
+      </p>
+<!-- Action Button -->
+<div class="flex justify-center">
+<a class="inline-block bg-[#c1598d] text-white font-bold tracking-widest text-sm py-5 px-12 hover:bg-[#a64a78] transition-colors duration-300 hover-lift shadow-lg uppercase" data-purpose="primary-cta-button" href="#">
+          Get Started Now
+        </a>
+</div>
+</div>
+</section>
+<!-- END: CTASection -->
 
 
 </main>
@@ -598,56 +828,139 @@ card.addEventListener("mouseenter",update)
 const teamMembers=[
 
 {
-name:"Sarah Jenkins",
-role:"Chief Financial Officer",
-department:"Finance",
-image:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-email:"sarah@aspire.com",
-bio:"Expert in financial strategy and investment planning."
+name:"Prof. Shireesh Kedare",
+role:"Director, IIT Bombay",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/IITB_director-e1725965730815_900x900.jpg",
+email:"",
+bio:"Prof. Shireesh Kedare "
 },
 
 {
-name:"Marcus Thorne",
-role:"Head of Treasury",
-department:"Finance",
-image:"https://images.unsplash.com/photo-1560250097-0b93528c311a",
+name:"Prof. Ravindra Gudi​",
+role:"Deputy Director (Finance & External Affairs), IIT Bombay​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2026/01/Ravi_Gudi_900.jpeg",
 bio:"Oversees treasury operations."
 },
 
 {
-name:"Elena Rodriguez",
-role:"Infrastructure Manager",
-department:"Infrastructure",
-image:"https://images.unsplash.com/photo-1554151228-14d9def656e4",
+name:"Prof. Milind Atrey​​",
+role:"Deputy Director (Academics, Research and Translation), IIT Bombay​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Prof.Milind-Atrey-Dean-RD_900x900.png",
 email:"elena@aspire.com",
 bio:"Leads infrastructure planning and development."
 },
 
 {
-name:"David Chen",
-role:"Technology Analyst",
-department:"Technology",
-image:"https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+name:"Prof. Sachin Patwardhan​",
+role:"Dean (Research & Development), IIT Bombay​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/SachinP_900x900.png",
 email:"david@aspire.com",
 bio:"Technology strategist focusing on innovation."
 },
 
 {
-name:"Michael Smith",
-role:"Head of Department",
-department:"HOD",
-image:"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f",
+name:"Prof. Devang Khakhar",
+role:"Professor, Department of Chemical Engineering",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Prof.-Devang-Khakhar-1_900X900.png",
 bio:"Driving leadership and research collaboration."
 },
 
 {
-name:"Anna White",
-role:"Infrastructure Engineer",
-department:"Infrastructure",
-image:"https://images.unsplash.com/photo-1580489944761-15a19d654956",
+name:"Dr. Nitin Kareer",
+role:"Additional Chief Secretary, Revenue & Forest Department, Government of Maharashtra",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Nitin-Kareer-900.png",
 email:"anna@aspire.com",
 bio:"Engineering infrastructure systems."
-}
+},
+{
+name:"Prof. Vikram Vishal",
+role:"Professor-in-charge",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_7019.jpg",
+email:"anna@aspire.com",
+bio:"Professor of Department of Earth Sciences, IIT Bombay.Adjunct Senior Lecturer Department of Civil Engineering, Monash University, Australia Associate Faculty Interdisciplinary Programme in Climate Studies, IIT Bombay"
+},
+{
+name:"Mr. Sharad Sanghi",
+role:"Chief Executive Officer, Neysa​",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/IMG_Mr_Sharad_Sanghi__900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Ms. Rekha Koita​",
+role:"Co-Founder, Koita Foundation",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Rekha-koita-900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Shri. Aseemkumar Gupta",
+role:"Additional Chief Secretary, Urban Development Department, Government of Maharashtra",
+department:"Board of Director",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/11/Dr-Aseem-Gupta_900.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+{
+name:"Dr. Rajappa Tadepalli",
+role:"Chief Executive Officer, ASPIRE",
+department:"Leadership",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/09/CEO_Headshot_Edited_2.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+//LEgal 
+{
+name:"Ms. Faiza Pirani",
+role:"Associate (Legal)",
+department:"Legal",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6977.jpg",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+
+//Marcom
+
+{
+name:"Ms. Deepabali Dasgupta",
+role:"Assistant Manager (Marketing & Communications)",
+department:"Marketing & Communications",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6968-1.jpg",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+{
+name:"Ms. Urvi Khadaria",
+role:"Associate (Marketing & Communications)",
+department:"Marketing & Communications",
+image:"https://iitbresearchpark.com/wp-content/uploads/2026/01/Urvi_headshot_updated.png",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+
+{
+name:"Mr. Mayank Pandey",
+role:"Web Developer (Marketing & Communications)",
+department:"Marketing & Communications",
+image:"https://iitbresearchpark.com/wp-content/uploads/2026/03/Mayank_Headshot-1.webp",
+email:"anna@aspire.com",
+bio:"Engineering infrastructure systems."
+},
+
+
 
 ]
 
@@ -675,9 +988,10 @@ grid.innerHTML+=`
 <div class="overflow-hidden rounded-2xl aspect-[3/4] bg-gray-100 cursor-pointer"
 onclick="openModal(${index})">
 
-<img src="${member.image}"
+<img 
+src="${member.image}?auto=format&fit=crop&w=400&q=70"
+loading="lazy"
 class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-
 </div>
 
 <div>
