@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>LlamaIndex Inspired Hero Section</title>
+<title>ASPIRE-IIT Bombay</title>
 <!-- Tailwind CSS CDN with plugins -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Google Fonts: Inter -->
@@ -213,12 +213,10 @@ Research Park brings together IIT Bombay’s intellectual strength, world-class 
 
 <div class="flex flex-wrap gap-4 mb-12">
 <button class="bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all">
-SIGN UP
+Be Our Colloborator
 </button>
 
-<button class="bg-white text-darkBlue border-2 border-black px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-100 transition-all">
-CONTACT SALES
-</button>
+
 </div>
 
 </section>
@@ -309,40 +307,218 @@ Our Valued Partners
 <div class="absolute top-0 right-0 w-72 h-72 bg-darkPink opacity-5 rounded-full -mr-32 -mt-32"></div>
 
 <div class="max-w-7xl mx-auto">
+  
+<!-- BEGIN: About ASPIRE -->
+<section class="bg-[#f7f7f7] py-24 px-6 md:px-12 relative overflow-hidden" data-purpose="about-aspire">
 
-<div class="grid lg:grid-cols-12 gap-12 items-start">
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-[#c1598d] opacity-5 rounded-full -mr-32 -mt-32"></div>
 
-<!-- LEFT TITLE -->
-<div class="lg:col-span-5">
+<div class="max-w-7xl mx-auto">
 
-<h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-darkPink">
-Applied Science Park for Innovation Research & Entrepreneurship (ASPIRE)
+<div id="contentWrapper" class="grid lg:grid-cols-2 gap-12 items-center mb-12 transition-all duration-700">
+
+<!-- LEFT IMAGE -->
+<div class="relative group">
+
+<div class="absolute -inset-2 bg-gradient-to-r from-[#c1598d] to-pink-300 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+
+<div class="relative overflow-hidden rounded-lg shadow-2xl aspect-[4/3]">
+
+<img id="aspireImage"
+class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+src=""
+alt="ASPIRE Innovation"/>
+
+</div>
+</div>
+
+
+<!-- RIGHT CONTENT -->
+<div class="space-y-8">
+
+<h2 id="aspireTitle"
+class="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] tracking-tighter text-[#c1598d]">
 </h2>
 
-</div>
-
-<!-- RIGHT TEXT -->
-<div class="lg:col-span-7">
-
-<div class="grid md:grid-cols-2 gap-8 text-lg text-darkGray leading-relaxed">
-
-<p>
-ASPIRE, the place where the seeds of innovation are sown, nurtured, and cultivated to fruition. Established with the mission to connect research with real-world applications, ASPIRE has evolved into a vibrant platform that accelerates innovation, fosters research-driven collaborations, and transforms ideas into tangible impact.
-</p>
-
-<p>
-The non-profit entity offers a space where academic brilliance converges with industry expertise. This is the story of ASPIRE, a journey that began with a vision to bridge the worlds of academia and industry and has grown into a thriving ecosystem where ideas transform into powerful outcomes.
-</p>
-
+<div id="aspireText"
+class="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
 </div>
 
 </div>
 
 </div>
+
+
+<!-- Navigation -->
+<div class="flex items-center justify-center gap-6 mt-8">
+
+<button id="prevBtn"
+class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:bg-[#c1598d] hover:text-white transition">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+</svg>
+
+</button>
+
+
+<button id="nextBtn"
+class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:bg-[#c1598d] hover:text-white transition">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+</svg>
+
+</button>
+
+</div>
+
+</div>
+</section>
+<!-- END: About ASPIRE -->
+
+
+
+<script>
+
+// JSON DATA
+const aspireData = [
+
+{
+title:"Applied Science Park for Innovation Research & Entrepreneurship (ASPIRE)",
+image:"https://lh3.googleusercontent.com/aida-public/AB6AXuACZHXMvGR_UuGuaku7xVBeKsNW6yLQZhkw9j2ukA36I7CepiBTI4DAqcQNsURI19lBqCJyt--j6ZtDL9nu0xBC86-ZwblTRPtBNgWaVZDZx7HFhHxDk_L6TwL4E8tixlP1oV2OKv42Kz-f7-sdXouwmO-8E2t8vSLiwFTL3LiJy11QNfG4WZKsg_djmqVVi0BJnuAj0RgzNqsvgY43KEP90kvW7pi4rlcqKEybTiYXoE6fArrAhFnawKv03ZdLxj1OtsgPMvTplQ",
+text:[
+"ASPIRE is where the seeds of innovation are sown and cultivated. With a mission to connect research with real-world applications, ASPIRE accelerates innovation and transforms ideas into tangible impact.",
+"The platform provides an ecosystem where academic brilliance converges with industry expertise, bridging the gap between research and industry."
+]
+},
+
+{
+title:"Formation of Aspire",
+image:"https://images.unsplash.com/photo-1581091870622-1e7d2f4cfa9f",
+text:[
+"In 2016, the Ministry of Education entrusted IIT Bombay with establishing the Research Park within the campus in Powai, Mumbai.",
+"This led to the creation of ASPIRE – the IIT Bombay Research Park Foundation – a non-profit organization dedicated to catalysing innovation."
+]
+},
+
+{
+title:"What We Do",
+image:"https://images.unsplash.com/photo-1552664730-d307ca884978",
+text:[
+"ASPIRE cultivates R&D partnerships and builds a thriving innovation hub that advances technologies with meaningful societal impact.",
+"Students gain invaluable exposure to corporate research while industries collaborate with academic experts."
+]
+},
+
+{
+title:"Indian Institute of Technology Bombay",
+image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+text:[
+"ASPIRE proudly calls IIT Bombay its home, a globally recognized institution for engineering education and research.",
+"The ecosystem allows industries to tap into exceptional faculty, bright students, and cutting-edge research."
+]
+}
+
+];
+
+let index=0;
+
+const title=document.getElementById("aspireTitle");
+const text=document.getElementById("aspireText");
+const image=document.getElementById("aspireImage");
+const wrapper=document.getElementById("contentWrapper");
+
+const prevBtn=document.getElementById("prevBtn");
+const nextBtn=document.getElementById("nextBtn");
+const section=document.querySelector('[data-purpose="about-aspire"]');
+
+function renderContent(i){
+
+wrapper.style.opacity="0";
+wrapper.style.transform="translateY(20px)";
+
+setTimeout(()=>{
+
+title.innerText=aspireData[i].title;
+
+image.src=aspireData[i].image;
+
+text.innerHTML=aspireData[i].text
+.map(p=>`<p>${p}</p>`)
+.join("");
+
+wrapper.style.opacity="1";
+wrapper.style.transform="translateY(0)";
+
+},300)
+
+}
+
+
+function nextSlide(){
+index=(index+1)%aspireData.length;
+renderContent(index);
+}
+
+function prevSlide(){
+index=(index-1+aspireData.length)%aspireData.length;
+renderContent(index);
+}
+
+
+// buttons
+nextBtn.addEventListener("click",nextSlide);
+prevBtn.addEventListener("click",prevSlide);
+
+
+// auto slider
+let slider=setInterval(nextSlide,6000);
+
+
+// pause on hover
+section.addEventListener("mouseenter",()=>clearInterval(slider));
+
+section.addEventListener("mouseleave",()=>{
+slider=setInterval(nextSlide,6000);
+});
+
+
+// initial load
+renderContent(index);
+
+</script>
+
+<!-- BEGIN: Feature Cards Section -->
+<div class="grid md:grid-cols-3 gap-8 mt-5" data-purpose="feature-cards">
+<!-- Card 1:  -->
+<div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-[#c1598d] hover:shadow-xl transition-shadow duration-300">
+<h3 class="text-2xl md:text-3xl font-light text-gray-900 mb-6">Bridging the Gap</h3>
+<p class="text-gray-600 leading-relaxed">
+                        ASPIRE fosters an environment that moves beyond ideation — connecting academic excellence with industry needs to tackle real-world challenges and deliver impactful solutions.
+                    </p>
+</div>
+<!-- Card 2: Cutting-Edge Hub -->
+<div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-[#c1598d] hover:shadow-xl transition-shadow duration-300">
+<h3 class="text-2xl md:text-3xl font-light text-gray-900 mb-6">Cutting-Edge Hub</h3>
+<p class="text-gray-600 leading-relaxed">
+                        Equipped with state-of-the-art facilities and purpose-built workspaces, ASPIRE fuels a dynamic workspace to catalyse innovation across disciplines.
+                    </p>
+</div>
+<!-- Card 3: Empowering Talent -->
+<div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-[#c1598d] hover:shadow-xl transition-shadow duration-300">
+<h3 class="text-2xl md:text-3xl font-light text-gray-900 mb-6">Empowering Talent</h3>
+<p class="text-gray-600 leading-relaxed">
+                        ASPIRE equips students with industry-driven research opportunities, offering hands-on experience that builds a pool of competent future professionals.
+                    </p>
+</div>
+</div>
+<!-- END: Feature Cards Section -->
 
 
 <!-- Mission / Vision / Values -->
-<div class="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- CARD 1 -->
 <div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1">
@@ -737,7 +913,7 @@ class="text-gray-600 text-center"></p>
 
 <!-- Main Headline -->
 <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-aspireDark mb-6 text-balance leading-tight">
-        Ready to transform your ideas into impact?
+        Driving innovation forward 
       </h2>
 <!-- Sub-headline -->
 <p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -746,7 +922,7 @@ class="text-gray-600 text-center"></p>
 <!-- Action Button -->
 <div class="flex justify-center">
 <a class="inline-block bg-[#c1598d] text-white font-bold tracking-widest text-sm py-5 px-12 hover:bg-[#a64a78] transition-colors duration-300 hover-lift shadow-lg uppercase" data-purpose="primary-cta-button" href="#">
-          Get Started Now
+          Connect With Us.
         </a>
 </div>
 </div>
