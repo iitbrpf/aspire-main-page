@@ -249,21 +249,7 @@ Our Valued Partners
 <!-- ROW 1 (LEFT → RIGHT) -->
 <div class="logo-row">
 
-<div class="logo-track scroll-right">
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
-
-<!-- duplicate for infinite scroll -->
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+<div class="logo-track scroll-right" id="logo-track-right">
 
 </div>
 
@@ -273,21 +259,7 @@ Our Valued Partners
 <!-- ROW 2 (RIGHT → LEFT) -->
 <div class="logo-row">
 
-<div class="logo-track scroll-left">
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
-
-<!-- duplicate -->
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+<div class="logo-track scroll-left" id="logo-track-left">
 
 </div>
 
@@ -1152,4 +1124,30 @@ modal.classList.add("hidden")
 </script>
 
  
+<script>
+fetch('../data/partners.json')
+  .then(response => response.json())
+  .then(logos => {
+    const rightTrack = document.getElementById('logo-track-right');
+    const leftTrack = document.getElementById('logo-track-left');
+    
+    // Duplicate logos for infinite scroll
+    const duplicatedLogos = logos.concat(logos);
+    
+    duplicatedLogos.forEach(src => {
+      const img = document.createElement('img');
+      img.className = 'logo';
+      img.src = src;
+      rightTrack.appendChild(img);
+    });
+    
+    duplicatedLogos.forEach(src => {
+      const img = document.createElement('img');
+      img.className = 'logo';
+      img.src = src;
+      leftTrack.appendChild(img);
+    });
+  })
+  .catch(error => console.error('Error loading partners.json:', error));
+</script>
 </body></html>

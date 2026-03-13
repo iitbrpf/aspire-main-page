@@ -71,7 +71,7 @@ align-items:center;
 }
 
 .logo{
-height:36px;
+height:45px;
 opacity:0.9;
 transition:0.3s;
 }
@@ -89,6 +89,11 @@ animation:scrollRight 20s linear infinite;
 /* RIGHT → LEFT */
 .scroll-left{
 animation:scrollLeft 20s linear infinite;
+}
+
+.logo-section:hover .scroll-right,
+.logo-section:hover .scroll-left {
+animation-play-state: paused;
 }
 
 @keyframes scrollLeft{
@@ -323,21 +328,7 @@ Our Valued Partners
 <!-- ROW 1 (LEFT → RIGHT) -->
 <div class="logo-row">
 
-<div class="logo-track scroll-right">
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
-
-<!-- duplicate for infinite scroll -->
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+<div class="logo-track scroll-right" id="logo-track-right">
 
 </div>
 
@@ -347,21 +338,7 @@ Our Valued Partners
 <!-- ROW 2 (RIGHT → LEFT) -->
 <div class="logo-row">
 
-<div class="logo-track scroll-left">
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
-
-<!-- duplicate -->
-
-<img class="logo" src="https://i.ibb.co/1fTyTypM/logoipsum-340.png">
-<img class="logo" src="https://i.ibb.co/zWLBwN3P/logoipsum-357.png">
-<img class="logo" src="https://i.ibb.co/6JJjPmnj/logoipsum-358.png">
-<img class="logo" src="https://i.ibb.co/ZRDqBy8C/logoipsum-364.png">
-<img class="logo" src="https://i.ibb.co/wNXrhGyh/logoipsum-367.png">
+<div class="logo-track scroll-left" id="logo-track-left">
 
 </div>
 
@@ -685,23 +662,6 @@ Empowering innovation through integrated resources and shared expertise.
 
 </div>
 
-<!-- Navigation -->
-<div class="hidden md:flex gap-3">
-
-<button class="swiper-prev p-2.5 rounded-full border hover:bg-white transition">
-
-←
-
-</button>
-
-<button class="swiper-next p-2.5 rounded-full border hover:bg-white transition">
-
-→
-
-</button>
-
-</div>
-
 </div>
 
 
@@ -709,72 +669,6 @@ Empowering innovation through integrated resources and shared expertise.
 <div class="swiper featureSlider">
 
 <div class="swiper-wrapper">
-
-
-<!-- CARD 1 -->
-<div class="swiper-slide">
-
-<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
-
-<h3 class="text-lg font-bold mb-3">
-Multidisciplinary expertise
-</h3>
-
-<p class="text-slate-500 text-sm leading-relaxed flex-grow">
-Access a diverse range of academic and professional skills to tackle complex challenges from multiple angles.
-</p>
-
-<a href="#" class="text-darkGray mt-6 font-semibold text-sm">
-Learn More →
-</a>
-
-</div>
-
-</div>
-
-
-<!-- CARD 2 -->
-<div class="swiper-slide">
-
-<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
-
-<h3 class="text-lg font-bold mb-3">
-Intellectual Capital
-</h3>
-
-<p class="text-slate-500 text-sm leading-relaxed flex-grow">
-Leverage deep knowledge, cutting-edge research capabilities, and proprietary methodologies.
-</p>
-
-<a href="#" class="text-darkGray  mt-6 font-semibold text-sm">
-Learn More →
-</a>
-
-</div>
-
-</div>
-
-
-<!-- CARD 3 -->
-<div class="swiper-slide">
-
-<div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-full">
-
-<h3 class="text-lg font-bold mb-3">
-Library Access
-</h3>
-
-<p class="text-slate-500 text-sm leading-relaxed flex-grow">
-Enjoy comprehensive access to physical collections and vast digital library resources.
-</p>
-
-<a href="#" class="text-darkGray mt-6 font-semibold text-sm">
-Learn More →
-</a>
-
-</div>
-
-</div>
 
 
 </div>
@@ -910,50 +804,7 @@ At ASPIRE, the synergy of IIT Bombay’s intellectual prowess, cutting-edge R&D 
 
 
 <!-- Footer Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-white/10 pt-16 mb-16">
-
-<!-- Ecosystem -->
-<div>
-
-<h3 class="text-lightPink font-bold uppercase tracking-wider text-sm mb-6">
-Ecosystem
-</h3>
-
-<ul class="space-y-3 text-slate-400 text-sm">
-
-<li><a class="hover:text-white transition" href="#">Departments @IITB</a></li>
-<li><a class="hover:text-white transition" href="#">IITB Centres of Excellence</a></li>
-<li><a class="hover:text-white transition" href="#">SINE</a></li>
-<li><a class="hover:text-white transition" href="#">Thematic Platforms</a></li>
-<li><a class="hover:text-white transition" href="#">Student Clubs</a></li>
-<li><a class="hover:text-white transition" href="#">IRCC</a></li>
-
-</ul>
-
-</div>
-
-
-<!-- Arc -->
-<div>
-
-<h3 class="text-lightPink font-bold uppercase tracking-wider text-sm mb-6">
-Arc of ASPIRE
-</h3>
-
-<ul class="space-y-3 text-slate-400 text-sm">
-
-<li><a class="hover:text-white transition" href="#">About ASPIRE</a></li>
-<li><a class="hover:text-white transition" href="#">Aspire Members</a></li>
-<li><a class="hover:text-white transition" href="#">Companies At ASPIRE</a></li>
-<li><a class="hover:text-white transition" href="#">Events</a></li>
-<li><a class="hover:text-white transition" href="#">Media</a></li>
-<li><a class="hover:text-white transition" href="#">People Behind Aspire</a></li>
-<li><a class="hover:text-white transition" href="#">Brand Kit</a></li>
-
-</ul>
-
-</div>
-
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 border-t border-white/10 pt-16 mb-16">
 
 <!-- Help -->
 <div>
@@ -964,11 +815,13 @@ Help & Support
 
 <ul class="space-y-3 text-slate-400 text-sm">
 
-<li><a class="hover:text-white transition" href="#">Contact Us</a></li>
+<li><a class="hover:text-white transition" href="#">Privacy Policy</a></li>
 <li><a class="hover:text-white transition" href="#">FAQ</a></li>
-<li><a class="hover:text-white transition" href="#">Career</a></li>
-<li><a class="hover:text-white transition" href="#">Privacy policy</a></li>
+<li><a class="hover:text-white transition" href="#">Careers</a></li>
+<li><a class="hover:text-white transition" href="#">Contact Us</a></li>
 <li><a class="hover:text-white transition" href="#">Sitemap</a></li>
+<li><a class="hover:text-white transition" href="#">Tenders</a></li>
+<li><a class="hover:text-white transition" href="#">Reports (TBD)</a></li>
 
 </ul>
 
@@ -1051,4 +904,30 @@ Find Direction on Maps
 
 </footer>
 <script src="script.js"></script>
+<script>
+fetch('data/partners.json')
+  .then(response => response.json())
+  .then(logos => {
+    const rightTrack = document.getElementById('logo-track-right');
+    const leftTrack = document.getElementById('logo-track-left');
+    
+    // Duplicate logos for infinite scroll
+    const duplicatedLogos = logos.concat(logos);
+    
+    duplicatedLogos.forEach(src => {
+      const img = document.createElement('img');
+      img.className = 'logo';
+      img.src = src;
+      rightTrack.appendChild(img);
+    });
+    
+    duplicatedLogos.forEach(src => {
+      const img = document.createElement('img');
+      img.className = 'logo';
+      img.src = src;
+      leftTrack.appendChild(img);
+    });
+  })
+  .catch(error => console.error('Error loading partners.json:', error));
+</script>
 </body></html>

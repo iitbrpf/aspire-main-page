@@ -86,22 +86,46 @@ if (sectionElement) {
 
 renderContent(currentIndex);
 
-// Swiper for Connect Collocate
-if (typeof Swiper !== 'undefined') {
-  new Swiper(".featureSlider", {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    loop: false,
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
+// Load connect collocate data
+fetch('data/connect-collocate.json')
+  .then(response => response.json())
+  .then(data => {
+    const wrapper = document.querySelector('.featureSlider .swiper-wrapper');
+    data.forEach(item => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `
+        <div class="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md transition border p-6 h-[200px]">
+          <h3 class="text-lg font-bold mb-3">${item.title}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed line-clamp-5">${item.description}</p>
+          <a href="${item.link}" class="text-darkGray mt-6 font-semibold text-sm">Learn More →</a>
+        </div>
+      `;
+      wrapper.appendChild(slide);
+    });
+  })
+  .then(() => {
+    // Swiper for Connect Collocate
+    if (typeof Swiper !== 'undefined') {
+      new Swiper(".featureSlider", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        }
+      });
     }
   });
-}
 
 // Stats Cycling
 const stats = [
@@ -291,7 +315,7 @@ function renderTeam() {
         </div>
         <div>
           <h3 class="text-lg font-bold">${member.name}</h3>
-          <p class="text-pink-500 text-sm font-medium">${member.role}</p>
+          <p class="text-gray-500 text-sm font-medium">${member.role}</p>
         </div>
         <div class="flex gap-3 mt-1">
           ${emailLink}
