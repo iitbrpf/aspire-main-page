@@ -387,7 +387,7 @@ const aspireData = [
 
 {
 title:"Applied Science Park for Innovation Research & Entrepreneurship (ASPIRE)",
-image:"https://lh3.googleusercontent.com/aida-public/AB6AXuACZHXMvGR_UuGuaku7xVBeKsNW6yLQZhkw9j2ukA36I7CepiBTI4DAqcQNsURI19lBqCJyt--j6ZtDL9nu0xBC86-ZwblTRPtBNgWaVZDZx7HFhHxDk_L6TwL4E8tixlP1oV2OKv42Kz-f7-sdXouwmO-8E2t8vSLiwFTL3LiJy11QNfG4WZKsg_djmqVVi0BJnuAj0RgzNqsvgY43KEP90kvW7pi4rlcqKEybTiYXoE6fArrAhFnawKv03ZdLxj1OtsgPMvTplQ",
+image:"https://iitbresearchpark.com/wp-content/uploads/2024/02/CAP_6837-1536x1023.jpg",
 text:[
 "ASPIRE is where the seeds of innovation are sown and cultivated. With a mission to connect research with real-world applications, ASPIRE accelerates innovation and transforms ideas into tangible impact.",
 "The platform provides an ecosystem where academic brilliance converges with industry expertise, bridging the gap between research and industry."
@@ -396,7 +396,7 @@ text:[
 
 {
 title:"Formation of Aspire",
-image:"https://images.unsplash.com/photo-1581091870622-1e7d2f4cfa9f",
+image:"https://iitbresearchpark.com/wp-content/uploads/2025/06/IMG_0067-scaled.jpg",
 text:[
 "In 2016, the Ministry of Education entrusted IIT Bombay with establishing the Research Park within the campus in Powai, Mumbai.",
 "This led to the creation of ASPIRE – the IIT Bombay Research Park Foundation – a non-profit organization dedicated to catalysing innovation."
@@ -405,7 +405,7 @@ text:[
 
 {
 title:"What We Do",
-image:"https://images.unsplash.com/photo-1552664730-d307ca884978",
+image:"https://iitbresearchpark.com/wp-content/uploads/2024/02/CAP_6998-1536x1023.jpg",
 text:[
 "ASPIRE cultivates R&D partnerships and builds a thriving innovation hub that advances technologies with meaningful societal impact.",
 "Students gain invaluable exposure to corporate research while industries collaborate with academic experts."
@@ -414,7 +414,7 @@ text:[
 
 {
 title:"Indian Institute of Technology Bombay",
-image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+image:"https://iitbresearchpark.com/wp-content/uploads/2024/02/IIT-Bombay_Imagee-1536x783.webp",
 text:[
 "ASPIRE proudly calls IIT Bombay its home, a globally recognized institution for engineering education and research.",
 "The ecosystem allows industries to tap into exceptional faculty, bright students, and cutting-edge research."
@@ -917,7 +917,7 @@ class="text-gray-600 text-center"></p>
       </h2>
 <!-- Sub-headline -->
 <p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-        Join a thriving ecosystem where academic brilliance meets industry expertise.
+        Our team at ASPIRE comprises dedicated individuals driven by a shared passion for innovation and impact. With diverse expertise spanning various domains, we collaborate tirelessly to push the boundaries of possibility and shape a future defined by progress.
       </p>
 <!-- Action Button -->
 <div class="flex justify-center">
@@ -1143,7 +1143,7 @@ bio:"Engineering infrastructure systems."
 let filteredMembers=[...teamMembers]
 
 const grid=document.getElementById("teamGrid")
-const title=document.getElementById("teamTitle")
+const titleofmember=document.getElementById("teamTitle")
 const selectedFilter=document.getElementById("selectedFilter")
 
 const modal=document.getElementById("memberModal")
@@ -1253,7 +1253,7 @@ if(dept==="all"){
 
 filteredMembers=[...teamMembers]
 
-title.innerText="Faces Behind ASPIRE"
+titleofmember.innerText="Faces Behind ASPIRE"
 
 selectedFilter.innerText="All Departments"
 
@@ -1261,7 +1261,7 @@ selectedFilter.innerText="All Departments"
 
 filteredMembers=teamMembers.filter(m=>m.department===dept)
 
-title.innerText=dept
+titleofmember.innerText=dept
 
 selectedFilter.innerText=dept
 
