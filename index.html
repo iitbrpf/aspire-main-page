@@ -16,159 +16,274 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
+  content: ["./**/*.{html,js}"],
   theme: {
     extend: {
       colors: {
-      
+        // Brand Colors
         brandCard: '#FFFFFF',
-        darkBlue:'#304268',
+        darkBlue: '#304268',
         darkPink: '#d94f9a',
         lightPink: '#eb989a',
         lightGray: '#f7f7f7',
-        darkGray:'#595656',
+        darkGray: '#595656',
         lightGreen: '#7bc99f',
         lightWhite: '#ffffff',
         lightYellow: '#d9c292',
+
+        // Semantic Colors
+        primary: '#c1598d',
+        secondary: '#304268',
+        accent: '#7bc99f',
+
+        // Neutral Colors
+        background: '#ffffff',
+        surface: '#f7f7f7',
+        text: {
+          primary: '#304268',
+          secondary: '#595656',
+          muted: '#f7f7f7',
+        },
       },
       fontFamily: {
         display: ["Public Sans", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
-    }
-  }
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
+      },
+      spacing: {
+        // Consistent spacing scale
+        '18': '4.5rem',
+        '88': '22rem',
+        '112': '28rem',
+        '128': '32rem',
+        '144': '36rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      boxShadow: {
+        'soft': '0 2px 15px rgba(0, 0, 0, 0.08)',
+        'medium': '0 4px 25px rgba(0, 0, 0, 0.12)',
+        'large': '0 8px 40px rgba(0, 0, 0, 0.16)',
+      },
+      borderRadius: {
+        'xl': '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+      },
+      animation: {
+        'scroll-left': 'scrollLeft 20s linear infinite',
+        'scroll-right': 'scrollRight 20s linear infinite',
+        'marquee': 'marquee 25s linear infinite',
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+      },
+      keyframes: {
+        scrollLeft: {
+          'from': { transform: 'translateX(0)' },
+          'to': { transform: 'translateX(-50%)' },
+        },
+        scrollRight: {
+          'from': { transform: 'translateX(-50%)' },
+          'to': { transform: 'translateX(0)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      screens: {
+        'xs': '475px',
+      },
+    },
+  },
+  plugins: [],
 }
 </script>
 
 <style>
-body{
-font-family:'Inter',sans-serif;
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  color: theme('colors.text.primary');
 }
 
-.logo-section{
-overflow:hidden;
-width:100%;
+/* Logo Section */
+.logo-section {
+  overflow: hidden;
+  width: 100%;
 }
 
-.logo-row{
-display:flex;
-overflow:hidden;
-position:relative;
+.logo-row {
+  display: flex;
+  overflow: hidden;
+  position: relative;
 }
 
-.logo-track{
-display:flex;
-flex-shrink:0;
-width:max-content;
-gap:3rem;
-padding:20px 0;
-align-items:center;
+.logo-track {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  gap: 3rem;
+  padding: 20px 0;
+  align-items: center;
 }
 
-.logo{
-height:45px;
-opacity:0.9;
-transition:0.3s;
+.logo {
+  height: 45px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
 }
 
-.logo:hover{
-opacity:1;
-transform:scale(1.05);
+.logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-/* LEFT → RIGHT */
-.scroll-right{
-animation:scrollRight 20s linear infinite;
+/* Animations */
+.scroll-right {
+  animation: scrollRight 20s linear infinite;
 }
 
-/* RIGHT → LEFT */
-.scroll-left{
-animation:scrollLeft 20s linear infinite;
+.scroll-left {
+  animation: scrollLeft 20s linear infinite;
 }
 
 .logo-section:hover .scroll-right,
 .logo-section:hover .scroll-left {
-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
-@keyframes scrollLeft{
-from{
-transform:translateX(0);
-}
-to{
-transform:translateX(-50%);
-}
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-@keyframes scrollRight{
-from{
-transform:translateX(-50%);
-}
-to{
-transform:translateX(0);
-}
+@keyframes scrollRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
-
-#teamGrid{
-display:flex;
-gap:2rem;
-overflow-x:auto;
-scroll-behavior:smooth;
-cursor:grab;
-padding-bottom:10px;
+/* Team Grid */
+#teamGrid {
+  display: flex;
+  gap: theme('spacing.8');
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  padding-bottom: theme('spacing.2.5');
 }
 
-#teamGrid:active{
-cursor:grabbing;
+#teamGrid:active {
+  cursor: grabbing;
 }
 
-#teamGrid::-webkit-scrollbar{
-display:none;
+#teamGrid::-webkit-scrollbar {
+  display: none;
 }
 
-.teamCard{
-min-width:220px;
-max-width:220px;
-flex:0 0 auto;
+.teamCard {
+  min-width: 220px;
+  max-width: 220px;
+  flex: 0 0 auto;
 }
 
-/* Marquee for Announcement Bar */
+/* Marquee */
 .marquee-container {
-    overflow: hidden;
-    width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 .marquee-content {
-    display: inline-flex;
-    white-space: nowrap;
-    will-change: transform;
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
 }
 
 .marquee-item {
-    padding-right: 4rem;
+  padding-right: theme('spacing.16');
 }
 
 .marquee-active {
-    animation: marquee 25s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .marquee-active:hover,
 .marquee-container:hover .marquee-active {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
+/* Utility Classes */
+.text-balance {
+  text-wrap: balance;
+}
 
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+/* Focus States */
+.focus\:ring-primary:focus {
+  --tw-ring-color: theme('colors.primary');
+}
+
+/* Custom Shadows */
+.shadow-soft {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-large {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.16);
+}
 </style>
 
 </head>
@@ -184,18 +299,18 @@ flex:0 0 auto;
 </div>
 <!-- END: Announcement Banner -->
 
-<nav class="sticky top-0 z-50 w-full bg-white dark:bg-brand-dark border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 h-20 flex items-center justify-between">
+<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+<div class="max-w-9xl mx-auto px-6 md:px-10 lg:px-20 h-20 flex items-center justify-between">
 <!-- Logo and Main Nav Section -->
 <div class="flex items-center gap-12">
 <!-- Logo -->
-<img src="https://iitbresearchpark.com/wp-content/uploads/2024/02/primary_new_cc_final_72dpi-02-1536x597.jpg" width="200" alt="">
+<img src="https://iitbresearchpark.com/wp-content/uploads/2024/02/primary_new_cc_final_72dpi-02-1536x597.jpg" width="200" alt="ASPIRE Logo" class="h-12 w-auto">
 <!-- Desktop Navigation Links -->
 <div class="hidden lg:flex items-center gap-8">
-<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">About Us</a>
-<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">Collaboration</a>
-<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">Aspire Members</a>
-<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="#">Life at Aspire</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Collaboration</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Aspire Members</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Life at Aspire</a>
 </div>
 </div>
 <!-- Action Area: Search and Profile -->
@@ -203,22 +318,20 @@ flex:0 0 auto;
 <!-- Search Bar -->
 <div class="hidden md:flex items-center">
 <div class="relative group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary text-xl">search</span>
-<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 w-48 lg:w-64 transition-all duration-300" placeholder="Search anything..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary text-xl">search</span>
+<input class="pl-10 pr-4 py-2 bg-gray-100 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 w-48 lg:w-64 transition-all duration-300" placeholder="Search anything..." type="text"/>
 </div>
 </div>
 <!-- Search Button (Mobile/Tablet) -->
-<button class="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">
+<button class="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors">
 <span class="material-symbols-outlined">search</span>
 </button>
 <!-- Action Button -->
 <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm">
-                    Join Us
-                </button>
-<!-- Profile Circle -->
-
+Join Us
+</button>
 <!-- Mobile Menu Trigger -->
-<button class="lg:hidden p-2 text-slate-600 dark:text-slate-300">
+<button class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -231,80 +344,78 @@ flex:0 0 auto;
 <div class="flex flex-col lg:flex-row min-h-[600px]">
 
 <!-- LEFT SIDE -->
-<section class="flex-1 flex flex-col justify-center px-6 md:px-12 py-16 lg:py-24 max-w-3xl">
+<section class="flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-20 py-16 lg:py-24 max-w-4xl">
 
-<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-6">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-6 text-balance">
 ASPIRE IITB Research Park Foundation
 </h1>
 
-<h2 class="text-2xl md:text-2xl mb-5 max-w-xl leading-relaxed">
+<h2 class="text-xl md:text-2xl mb-6 max-w-2xl leading-relaxed text-gray-700">
 Applied Science Park for Innovation Research and Entrepreneurship
 </h2>
 
-<p class="text-lg md:text-xl text-darkGray mb-10 max-w-xl leading-relaxed">
-Research Park brings together IIT Bombay’s intellectual strength, world-class R&D ecosystem, and the vibrancy of the tech industry.
+<p class="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl leading-relaxed">
+Research Park brings together IIT Bombay's intellectual strength, world-class R&D ecosystem, and the vibrancy of the tech industry.
 </p>
 
 <!-- STATS -->
-<div class="grid grid-cols-3 gap-10 mb-10 max-w-xl">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12 max-w-2xl">
 
 <!-- Stat 1 -->
-<div class="stat cursor-pointer">
-<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
-<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
-<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+<div class="stat cursor-pointer group">
+<div class="w-8 h-1 bg-primary mb-3 rounded-full"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
+<p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>
 
 <!-- Stat 2 -->
-<div class="stat cursor-pointer">
-<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
-<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
-<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+<div class="stat cursor-pointer group">
+<div class="w-8 h-1 bg-primary mb-3 rounded-full"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
+<p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>
 
 <!-- Stat 3 -->
-<div class="stat cursor-pointer">
-<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
-<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
-<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+<div class="stat cursor-pointer group">
+<div class="w-8 h-1 bg-primnary mb-3 rounded-full"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
+<p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>
 
 <!-- Stat 4 -->
-<div class="stat cursor-pointer">
-<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
-<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
-<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+<div class="stat cursor-pointer group">
+<div class="w-8 h-1 bg-primary mb-3 rounded-full"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
+<p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>
 
 <!-- Stat 5 -->
-<div class="stat cursor-pointer">
-<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
-<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
-<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+<div class="stat cursor-pointer group">
+<div class="w-8 h-1 bg-primary mb-3 rounded-full"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
+<p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>
 
 <!-- Stat 6 -->
-<div class="stat cursor-pointer">
-<div class="w-6 h-[3px] bg-lightYellow mb-2"></div>
-<h3 class="text-2xl md:text-3xl font-bold stat-number"></h3>
-<p class="text-[10px] tracking-widest uppercase text-darkGray stat-label"></p>
+<div class="stat cursor-pointer group">
+<div class="w-8 h-1 bg-primary mb-3 rounded-full"></div>
+<h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
+<p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>
 
 </div>
 
-<div class="flex flex-wrap gap-4 mb-12">
-<button class="bg-black text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-gray-800 transition-all">
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all shadow-medium hover-lift">
 Be Our Collaborator
 </button>
-
-
 </div>
 
 </section>
 
 
 <!-- RIGHT IMAGE -->
-<section class="flex-1 flex items-center justify-center p-8">
+<section class="flex-1 flex items-center justify-center p-8 lg:p-12">
 
 <img src="https://iitbresearchpark.com/wp-content/uploads/2026/03/CAP_6740-810x1024-1-1214x1536.jpg"
 class="rounded-xl shadow-xl max-h-[700px] object-cover"/>
@@ -314,7 +425,7 @@ class="rounded-xl shadow-xl max-h-[700px] object-cover"/>
 </div>
 
 
-  <!-- BEGIN: Trusted Partners -->
+<!-- BEGIN: Trusted Partners -->
 <section class="py-12 border-y border-gray-100 bg-white">
 
 <div class="max-w-7xl mx-auto px-6">
@@ -354,27 +465,27 @@ Our Valued Partners
 
 
 <!-- ABOUT ASPIRE -->
-<section class="bg-[#f7f7f7] py-24 px-6 md:px-12 relative overflow-hidden">
+<section class="bg-surface py-20 lg:py-24 px-6 lg:px-20 relative overflow-hidden">
 
 <!-- Decorative background -->
-<div class="absolute top-0 right-0 w-72 h-72 bg-darkPink opacity-5 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute top-0 right-0 w-72 h-72 bg-primary opacity-5 rounded-full -mr-32 -mt-32"></div>
 
-<div class="max-w-7xl mx-auto">
-  
+<div class="max-w-8xl mx-auto">
+
 <!-- BEGIN: About ASPIRE -->
-<section class="bg-[#f7f7f7] py-24 px-6 md:px-12 relative overflow-hidden" data-purpose="about-aspire">
+<section class="bg-surface py-20 lg:py-24 px-6 lg:px-20 relative overflow-hidden" data-purpose="about-aspire">
 
 <!-- Decorative element -->
-<div class="absolute top-0 right-0 w-64 h-64 bg-[#c1598d] opacity-5 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-full -mr-32 -mt-32"></div>
 
-<div class="max-w-7xl mx-auto">
+<div class="max-w-8xl mx-auto">
 
-<div id="contentWrapper" class="grid lg:grid-cols-2 gap-12 items-center mb-12 transition-all duration-700">
+<div id="contentWrapper" class="grid lg:grid-cols-2 gap-16 items-center mb-16 transition-all duration-700">
 
 <!-- LEFT IMAGE -->
 <div class="relative group">
 
-<div class="absolute -inset-2 bg-gradient-to-r from-[#c1598d] to-pink-300 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<div class="absolute -inset-2 bg-gradient-to-r from-primary to-pink-300 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
 
 <div class="relative overflow-hidden rounded-lg shadow-2xl aspect-[4/3]">
 
@@ -391,7 +502,7 @@ alt="ASPIRE Innovation"/>
 <div class="space-y-8">
 
 <h2 id="aspireTitle"
-class="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] tracking-tighter text-[#c1598d]">
+class="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] tracking-tighter text-primary">
 </h2>
 
 <div id="aspireText"
@@ -407,7 +518,7 @@ class="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
 <div class="flex items-center justify-center gap-6 mt-8">
 
 <button id="prevBtn"
-class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:bg-[#c1598d] hover:text-white transition">
+class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:bg-primary hover:text-white transition">
 
 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -417,7 +528,7 @@ class="w-12 h-12 flex items-center justify-center rounded-full bg-white border b
 
 
 <button id="nextBtn"
-class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:bg-[#c1598d] hover:text-white transition">
+class="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-300 shadow-md hover:bg-primary hover:text-white transition">
 
 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -436,34 +547,34 @@ class="w-12 h-12 flex items-center justify-center rounded-full bg-white border b
 
 
 <!-- BEGIN: Feature Cards Section -->
-<div class="grid md:grid-cols-3 gap-8 mt-5" data-purpose="feature-cards">
-<!-- Card 1:  -->
-<div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-[#c1598d] hover:shadow-xl transition-shadow duration-300">
-<h3 class="text-2xl md:text-3xl font-light text-gray-900 mb-6">Bridging the Gap</h3>
+<div class="grid md:grid-cols-3 gap-4 lg:gap-4" data-purpose="feature-cards">
+<!-- Card 1 -->
+<div class="bg-white p-8 lg:p-10 shadow-soft border-t-4 border-primary hover:shadow-medium transition-all duration-300 hover-lift">
+<h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">Bridging the Gap</h3>
 <p class="text-gray-600 leading-relaxed">
-                        ASPIRE fosters an environment that moves beyond ideation — connecting academic excellence with industry needs to tackle real-world challenges and deliver impactful solutions.
-                    </p>
+ASPIRE fosters an environment that moves beyond ideation — connecting academic excellence with industry needs to tackle real-world challenges and deliver impactful solutions.
+</p>
 </div>
-<!-- Card 2: Cutting-Edge Hub -->
-<div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-[#c1598d] hover:shadow-xl transition-shadow duration-300">
-<h3 class="text-2xl md:text-3xl font-light text-gray-900 mb-6">Cutting-Edge Hub</h3>
+<!-- Card 2 -->
+<div class="bg-white p-8 lg:p-10 shadow-soft border-t-4 border-primary hover:shadow-medium transition-all duration-300 hover-lift">
+<h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">Cutting-Edge Hub</h3>
 <p class="text-gray-600 leading-relaxed">
-                        Equipped with state-of-the-art facilities and purpose-built workspaces, ASPIRE fuels a dynamic workspace to catalyse innovation across disciplines.
-                    </p>
+Equipped with state-of-the-art facilities and purpose-built workspaces, ASPIRE fuels a dynamic workspace to catalyse innovation across disciplines.
+</p>
 </div>
-<!-- Card 3: Empowering Talent -->
-<div class="bg-white p-8 md:p-10 shadow-sm border-t-4 border-[#c1598d] hover:shadow-xl transition-shadow duration-300">
-<h3 class="text-2xl md:text-3xl font-light text-gray-900 mb-6">Empowering Talent</h3>
+<!-- Card 3 -->
+<div class="bg-white p-8 lg:p-10 shadow-soft border-t-4 border-primary hover:shadow-medium transition-all duration-300 hover-lift">
+<h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">Empowering Talent</h3>
 <p class="text-gray-600 leading-relaxed">
-                        ASPIRE equips students with industry-driven research opportunities, offering hands-on experience that builds a pool of competent future professionals.
-                    </p>
+ASPIRE equips students with industry-driven research opportunities, offering hands-on experience that builds a pool of competent future professionals.
+</p>
 </div>
 </div>
 <!-- END: Feature Cards Section -->
 
 
 <!-- Mission / Vision / Values -->
-<div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="mt-16 lg:mt-20 grid md:grid-cols-3 gap-4 lg:gap-4">
 
 <!-- CARD 1 -->
 <div class="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1">
@@ -525,11 +636,11 @@ Integrity, excellence, accountability, transparency, and empathy guide our missi
 
 
 
-<!-- Team Members Section (Optional) -->
+<!-- Team Members Section -->
 
-<div class="bg-[#f7f7f7]  mx-auto px-6 py-16">
+<div class="bg-surface mx-auto px-6 lg:px-20 py-16 lg:py-20">
 
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
 
 <div>
 
@@ -537,11 +648,11 @@ Integrity, excellence, accountability, transparency, and empathy guide our missi
 Our Team
 </p>
 
-<h1 id="teamTitle" class="text-5xl font-black mt-2">
+<h1 id="teamTitle" class="text-4xl lg:text-5xl font-black mt-2 text-balance">
 Faces Behind ASPIRE
 </h1>
 
-<p class="text-gray-500 mt-3 max-w-xl">
+<p class="text-gray-500 mt-4 max-w-xl text-lg">
 Meet the experts driving strategy, infrastructure and innovation.
 </p>
 
@@ -556,13 +667,13 @@ Filter by Department
 </label>
 
 <button id="filterToggle"
-class="w-full mt-1 flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm">
+class="w-full mt-2 flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-soft hover:shadow-medium transition-shadow">
 
 <span id="selectedFilter">
 All Departments
 </span>
 
-<span class="material-symbols-outlined text-pink-500">
+<span class="material-symbols-outlined text-primary">
 expand_more
 </span>
 
@@ -643,20 +754,20 @@ Marketing & Communications
 
 <!-- Connect collocate section -->
 
-<div class="flex justify-center px-6 lg:px-40 py-20">
+<div class="flex justify-center px-6 lg:px-20 py-20 lg:py-24">
 
-<div class="max-w-6xl w-full">
+<div class="max-w-8xl w-full">
 
 <!-- Header -->
-<div class="flex items-end justify-between border-b pb-8 mb-10">
+<div class="flex items-end justify-between border-b border-gray-200 pb-12 mb-16">
 
 <div class="max-w-2xl">
 
-<h2 class="text-3xl md:text-4xl font-bold">
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-balance">
 Connect. Collocate. Collaborate
 </h2>
 
-<p class="text-slate-500 mt-4 text-lg">
+<p class="text-gray-600 mt-6 text-lg lg:text-xl leading-relaxed">
 Empowering innovation through integrated resources and shared expertise.
 </p>
 
@@ -726,23 +837,21 @@ class="text-gray-600 text-center"></p>
 
 <!-- End of team memebrs section  -->
 <!-- BEGIN: CTASection -->
-<section class="relative min-h-[70vh] flex items-center justify-center bg-grid-pattern px-6 py-24" data-purpose="hero-cta">
-<div class="max-w-4xl w-full text-center">
-<!-- Metadata Tag -->
-
+<section class="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5 px-6 lg:px-20 py-20 lg:py-24" data-purpose="hero-cta">
+<div class="max-w-5xl w-full text-center">
 <!-- Main Headline -->
-<h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-aspireDark mb-6 text-balance leading-tight">
-        Driving innovation forward 
-      </h2>
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-secondary mb-8 text-balance leading-tight">
+Driving innovation forward
+</h2>
 <!-- Sub-headline -->
-<p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-        Our team at ASPIRE comprises dedicated individuals driven by a shared passion for innovation and impact. With diverse expertise spanning various domains, we collaborate tirelessly to push the boundaries of possibility and shape a future defined by progress.
-      </p>
+<p class="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+Our team at ASPIRE comprises dedicated individuals driven by a shared passion for innovation and impact. With diverse expertise spanning various domains, we collaborate tirelessly to push the boundaries of possibility and shape a future defined by progress.
+</p>
 <!-- Action Button -->
 <div class="flex justify-center">
-<a class="inline-block bg-[#c1598d] text-white font-bold tracking-widest text-sm py-5 px-12 hover:bg-[#a64a78] transition-colors duration-300 hover-lift shadow-lg uppercase" data-purpose="primary-cta-button" href="#">
-          Connect With Us.
-        </a>
+<a class="inline-block bg-primary hover:bg-primary/90 text-white font-bold tracking-widest text-sm py-5 px-12 transition-all duration-300 hover-lift shadow-medium uppercase rounded-lg" data-purpose="primary-cta-button" href="#">
+Connect With Us.
+</a>
 </div>
 </div>
 </section>
@@ -754,31 +863,26 @@ class="text-gray-600 text-center"></p>
 
 
 <!-- ASPIRE Footer -->
+<footer class="bg-secondary text-white pt-16 lg:pt-20 pb-12 px-6 lg:px-20">
 
- <!-- ASPIRE Footer -->
-<footer class="bg-darkBlue text-white pt-16 pb-8 px-6 md:px-12 lg:px-24">
-
-<div class="max-w-7xl mx-auto">
+<div class="max-w-8xl mx-auto">
 
 <!-- Brand -->
-<div class="flex flex-col items-center text-center mb-12">
+<div class="flex flex-col items-center text-center mb-16">
 
-<div class="flex items-center gap-3 mb-6">
-
-
-<h2 class="text-3xl font-bold tracking-tight">ASPIRE</h2>
-
+<div class="flex items-center gap-3 mb-8">
+<h2 class="text-3xl lg:text-4xl font-bold tracking-tight">ASPIRE</h2>
 </div>
 
-<p class="max-w-3xl text-slate-300 leading-relaxed text-lg">
-At ASPIRE, the synergy of IIT Bombay’s intellectual prowess, cutting-edge R&D infrastructure, and the dynamic technology sector comes to life.
+<p class="max-w-4xl text-gray-300 leading-relaxed text-lg lg:text-xl">
+At ASPIRE, the synergy of IIT Bombay's intellectual prowess, cutting-edge R&D infrastructure, and the dynamic technology sector comes to life.
 </p>
 
 </div>
 
 
 <!-- Social Icons -->
-<div class="flex justify-center gap-6 mb-16">
+<div class="flex justify-center gap-8 mb-16">
 
 <a class="text-slate-400 hover:text-darkPink transition-colors" href="#">
 <span class="material-symbols-outlined text-2xl">social_leaderboard</span>
@@ -804,24 +908,24 @@ At ASPIRE, the synergy of IIT Bombay’s intellectual prowess, cutting-edge R&D 
 
 
 <!-- Footer Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 border-t border-white/10 pt-16 mb-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 border-t border-white/10 pt-16 lg:pt-20 mb-16 lg:mb-20">
 
 <!-- Help -->
 <div>
 
-<h3 class="text-lightPink font-bold uppercase tracking-wider text-sm mb-6">
+<h3 class="text-lightPink font-bold uppercase tracking-wider text-sm mb-8">
 Help & Support
 </h3>
 
-<ul class="space-y-3 text-slate-400 text-sm">
+<ul class="space-y-4 text-gray-300 text-sm lg:text-base">
 
-<li><a class="hover:text-white transition" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-white transition" href="#">FAQ</a></li>
-<li><a class="hover:text-white transition" href="#">Careers</a></li>
-<li><a class="hover:text-white transition" href="#">Contact Us</a></li>
-<li><a class="hover:text-white transition" href="#">Sitemap</a></li>
-<li><a class="hover:text-white transition" href="#">Tenders</a></li>
-<li><a class="hover:text-white transition" href="#">Reports (TBD)</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Sitemap</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Tenders</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Reports (TBD)</a></li>
 
 </ul>
 
@@ -831,11 +935,11 @@ Help & Support
 <!-- Address -->
 <div class="flex flex-col">
 
-<h3 class="text-lightPink font-bold uppercase tracking-wider text-sm mb-6">
+<h3 class="text-lightPink font-bold uppercase tracking-wider text-sm mb-8">
 How to Reach
 </h3>
 
-<div class="space-y-4 text-slate-400 text-sm mb-6">
+<div class="space-y-6 text-gray-300 text-sm lg:text-base mb-8">
 
 <div class="flex items-start gap-2">
 
@@ -882,19 +986,21 @@ Find Direction on Maps
 
 
 <!-- Bottom -->
-<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="border-t border-white/10 pt-12 lg:pt-16 flex flex-col md:flex-row justify-between items-center gap-6">
 
-<p class="text-slate-400 text-sm">
+<p class="text-gray-400 text-sm lg:text-base">
 © 2024 ASPIRE Innovation Hub. All rights reserved.
 </p>
 
-<div class="flex gap-6 text-sm text-slate-400">
+<div class="flex gap-8 text-sm lg:text-base text-gray-400">
 
-<a class="hover:text-white transition" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
 
-<a class="hover:text-white transition" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
 
-<a class="hover:text-white transition" href="#">Contact</a>
+<a class="hover:text-white transition-colors" href="#">Contact</a>
+
+</div>
 
 </div>
 
