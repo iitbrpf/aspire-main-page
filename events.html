@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resources &amp; Updates | ASPIRE Research Institution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+
+        /* Swiper custom styles */
+        .swiper {
+            overflow: hidden;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .swiper-slide {
+            height: auto;
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #d1d5db;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #c1598d;
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .upcoming-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .swiper-slide {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+
+<main class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+
+<!-- 1. Events Section -->
+<section class="mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-200 dark:border-slate-800 pb-8">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight mb-2">Events Calendar</h2>
+<p class="text-slate-500 dark:text-slate-400">Key dates for global research summits and seminars.</p>
+</div>
+<div class="flex gap-2 self-start">
+<button id="upcomingBtn" class="px-5 py-2 text-sm font-bold bg-primary text-white rounded-md cursor-pointer">Upcoming</button>
+<button id="pastBtn" class="px-5 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary cursor-pointer">Past Events</button>
+</div>
+</div>
+
+<!-- Upcoming Events -->
+<div id="upcomingEvents" class="relative">
+<div class="swiper upcomingEventsSwiper">
+<div class="swiper-wrapper">
+<!-- Event Card 1 -->
+<div class="swiper-slide">
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" data-alt="Modern auditorium with blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-between">
+<div>
+<span class="text-primary text-xs font-black uppercase tracking-widest mb-2">Dec 15, 2024</span>
+<h3 class="text-white text-2xl font-bold leading-tight group-hover:underline underline-offset-4 decoration-primary">Mumbai Tech Summit 2024</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">The largest gathering of tech innovators in India focusing on AI and Green Computing.</p>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Join Event</button>
+<button class="flex-1 border border-white/30 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Sponsor</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="swiper-slide">
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" data-alt="Science lab with blue and orange tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-between">
+<div>
+<span class="text-primary text-xs font-black uppercase tracking-widest mb-2">Jan 20, 2025</span>
+<h3 class="text-white text-2xl font-bold leading-tight group-hover:underline underline-offset-4 decoration-primary">Quantum Ethics Symposium</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Exploring the moral boundaries of quantum computing.</p>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Join Event</button>
+<button class="flex-1 border border-white/30 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Sponsor</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="swiper-slide">
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" data-alt="People working in a collaborative space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-between">
+<div>
+<span class="text-primary text-xs font-black uppercase tracking-widest mb-2">Feb 10, 2025</span>
+<h3 class="text-white text-2xl font-bold leading-tight group-hover:underline underline-offset-4 decoration-primary">AI in Academia 2025</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Redefining research workflows with generative intelligence.</p>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Join Event</button>
+<button class="flex-1 border border-white/30 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Sponsor</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="swiper-slide">
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-between">
+<div>
+<span class="text-primary text-xs font-black uppercase tracking-widest mb-2">Mar 15, 2025</span>
+<h3 class="text-white text-2xl font-bold leading-tight group-hover:underline underline-offset-4 decoration-primary">Future Tech Conference</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Exploring emerging technologies and their impact on society.</p>
+</div>
+<div class="flex gap-3 mt-4">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Join Event</button>
+<button class="flex-1 border border-white/30 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-medium transition-colors">Sponsor</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Navigation buttons -->
+<div class="flex items-center justify-center gap-4 mt-8">
+<div class="swiper-pagination upcoming-pagination"></div>
+</div>
+</div>
+
+<!-- Past Events -->
+<div id="pastEvents" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Past Event Card 1 -->
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<span class="text-green-400 text-xs font-black uppercase tracking-widest mb-2">Oct 24, 2024</span>
+<h3 class="text-white text-2xl font-bold leading-tight">Global Sustainability Summit</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Keynote on circular economies and policy frameworks.</p>
+<button onclick="openEventModal('sustainability')" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">View Moments</button>
+</div>
+</div>
+<!-- Past Event Card 2 -->
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<span class="text-green-400 text-xs font-black uppercase tracking-widest mb-2">Sep 15, 2024</span>
+<h3 class="text-white text-2xl font-bold leading-tight">Innovation Showcase 2024</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Showcasing breakthrough technologies from our labs.</p>
+<button onclick="openEventModal('innovation')" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">View Moments</button>
+</div>
+</div>
+<!-- Past Event Card 3 -->
+<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+<span class="text-green-400 text-xs font-black uppercase tracking-widest mb-2">Aug 08, 2024</span>
+<h3 class="text-white text-2xl font-bold leading-tight">Research Excellence Awards</h3>
+<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Celebrating outstanding contributions to research.</p>
+<button onclick="openEventModal('awards')" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">View Moments</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Newsletter Section -->
+<!-- Event Moments Modal -->
+<div id="eventModal" class="fixed inset-0 bg-black/80 hidden z-50 overflow-y-auto">
+<div class="min-h-screen flex items-center justify-center p-4">
+<div class="bg-white dark:bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+<!-- Modal Header -->
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between">
+<h2 id="modalTitle" class="text-2xl font-bold">Event Moments</h2>
+<button onclick="closeEventModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-2">
+<p id="modalDate" class="text-slate-500 dark:text-slate-400"></p>
+<p id="modalDescription" class="text-slate-600 dark:text-slate-300 mt-1"></p>
+</div>
+</div>
+
+<!-- Modal Content -->
+<div class="p-6">
+<!-- Image/Video Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+<div id="galleryContainer" class="contents">
+<!-- Gallery items will be populated by JavaScript -->
+</div>
+</div>
+
+<!-- Event Details -->
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+<h3 class="font-semibold mb-2">Event Highlights</h3>
+<ul id="eventHighlights" class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+<!-- Highlights will be populated by JavaScript -->
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- NEWSLETTER SECTION -->
+
+<section class="mb-24 py-16 bg-slate-50 dark:bg-slate-900/50 rounded-3xl px-8 lg:px-16 border border-slate-200 dark:border-slate-800">
+
+<div class="text-center mb-16">
+<h2 class="text-3xl font-extrabold tracking-tight mb-4">ASPIRE Newsletters</h2>
+<p class="text-slate-500 dark:text-slate-400">
+Quarterly insights from our leading researchers and labs.
+</p>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+
+<!-- Newsletter 1 -->
+<div class="flex flex-col group">
+
+<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
+<img src="https://iitbresearchpark.com/wp-content/uploads/2026/01/1-1086x1536.jpg"
+alt="ASPIRE Newsletter Issue 04"
+class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+
+<h3 class="text-lg font-bold mb-1">
+The Innoverse Grid
+</h3>
+
+<span class="text-xs text-slate-500 mb-3">
+Volume 3 • January 2026
+</span>
+
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+From Engagement to Impact – showcasing outcomes, global partnerships, and the evolving momentum at IIT Bombay’s Research Park.
+</p>
+
+<button class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
+<span class="material-symbols-outlined !text-lg">download</span>
+Download PDF
+</button>
+
+</div>
+
+
+<!-- Newsletter 2 -->
+<div class="flex flex-col group">
+
+<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
+<img src="https://iitbresearchpark.com/wp-content/uploads/2025/11/cover-1086x1536.jpg"
+alt="ASPIRE Newsletter Issue 03"
+class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+
+<h3 class="text-lg font-bold mb-1">
+The Innoverse Grid
+</h3>
+
+<span class="text-xs text-slate-500 mb-3">
+Volume 02 • Nov 2025
+</span>
+
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+Deepening the Dialogue – strengthening industry–academia collaborations, spotlighting active engagements, and expanding ASPIRE’s innovation ecosystem.
+</p>
+
+<button class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
+<span class="material-symbols-outlined !text-lg">download</span>
+Download PDF
+</button>
+
+</div>
+
+
+<!-- Newsletter 3 -->
+<div class="flex flex-col group">
+
+<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
+<img src="https://iitbresearchpark.com/wp-content/uploads/2025/06/Newsletter_Volume1_Page1-1086x1536.png"
+alt="ASPIRE Newsletter Issue 02"
+class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+</div>
+
+<h3 class="text-lg font-bold mb-1">
+The Innoverse Grid
+</h3>
+
+<span class="text-xs text-slate-500 mb-3">
+Volume 01 • June 2025
+</span>
+
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+ASPIRE’s inaugural volume of its official newsletter — a gateway into groundbreaking innovations, dynamic partnerships, and the pulse of progress at IIT Bombay’s Research Park.
+</p>
+
+<button class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
+<span class="material-symbols-outlined !text-lg">download</span>
+Download PDF
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- 3. Media Mentions Section -->
+<section class="mb-24">
+<h2 class="text-3xl font-extrabold tracking-tight mb-12">Press &amp; Media</h2>
+<!-- Top Split Screen -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="flex flex-col group bg-white dark:bg-brand-bg rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800">
+<div class="aspect-video w-full overflow-hidden">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern sustainable architecture with glass and greenery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5A8-0shQysYcM2tc9xUYJ9Gj6xO_rI0uPPV5_jZGjBMyQcKnNcmJHENJujEAi_ZQnBSiiYzXLX8F_V3-xRP7afujBiV9Kl6XBVSurjtq12YTxquR6Xj8E4c1Zr80wfVyjFOMafXjnUvGBtMyXxTYHNT_t7lObvadEueLXy3wo8VJvTghkmfRl_um3583SPGPPFAowNj4UFPcwBoDdaJx_uPCgviCAleHS1SovMWbXLcMziVmk5lGN5zhzPqFmjxwRL2eUtCKkVw');"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded">Press</span>
+<span class="text-slate-400 text-xs font-medium">12.18.2025</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
+                            ASPIRE Launches New Renewable Energy Initiative for Urban Centers
+                        </h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                            Our latest multi-disciplinary initiative aims to bridge the gap between theoretical physics and practical green energy solutions for high-density metropolitan areas.
+                        </p>
+<div class="mt-auto">
+<a class="inline-flex items-center text-primary text-sm font-bold group-hover:gap-2 transition-all" href="#">
+                                Read More 
+                                <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Card 2 -->
+<article class="flex flex-col group bg-white dark:bg-brand-bg rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800">
+<div class="aspect-video w-full overflow-hidden">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern sustainable architecture with glass and greenery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5A8-0shQysYcM2tc9xUYJ9Gj6xO_rI0uPPV5_jZGjBMyQcKnNcmJHENJujEAi_ZQnBSiiYzXLX8F_V3-xRP7afujBiV9Kl6XBVSurjtq12YTxquR6Xj8E4c1Zr80wfVyjFOMafXjnUvGBtMyXxTYHNT_t7lObvadEueLXy3wo8VJvTghkmfRl_um3583SPGPPFAowNj4UFPcwBoDdaJx_uPCgviCAleHS1SovMWbXLcMziVmk5lGN5zhzPqFmjxwRL2eUtCKkVw');"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded">Press</span>
+<span class="text-slate-400 text-xs font-medium">12.18.2025</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
+                            ASPIRE Launches New Renewable Energy Initiative for Urban Centers
+                        </h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                            Our latest multi-disciplinary initiative aims to bridge the gap between theoretical physics and practical green energy solutions for high-density metropolitan areas.
+                        </p>
+<div class="mt-auto">
+<a class="inline-flex items-center text-primary text-sm font-bold group-hover:gap-2 transition-all" href="#">
+                                Read More 
+                                <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+
+</section>
+<!-- 4. Brand Resources Section -->
+<section class="relative overflow-hidden bg-slate-900 rounded-3xl p-12 lg:p-24 text-center">
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Visual Identity</span>
+<h2 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-8">Brand Kit.</h2>
+<p class="text-slate-400 text-lg mb-12">
+                    Access high-resolution logos, typography guidelines, and institutional colors for official partnerships and media coverage.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full text-lg font-black transition-all transform hover:scale-105">
+                        Download Kit
+                    </button>
+<a class="text-slate-300 hover:text-white font-bold text-sm underline underline-offset-8 decoration-primary/50" href="#">View Usage Guidelines</a>
+</div>
+</div>
+</section>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Event tab switching functionality
+    document.getElementById('upcomingBtn').addEventListener('click', function() {
+        document.getElementById('upcomingEvents').classList.remove('hidden');
+        document.getElementById('pastEvents').classList.add('hidden');
+        this.classList.add('bg-primary', 'text-white');
+        this.classList.remove('text-slate-500', 'dark:text-slate-400');
+        document.getElementById('pastBtn').classList.remove('bg-primary', 'text-white');
+        document.getElementById('pastBtn').classList.add('text-slate-500', 'dark:text-slate-400');
+    });
+
+    document.getElementById('pastBtn').addEventListener('click', function() {
+        document.getElementById('pastEvents').classList.remove('hidden');
+        document.getElementById('upcomingEvents').classList.add('hidden');
+        this.classList.add('bg-primary', 'text-white');
+        this.classList.remove('text-slate-500', 'dark:text-slate-400');
+        document.getElementById('upcomingBtn').classList.remove('bg-primary', 'text-white');
+        document.getElementById('upcomingBtn').classList.add('text-slate-500', 'dark:text-slate-400');
+    });
+});
+
+// Event data for modals
+const eventData = {
+    sustainability: {
+        title: "Global Sustainability Summit",
+        date: "October 24, 2024",
+        description: "A comprehensive discussion on circular economies, sustainable development, and policy frameworks for a greener future.",
+        gallery: [
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ', alt: 'Keynote speaker at the summit' },
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg', alt: 'Panel discussion on green technologies' },
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg', alt: 'Networking session with attendees' }
+        ],
+        highlights: [
+            "Over 500 attendees from 25+ countries",
+            "Keynote by Dr. Sarah Chen on circular economy principles",
+            "Interactive workshops on sustainable innovation",
+            "Partnership announcements with leading green tech companies"
+        ]
+    },
+    innovation: {
+        title: "Innovation Showcase 2024",
+        date: "September 15, 2024",
+        description: "Showcasing breakthrough technologies and research innovations from our state-of-the-art laboratories.",
+        gallery: [
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg', alt: 'AI demonstration in the lab' },
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ', alt: 'Research team presenting findings' },
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg', alt: 'Interactive technology display' }
+        ],
+        highlights: [
+            "15+ groundbreaking research projects showcased",
+            "Live demonstrations of AI and robotics innovations",
+            "Industry partnerships formed during the event",
+            "Student research awards presented"
+        ]
+    },
+    awards: {
+        title: "Research Excellence Awards",
+        date: "August 08, 2024",
+        description: "Celebrating outstanding contributions to research and innovation across all disciplines.",
+        gallery: [
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg', alt: 'Award ceremony stage setup' },
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ', alt: 'Recipients receiving awards' },
+            { type: 'image', src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg', alt: 'Celebration and networking' }
+        ],
+        highlights: [
+            "12 prestigious research awards presented",
+            "Recognition of interdisciplinary collaboration",
+            "Special mention for young researchers",
+            "Inspiring keynote by Nobel laureate"
+        ]
+    }
+};
+
+// Modal functions
+function openEventModal(eventId) {
+    const event = eventData[eventId];
+    if (!event) return;
+
+    // Populate modal content
+    document.getElementById('modalTitle').textContent = event.title;
+    document.getElementById('modalDate').textContent = event.date;
+    document.getElementById('modalDescription').textContent = event.description;
+
+    // Populate gallery
+    const galleryContainer = document.getElementById('galleryContainer');
+    galleryContainer.innerHTML = '';
+    
+    event.gallery.forEach(item => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-700';
+        
+        if (item.type === 'image') {
+            galleryItem.innerHTML = `
+                <img src="${item.src}" alt="${item.alt}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            `;
+        } else if (item.type === 'video') {
+            galleryItem.innerHTML = `
+                <video controls class="w-full h-full object-cover">
+                    <source src="${item.src}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+        }
+        
+        galleryContainer.appendChild(galleryItem);
+    });
+
+    // Populate highlights
+    const highlightsList = document.getElementById('eventHighlights');
+    highlightsList.innerHTML = '';
+    
+    event.highlights.forEach(highlight => {
+        const li = document.createElement('li');
+        li.textContent = highlight;
+        highlightsList.appendChild(li);
+    });
+
+    // Show modal
+    document.getElementById('eventModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEventModal() {
+    document.getElementById('eventModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+document.getElementById('eventModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeEventModal();
+    }
+});
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !document.getElementById('eventModal').classList.contains('hidden')) {
+        closeEventModal();
+    }
+});
+
+// Initialize Swiper for upcoming events
+const upcomingEventsSwiper = new Swiper('.upcomingEventsSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.upcoming-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+    on: {
+        init: function () {
+            // Pause autoplay when user hovers over the swiper
+            this.el.addEventListener('mouseenter', () => {
+                this.autoplay.stop();
+            });
+            this.el.addEventListener('mouseleave', () => {
+                this.autoplay.start();
+            });
+        },
+    },
+});
+</script>
+
+</body></html>
