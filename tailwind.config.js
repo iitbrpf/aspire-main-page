@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+
+tailwind.config = {
   content: ["./**/*.{html,js}"],
   theme: {
     extend: {
@@ -47,6 +47,14 @@ module.exports = {
       },
       spacing: {
         // Consistent spacing scale
+        '2': '0.5rem',
+        '4': '1rem',
+        '6': '1.5rem',
+        '8': '2rem',
+        '10': '2.5rem',
+        '12': '3rem',
+        '14': '3.5rem',
+        '16': '4rem',
         '18': '4.5rem',
         '88': '22rem',
         '112': '28rem',
@@ -63,6 +71,9 @@ module.exports = {
         'large': '0 8px 40px rgba(0, 0, 0, 0.16)',
       },
       borderRadius: {
+        'sm': '0.125rem',
+        'md': '0.25rem',
+        'lg': '0.5rem',
         'xl': '0.75rem',
         '2xl': '1rem',
         '3xl': '1.5rem',
@@ -101,8 +112,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/container-queries'),
-  ],
+  plugins: [],
 }
