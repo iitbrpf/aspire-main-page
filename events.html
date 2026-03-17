@@ -131,18 +131,33 @@
           <h2 class="text-3xl font-extrabold tracking-tight mb-2">Events Calendar</h2>
           <p class="text-slate-500 dark:text-slate-400">Key dates for global research summits and seminars.</p>
         </div>
-        <div class="flex gap-1 self-start bg-slate-100 dark:bg-slate-800 rounded-full p-1">
-          <button id="upcomingBtn"
-            class="filter-btn px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 bg-primary text-white shadow">Upcoming</button>
-          <button id="pastBtn"
-            class="filter-btn px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">Past</button>
-          <button id="archivesBtn"
-            class="filter-btn px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">Archives</button>
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4 self-start">
+          <!-- Custom Dropdown -->
+          <div class="relative w-64">
+            <label class="text-xs tracking-widest text-slate-400 font-bold uppercase">
+              Filter by Category
+            </label>
+            <button id="filterToggle" class="w-full mt-2 flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 shadow-sm hover:shadow-md transition-all">
+              <span id="selectedFilter" class="text-sm font-semibold">Recent Events</span>
+              <span class="material-symbols-outlined text-primary">expand_more</span>
+            </button>
+            <div id="filterMenu" class="absolute w-full mt-2 bg-white dark:bg-slate-800 rounded-xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-700 z-50 hidden">
+              <button class="filterCategoryBtn w-full text-left px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" data-filter="upcoming">Upcoming Events</button>
+              <button class="filterCategoryBtn w-full text-left px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" data-filter="past">Recent Events</button>
+              <button class="filterCategoryBtn w-full text-left px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" data-filter="archives">Archives</button>
+            </div>
+          </div>
+
+          <button id="hostEventBtn"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 text-sm font-bold rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center gap-2 mt-auto">
+            <span class="material-symbols-outlined text-lg">add_circle</span>
+            Host Event
+          </button>
         </div>
       </div>
 
       <!-- Upcoming Events -->
-      <div id="upcomingEvents" style="display:block">
+      <div id="upcomingEvents" style="display:none">
         <div class="swiper upcomingEventsSwiper">
           <div id="upcomingWrapper" class="swiper-wrapper"></div>
         </div>
@@ -151,8 +166,8 @@
         </div>
       </div>
 
-      <!-- Past Events -->
-      <div id="pastEvents" style="display:none">
+      <!-- Recent Events -->
+      <div id="pastEvents" style="display:block">
         <div class="swiper pastEventsSwiper">
           <div id="pastWrapper" class="swiper-wrapper"></div>
         </div>
@@ -296,7 +311,7 @@
           </a>
         </div>
         <div class="rounded-2xl lg:rounded-none overflow-hidden h-full order-1 lg:order-2">
-          <img id="featuredMediaImage" src="" alt="Featured Story"
+          <img id="featuredMediaImage" src="" alt="Featured Story" loading="lazy"
             class="w-full h-full object-contain aspect-video lg:aspect-square">
         </div>
       </div>
@@ -339,79 +354,78 @@
     </section>
   </main>
 
-  <!-- Unified Event Modal -->
-  <div id="eventModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 overflow-y-auto" style="display:none">
+  <!-- Host Event Modal -->
+  <div id="hostEventModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[60] overflow-y-auto hidden">
     <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden">
-
-        <!-- Header -->
-        <div class="flex items-start justify-between p-6 border-b border-slate-100 dark:border-slate-800">
-          <div>
-            <span id="modalBadge"
-              class="inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2"></span>
-            <h2 id="modalTitle" class="text-xl font-extrabold leading-tight"></h2>
-            <p id="modalMeta" class="text-xs text-slate-500 mt-1"></p>
-          </div>
-          <button onclick="closeEventModal()"
-            class="ml-4 mt-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex-shrink-0">
-            <span class="material-symbols-outlined">close</span>
-          </button>
+      <div class="w-full max-w-2xl bg-white dark:bg-[#323031] rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden relative">
+        <button onclick="closeHostEventModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        
+        <div class="p-8 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-white/5">
+          <h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-2">Booking Request Form</h1>
+          <p class="text-slate-500 dark:text-slate-400 font-normal leading-relaxed">
+            Professional research institution request portal. Please provide accurate details for your booking. <span class="text-primary font-semibold">All fields are mandatory.</span>
+          </p>
         </div>
-
-        <!-- UPCOMING PANEL -->
-        <div id="modalUpcoming" class="p-6" style="display:none">
-          <p id="modalUpcomingDesc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8"></p>
-
-          <div class="grid grid-cols-2 gap-4">
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Date</span>
-              <span id="modalUpcomingDate" class="text-sm font-bold"></span>
+        
+        <form class="p-8 space-y-8" onsubmit="event.preventDefault(); alert('Booking Request Submitted!'); closeHostEventModal();">
+          <div class="grid grid-cols-1 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-slate-700 dark:text-slate-200 text-sm font-bold uppercase tracking-wider">Full Name <span class="text-red-500">*</span></label>
+              <input class="form-input w-full rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-background-dark text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 transition-all" placeholder="Dr. Jane Smith" required="" type="text"/>
             </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Time</span>
-              <span id="modalUpcomingTime" class="text-sm font-bold"></span>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="text-slate-700 dark:text-slate-200 text-sm font-bold uppercase tracking-wider">Email ID <span class="text-red-500">*</span></label>
+                <input class="form-input w-full rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-background-dark text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 transition-all" placeholder="name@institution.edu" required="" type="email"/>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-slate-700 dark:text-slate-200 text-sm font-bold uppercase tracking-wider">Contact Number <span class="text-red-500">*</span></label>
+                <input class="form-input w-full rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-background-dark text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 transition-all" placeholder="+91 00000-00000" required="" type="tel"/>
+              </div>
             </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Venue</span>
-              <span id="modalUpcomingVenue" class="text-sm font-bold"></span>
+            
+            <div class="flex flex-col gap-2">
+              <label class="text-slate-700 dark:text-slate-200 text-sm font-bold uppercase tracking-wider">Company Name <span class="text-red-500">*</span></label>
+              <input class="form-input w-full rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-background-dark text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 transition-all" placeholder="Enter organization name" required="" type="text"/>
             </div>
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Organiser</span>
-              <span id="modalUpcomingOrg" class="text-sm font-bold"></span>
+            
+            <div class="flex flex-col gap-4 py-2">
+              <label class="text-slate-700 dark:text-slate-200 text-sm font-bold uppercase tracking-wider">Member Company Type <span class="text-red-500">*</span></label>
+              <div class="flex flex-wrap gap-6">
+                <label class="inline-flex items-center cursor-pointer group">
+                  <input class="form-radio text-primary border-slate-300 dark:border-slate-600 focus:ring-primary h-5 w-5" name="member_type" required="" type="radio" value="resident"/>
+                  <span class="ml-3 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Resident Company</span>
+                </label>
+                <label class="inline-flex items-center cursor-pointer group">
+                  <input class="form-radio text-primary border-slate-300 dark:border-slate-600 focus:ring-primary h-5 w-5" name="member_type" type="radio" value="associate"/>
+                  <span class="ml-3 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Associate Company</span>
+                </label>
+                <label class="inline-flex items-center cursor-pointer group">
+                  <input class="form-radio text-primary border-slate-300 dark:border-slate-600 focus:ring-primary h-5 w-5" name="member_type" type="radio" value="na"/>
+                  <span class="ml-3 text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">NA</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="flex flex-col gap-2">
+              <label class="text-slate-700 dark:text-slate-200 text-sm font-bold uppercase tracking-wider">IIT Bombay Department Name (if applicable) <span class="text-red-500">*</span></label>
+              <input class="form-input w-full rounded-lg border-slate-200 dark:border-slate-600 bg-white dark:bg-background-dark text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 transition-all" placeholder="e.g. Computer Science and Engineering" required="" type="text"/>
             </div>
           </div>
-
-          <button
-            class="w-full mt-8 bg-primary text-white py-3 rounded-xl font-bold hover:shadow-lg transition">Register
-            Now</button>
-        </div>
-
-        <!-- PAST/ARCHIVE PANEL (Gallery) -->
-        <div id="modalGallery" style="display:none">
-          <div class="relative group">
-            <div class="swiper modal-gallery-swiper">
-              <div id="modalSwiperWrapper" class="swiper-wrapper"></div>
-            </div>
-            <!-- arrows -->
-            <button id="mgPrev" class="modal-nav-btn modal-nav-prev"><span
-                class="material-symbols-outlined !text-base">chevron_left</span></button>
-            <button id="mgNext" class="modal-nav-btn modal-nav-next"><span
-                class="material-symbols-outlined !text-base">chevron_right</span></button>
+          
+          <div class="pt-6 border-t border-slate-100 dark:border-slate-700">
+            <button class="w-full h-14 bg-primary hover:bg-primary/90 text-white font-bold text-lg rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2" type="submit">
+              Submit Booking Request
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <p class="text-center text-slate-400 dark:text-slate-500 text-xs mt-4">
+              By submitting this form, you agree to ASPIRE's institutional guidelines and data privacy policy.
+            </p>
           </div>
-
-          <div id="mgPagination" class="modal-gallery-pagination"></div>
-
-          <div class="p-6">
-            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3">Event Overview</h4>
-            <p id="modalGalleryDesc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6"></p>
-
-            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3">Highlights</h4>
-            <ul id="modalHighlights"
-              class="space-y-2 list-disc list-inside text-sm text-slate-600 dark:text-slate-400 marker:text-primary mb-6">
-            </ul>
-          </div>
-        </div>
-
+        </form>
       </div>
     </div>
   </div>
@@ -446,8 +460,8 @@
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
 
-      const badgeText = type === 'upcoming' ? 'Upcoming' : (type === 'past' ? 'Past' : 'Archive');
-      const badgeClass = type === 'upcoming' ? 'bg-primary text-white' : (type === 'past' ? 'bg-green-100 text-green-700' : 'bg-slate-200 text-slate-600');
+      const badgeText = type === 'upcoming' ? 'Upcoming' : (type === 'past' ? 'Recent' : 'Archive');
+      const badgeClass = type === 'upcoming' ? 'bg-primary text-white' : (type === 'past' ? 'bg-green-100 text-green-700 shadow-none border border-green-200' : 'bg-slate-200 text-slate-600');
 
       const actionText = type === 'upcoming' ? 'View Details' : 'View Moments';
       const dateText = ev.date ? formatDate(ev.date) : (ev.meta ? ev.meta.split(' • ')[0] : 'Date TBD');
@@ -459,7 +473,7 @@
     <div class="group h-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition hover:shadow-md">
       <div class="relative aspect-[4/3] overflow-hidden">
         <span class="absolute top-2 left-2 ${badgeClass} text-[10px] font-semibold px-2 py-0.5 rounded-full shadow z-10">${badgeText}</span>
-        <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="${imageUrl}" alt="${ev.title || ''}"/>
+        <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="${imageUrl}" alt="${ev.title || ''}" loading="lazy"/>
       </div>
       <div class="p-3 flex flex-col flex-1">
         <span class="text-primary text-[10px] font-medium uppercase">${dateText}</span>
@@ -536,7 +550,7 @@
         badge.textContent = 'Upcoming';
         badge.className = 'inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 bg-primary/10 text-primary';
       } else if (type === 'past') {
-        badge.textContent = 'Past Event';
+        badge.textContent = 'Recent Event';
         badge.className = 'inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 bg-green-100 text-green-700';
       } else {
         badge.textContent = 'Archive';
@@ -624,34 +638,71 @@
 
     // ── Main Entry ──────────────────────────────────────────────────────────
     document.addEventListener('DOMContentLoaded', async function () {
-      const upcomingBtn = document.getElementById('upcomingBtn');
-      const pastBtn = document.getElementById('pastBtn');
-      const archivesBtn = document.getElementById('archivesBtn');
+      const filterToggle = document.getElementById('filterToggle');
+      const filterMenu = document.getElementById('filterMenu');
+      const selectedFilter = document.getElementById('selectedFilter');
+      const filterBtns = document.querySelectorAll('.filterCategoryBtn');
+      
+      const hostEventBtn = document.getElementById('hostEventBtn');
+      const hostEventModal = document.getElementById('hostEventModal');
       const upcomingEl = document.getElementById('upcomingEvents');
       const pastEl = document.getElementById('pastEvents');
       const archivesEl = document.getElementById('archivesEvents');
       const modal = document.getElementById('eventModal');
-      const allBtns = [upcomingBtn, pastBtn, archivesBtn];
 
-      function showSection(activeBtn, activeEl) {
-        allBtns.forEach(b => {
-          b.classList.remove('bg-primary', 'text-white', 'shadow');
-          b.classList.add('text-slate-500');
-        });
-        activeBtn.classList.add('bg-primary', 'text-white', 'shadow');
-        activeBtn.classList.remove('text-slate-500');
+      function showSection(value) {
         upcomingEl.style.display = 'none';
         pastEl.style.display = 'none';
         archivesEl.style.display = 'none';
-        activeEl.style.display = 'block';
+        
+        if (value === 'upcoming') {
+          upcomingEl.style.display = 'block';
+          selectedFilter.textContent = 'Upcoming Events';
+        } else if (value === 'past') {
+          pastEl.style.display = 'block';
+          selectedFilter.textContent = 'Recent Events';
+        } else if (value === 'archives') {
+          archivesEl.style.display = 'block';
+          selectedFilter.textContent = 'Archives';
+        }
 
         // Trigger resize event to force Swiper recalculation for newly visible container
         window.dispatchEvent(new Event('resize'));
+        filterMenu.classList.add('hidden');
       }
 
-      upcomingBtn.addEventListener('click', () => showSection(upcomingBtn, upcomingEl));
-      pastBtn.addEventListener('click', () => showSection(pastBtn, pastEl));
-      archivesBtn.addEventListener('click', () => showSection(archivesBtn, archivesEl));
+      // Dropdown Toggle
+      filterToggle.addEventListener('click', () => {
+        filterMenu.classList.toggle('hidden');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!filterToggle.contains(e.target) && !filterMenu.contains(e.target)) {
+          filterMenu.classList.add('hidden');
+        }
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          showSection(btn.dataset.filter);
+        });
+      });
+
+      hostEventBtn.addEventListener('click', () => {
+        hostEventModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+
+      window.closeHostEventModal = function() {
+        hostEventModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      };
+
+      hostEventModal.addEventListener('click', e => { if (e.target === hostEventModal) closeHostEventModal(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !hostEventModal.classList.contains('hidden')) closeHostEventModal();
+      });
 
       modal.addEventListener('click', e => { if (e.target === modal) closeEventModal(); });
       document.addEventListener('keydown', e => {
