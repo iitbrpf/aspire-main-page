@@ -1,0 +1,71 @@
+{
+  "newsletters": [
+    {
+      "id": "nl-4",
+      "title": "The Innoverse Grid",
+      "volume": "Volume 3",
+      "date": "January 2026",
+      "description": "From Engagement to Impact – showcasing outcomes, global partnerships, and the evolving momentum at IIT Bombay’s Research Park.",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2026/01/1-1086x1536.jpg",
+      "pdf": "#"
+    },
+    {
+      "id": "nl-3",
+      "title": "The Innoverse Grid",
+      "volume": "Volume 02",
+      "date": "Nov 2025",
+      "description": "Deepening the Dialogue – strengthening industry–academia collaborations, spotlighting active engagements, and expanding ASPIRE’s innovation ecosystem.",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2025/11/cover-1086x1536.jpg",
+      "pdf": "#"
+    },
+    {
+      "id": "nl-2",
+      "title": "The Innoverse Grid",
+      "volume": "Volume 01",
+      "date": "June 2025",
+      "description": "ASPIRE’s inaugural volume of its official newsletter — a gateway into groundbreaking innovations, dynamic partnerships, and the pulse of progress at IIT Bombay’s Research Park.",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2025/06/Newsletter_Volume1_Page1-1086x1536.png",
+      "pdf": "#"
+    }
+  ],
+  "press": [
+    {
+      "id": "press-1",
+      "type": "Press",
+      "date": "08.08.2025",
+      "title": "Prof. Vikram Vishal, ASPIRE’s Professor-In-Charge, plays an integral role in a Certificate Course curated for NTPC Limited at IIT Bombay",
+      "description": "",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2025/09/AI-ML-COURSE_crop.png",
+      "link": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2164647&reg=3&lang=2"
+    },
+    {
+      "id": "press-2",
+      "type": "Press",
+      "date": "10.05.2025",
+      "title": "IIT Bombay Research Park to House 40 Firms and Focus on Cooperation in AI and ML",
+      "description": "",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2024/04/Artboard-5.webp",
+      "link": "https://www.dqindia.com/iit-bombay-research-park-to-house-40-firms-and-focus-on-cooperation-in-ai-and-ml/"
+    },
+    {
+      "id": "press-3",
+      "type": "Article",
+      "date": "08.12.2025",
+      "title": "80 companies, research, internships: IIT Bombay has big plans for its research park",
+      "description": "",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2024/04/Artboard-1.webp",
+      "link": "https://news.careers360.com/iit-bombay-iitb-powai-research-park-academia-industry-collaboration-launch-this-year"
+    }
+  ],
+  "featured": {
+    "title": "Scaling Innovation: Inside the ASPIRE Research Ecosystem",
+    "description": "Hon’ble Prime Minister Shri Narendra Modi virtually inaugurated the Aspire – IIT Bombay Research Park Foundation Building on 20 February 2024 in the presence of Member of Parliament Shri Manoj Kotak (Mumbai North-East), Chairperson of the Board of Governors of IIT Bombay Shri. Sharad Saraf, Director of IIT Bombay Prof. Subhasis Chaudhuri, Professor-In-Charge of Aspire – IIT Bombay Research Park Prof. Swaroop Ganguly and Institute functionaries.",
+    "image": "https://iitbresearchpark.com/wp-content/uploads/2024/04/NewLogo_Unreveil-1.webp",
+    "link": "#"
+  },
+  "carousel": [
+    "http://iitbresearchpark.com/wp-content/uploads/2024/04/ResearchPark_Team.webp",
+    "https://iitbresearchpark.com/wp-content/uploads/2024/04/COO_ResearchPark-1.webp",
+    "https://iitbresearchpark.com/wp-content/uploads/2024/04/PIC_ResearchPark.webp"
+  ]
+}

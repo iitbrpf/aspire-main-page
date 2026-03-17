@@ -1,456 +1,768 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Resources &amp; Updates | ASPIRE Research Institution</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="./tailwind.config.js"></script>
-<style>
-        body { font-family: 'Public Sans', sans-serif; }
+<html class="light" lang="en">
 
-        /* Swiper custom styles */
-        .swiper {
-            overflow: hidden;
-        }
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Resources &amp; Updates | ASPIRE Research Institution</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="./tailwind.config.js"></script>
+  <style>
+    body {
+      font-family: 'Public Sans', sans-serif;
+    }
 
-        .swiper-wrapper {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
+    /* Swiper custom styles */
+    .swiper {
+      overflow: hidden;
+    }
 
-        .swiper-slide {
-            height: auto;
-            flex-shrink: 0;
-            width: 100%;
-        }
+    .swiper-wrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
 
-        .swiper-pagination-bullet {
-            width: 8px;
-            height: 8px;
-            background: #d1d5db;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
+    .swiper-slide {
+      height: auto;
+      display: flex;
+      flex-shrink: 0;
+    }
 
-        .swiper-pagination-bullet-active {
-            background: #c1598d;
-            opacity: 1;
-            transform: scale(1.2);
-        }
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background: #d1d5db;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
 
-        .upcoming-pagination {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
+    .swiper-pagination-bullet-active {
+      background: #c1598d;
+      opacity: 1;
+      transform: scale(1.2);
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
-            .swiper-slide {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    .upcoming-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .swiper-slide {
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Modal gallery slider */
+    .modal-gallery-swiper {
+      width: 100%;
+    }
+
+    .modal-gallery-swiper .swiper-slide {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .modal-gallery-swiper .swiper-slide img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border: none;
+    }
+
+    .modal-nav-prev {
+      left: 8px;
+    }
+
+    .modal-nav-next {
+      right: 8px;
+    }
+
+    .modal-gallery-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
 
-<main class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
 
-<!-- 1. Events Section -->
-<section class="mb-24">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-200 dark:border-slate-800 pb-8">
-<div>
-<h2 class="text-3xl font-extrabold tracking-tight mb-2">Events Calendar</h2>
-<p class="text-slate-500 dark:text-slate-400">Key dates for global research summits and seminars.</p>
-</div>
-<div class="flex gap-2 self-start">
-<button id="pastBtn" class="px-5 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary cursor-pointer">Past Events</button>
-</div>
-</div>
+  <main class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
 
-<!-- Upcoming Events -->
-<div id="upcomingEvents" class="relative">
-<div class="swiper upcomingEventsSwiper">
-<div class="swiper-wrapper">
+    <!-- 1. Events Section -->
+    <section class="mb-12">
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-200 dark:border-slate-800 pb-8">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight mb-2">Events Calendar</h2>
+          <p class="text-slate-500 dark:text-slate-400">Key dates for global research summits and seminars.</p>
+        </div>
+        <div class="flex gap-1 self-start bg-slate-100 dark:bg-slate-800 rounded-full p-1">
+          <button id="upcomingBtn"
+            class="filter-btn px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 bg-primary text-white shadow">Upcoming</button>
+          <button id="pastBtn"
+            class="filter-btn px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">Past</button>
+          <button id="archivesBtn"
+            class="filter-btn px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">Archives</button>
+        </div>
+      </div>
 
+      <!-- Upcoming Events -->
+      <div id="upcomingEvents" style="display:block">
+        <div class="swiper upcomingEventsSwiper">
+          <div id="upcomingWrapper" class="swiper-wrapper"></div>
+        </div>
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <div class="swiper-pagination upcoming-pagination"></div>
+        </div>
+      </div>
 
-<div class="swiper-slide max-w-xs">
-  <div class="group rounded-lg overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition hover:shadow-md">
+      <!-- Past Events -->
+      <div id="pastEvents" style="display:none">
+        <div class="swiper pastEventsSwiper">
+          <div id="pastWrapper" class="swiper-wrapper"></div>
+        </div>
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <div class="swiper-pagination past-pagination"></div>
+        </div>
+      </div>
 
-    <!-- Image -->
-    <div class="relative aspect-[4/3] overflow-hidden">
-      
-      <!-- Badge -->
-      <span class="absolute top-2 left-2 bg-white text-slate-900 text-[10px] font-semibold px-2 py-0.5 rounded-full shadow">
-        Upcoming
-      </span>
+      <!-- Archives -->
+      <div id="archivesEvents" style="display:none">
+        <div class="swiper archivesEventsSwiper">
+          <div id="archivesWrapper" class="swiper-wrapper"></div>
+        </div>
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <div class="swiper-pagination archives-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- 2. Newsletter Section -->
+    <!-- Unified Event Modal -->
+    <div id="eventModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 overflow-y-auto">
+      <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden">
 
-      <img 
-        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" 
-        src="https://iitbresearchpark.com/wp-content/uploads/2026/03/Women-In-Helm-Event-page-2048x1366.jpg"
-        alt=""
-      />
-    </div>
+          <!-- Header -->
+          <div class="flex items-start justify-between p-6 border-b border-slate-100 dark:border-slate-800">
+            <div>
+              <span id="modalBadge"
+                class="inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2"></span>
+              <h2 id="modalTitle" class="text-xl font-extrabold leading-tight"></h2>
+              <p id="modalMeta" class="text-xs text-slate-500 mt-1"></p>
+            </div>
+            <button onclick="closeEventModal()"
+              class="ml-4 mt-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex-shrink-0">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
 
-    <!-- Content -->
-    <div class="p-3">
-      <span class="text-primary text-[10px] font-medium uppercase">
-        March 12, 2026
-      </span>
+          <!-- UPCOMING PANEL -->
+          <div id="modalUpcoming" class="hidden p-6 space-y-5">
+            <p id="modalUpcomingDesc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+            <a id="rsvpLinkHere" href="#"
+              class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+              Register Here <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+                <span class="material-symbols-outlined text-primary text-lg">calendar_month</span>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Date</p>
+                <p id="modalUpcomingDate" class="text-sm font-semibold mt-0.5"></p>
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+                <span class="material-symbols-outlined text-primary text-lg">schedule</span>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Time</p>
+                <p id="modalUpcomingTime" class="text-sm font-semibold mt-0.5"></p>
+              </div>
+              <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+                <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Venue</p>
+                <p id="modalUpcomingVenue" class="text-sm font-semibold mt-0.5"></p>
+              </div>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">group</span>
+              <div>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest">Organised by</p>
+                <p id="modalUpcomingOrg" class="text-sm font-semibold mt-0.5"></p>
+              </div>
+            </div>
 
-      <h3 class="text-sm font-semibold mt-1 leading-snug line-clamp-2">
-        Women at the Helm – Leadership Dialogue
-      </h3>
+            <!-- Dynamic Action Buttons -->
+            <div id="modalUpcomingActions" class="flex flex-col sm:flex-row gap-3 pt-2"></div>
+          </div>
 
-      <p class="text-slate-500 text-xs mt-1 line-clamp-2">
-        Tech innovators focusing on AI & sustainability.
-      </p>
+          <!-- PAST / ARCHIVE PANEL -->
+          <div id="modalGallery" class="hidden">
+            <!-- Image Slider -->
+            <div class="relative px-6 pt-6">
+              <div class="swiper modal-gallery-swiper">
+                <div id="modalSwiperWrapper" class="swiper-wrapper"></div>
+                <button class="modal-nav-btn modal-nav-prev" id="mgPrev">
+                  <span class="material-symbols-outlined text-base text-slate-700">chevron_left</span>
+                </button>
+                <button class="modal-nav-btn modal-nav-next" id="mgNext">
+                  <span class="material-symbols-outlined text-base text-slate-700">chevron_right</span>
+                </button>
+              </div>
+              <div class="modal-gallery-pagination" id="mgPagination"></div>
+            </div>
+            <!-- Description + highlights -->
+            <div class="p-6 space-y-4">
+              <p id="modalGalleryDesc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+              <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+                <h3 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Highlights</h3>
+                <ul id="modalHighlights"
+                  class="text-sm text-slate-600 dark:text-slate-300 space-y-1 list-disc list-inside"></ul>
+              </div>
+            </div>
+          </div>
 
-      <div class="flex gap-2 mt-3">
-        <button onclick="openEventModal('sustainability')" class="flex-1 bg-primary text-white text-xs py-1.5 rounded-md">
-          View
-        </button>
+        </div>
       </div>
     </div>
 
+
+
+
+    <!-- NEWSLETTER SECTION -->
+
+    <section
+      class="mb-24 py-16 bg-slate-50 dark:bg-slate-900/50 rounded-3xl px-8 lg:px-16 border border-slate-200 dark:border-slate-800">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold tracking-tight mb-4">ASPIRE Newsletters</h2>
+        <p class="text-slate-500 dark:text-slate-400">
+          Quarterly insights from our leading researchers and labs.
+        </p>
+      </div>
+
+      <div id="newsletterGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+
+
+      </div>
+
+    </section>
+    <!-- 3. Media Mentions Section -->
+    <section class="mb-24">
+      <h2 class="text-3xl font-extrabold tracking-tight mb-12">Press &amp; Media</h2>
+      <!-- Split Screen Featured -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-slate-50 dark:bg-slate-900/50 rounded-3xl overflow-hidden p-8 lg:p-0">
+        <div class="lg:p-12 space-y-6 order-2 lg:order-1">
+          <span class="text-primary font-black uppercase tracking-widest text-xs">Featured Highlight</span>
+          <h3 id="featuredMediaTitle"
+            class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+          </h3>
+          <p id="featuredMediaDesc" class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed line-clamp-5"></p>
+          <a id="featuredMediaLink" href="#"
+            class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+            Read Full Story <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+        </div>
+        <div class="rounded-2xl lg:rounded-none overflow-hidden h-full order-1 lg:order-2">
+          <img id="featuredMediaImage" src="" alt="Featured Story"
+            class="w-full h-full object-contain aspect-video lg:aspect-square">
+        </div>
+      </div>
+
+      <!-- Media Carousel Slider -->
+      <div class="mb-20">
+        <div class="swiper mediaCarouselSwiper rounded-3xl overflow-hidden">
+          <div id="mediaCarouselWrapper" class="swiper-wrapper"></div>
+          <div class="media-carousel-pagination mt-8 flex justify-center gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Existing Media Grid -->
+      <div id="mediaGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      </div>
+
+    </section>
+    <!-- 4. Brand Resources Section -->
+    <section class="relative overflow-hidden bg-slate-900 rounded-3xl p-12 lg:p-24 text-center">
+      <!-- Background Decoration -->
+      <div class="relative z-10  mx-auto">
+        <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Visual Identity</span>
+        <h2 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-8">Brand Kit.</h2>
+        <p class="text-slate-400 text-lg mb-12">
+          The ASPIRE Brand Kit provides a structured framework for maintaining visual and communication consistency
+          across all platforms. It includes official logos, typography guidelines, color systems, and usage protocols
+          designed for partners, collaborators, and media stakeholders. Adhering to these standards helps preserve the
+          integrity and recognition of the ASPIRE identity.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <button
+            class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full text-lg font-black transition-all transform hover:scale-105">
+            <a download href="https://iitbresearchpark.com/wp-content/uploads/2025/08/BRAND-KIT-1.pdf">Download
+              Kit</a>
+          </button>
+          <!-- <a class="text-slate-300 hover:text-white font-bold text-sm underline underline-offset-8 decoration-primary/50"
+            href="#">View Usage Guidelines</a> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Unified Event Modal -->
+  <div id="eventModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 overflow-y-auto" style="display:none">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden">
+
+        <!-- Header -->
+        <div class="flex items-start justify-between p-6 border-b border-slate-100 dark:border-slate-800">
+          <div>
+            <span id="modalBadge"
+              class="inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2"></span>
+            <h2 id="modalTitle" class="text-xl font-extrabold leading-tight"></h2>
+            <p id="modalMeta" class="text-xs text-slate-500 mt-1"></p>
+          </div>
+          <button onclick="closeEventModal()"
+            class="ml-4 mt-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex-shrink-0">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+
+        <!-- UPCOMING PANEL -->
+        <div id="modalUpcoming" class="p-6" style="display:none">
+          <p id="modalUpcomingDesc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-8"></p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Date</span>
+              <span id="modalUpcomingDate" class="text-sm font-bold"></span>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Time</span>
+              <span id="modalUpcomingTime" class="text-sm font-bold"></span>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Venue</span>
+              <span id="modalUpcomingVenue" class="text-sm font-bold"></span>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Organiser</span>
+              <span id="modalUpcomingOrg" class="text-sm font-bold"></span>
+            </div>
+          </div>
+
+          <button
+            class="w-full mt-8 bg-primary text-white py-3 rounded-xl font-bold hover:shadow-lg transition">Register
+            Now</button>
+        </div>
+
+        <!-- PAST/ARCHIVE PANEL (Gallery) -->
+        <div id="modalGallery" style="display:none">
+          <div class="relative group">
+            <div class="swiper modal-gallery-swiper">
+              <div id="modalSwiperWrapper" class="swiper-wrapper"></div>
+            </div>
+            <!-- arrows -->
+            <button id="mgPrev" class="modal-nav-btn modal-nav-prev"><span
+                class="material-symbols-outlined !text-base">chevron_left</span></button>
+            <button id="mgNext" class="modal-nav-btn modal-nav-next"><span
+                class="material-symbols-outlined !text-base">chevron_right</span></button>
+          </div>
+
+          <div id="mgPagination" class="modal-gallery-pagination"></div>
+
+          <div class="p-6">
+            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3">Event Overview</h4>
+            <p id="modalGalleryDesc" class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6"></p>
+
+            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3">Highlights</h4>
+            <ul id="modalHighlights"
+              class="space-y-2 list-disc list-inside text-sm text-slate-600 dark:text-slate-400 marker:text-primary mb-6">
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-</div>
 
-</div>
+  <script>
+    // ── Modal gallery swiper instance ───────────────────────────────────────────
+    let modalGallerySwiper = null;
 
-<!-- Navigation buttons -->
-<div class="flex items-center justify-center gap-4 mt-8">
-<div class="swiper-pagination upcoming-pagination"></div>
-</div>
-</div>
+    // ── Archive modal data (static, not in JSON) ─────────────────────────────────
+    const ARCHIVE_MODAL = {
+      'symposium-2023': { title: 'Annual Research Symposium 2023', meta: 'Jan 18, 2023  •  IIT Bombay Research Park', description: 'The flagship annual symposium bringing together researchers, industry experts, and policymakers.', highlights: ['200+ paper presentations', 'Special panel on Deep Tech', 'MoUs signed with 5 firms'], images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ', 'https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg'] },
+      'deeptech-2023': { title: 'Deep Tech Founders Conclave', meta: 'Apr 05, 2023  •  Mumbai Convention Centre', description: 'Exclusive gathering of deep-tech founders, VCs, and corporates exploring commercialisation pathways.', highlights: ['40 startup pitches', '₹120 Cr in deals facilitated', 'International VC panel from US, EU & Israel'], images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg'] },
+      'industry-academia-2022': { title: 'Industry–Academia Partnership Summit', meta: 'Nov 22, 2022  •  IIT Bombay Campus', description: 'Summit dedicated to bridging gaps between universities and industry through partnership frameworks.', highlights: ['15 MoUs signed on-stage', 'Joint PhD programme announced', '60 companies represented'], images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg'] },
+      'biotech-2022': { title: 'Biotech & Life Sciences Forum', meta: 'Jul 14, 2022  •  Mumbai Bio Cluster', description: 'Forum on advances in biotech, genomics, and pharmaceutical research from India\'s leading labs.', highlights: ['Genome mapping project unveiled', '20 papers presented', '300+ life-science professionals'], images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ'] },
+      'ip-workshop-2022': { title: 'National IP & Innovation Workshop', meta: 'Mar 30, 2022  •  Online / Hybrid', description: 'Hybrid workshop on IP rights, patent filing strategies, and technology transfer best practices.', highlights: ['Live patent filing demo', '500+ online attendees', 'IP toolkit released as open resource'], images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg'] },
+      'inaugural-2021': { title: 'ASPIRE Inaugural Conclave', meta: 'Aug 10, 2021  •  IIT Bombay Research Park', description: 'The landmark launch event of ASPIRE Research Park, marking a new chapter in India\'s innovation story.', highlights: ['Inaugurated by Director, IIT Bombay', '10 founding partners announced', 'Vision 2030 roadmap unveiled'], images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg'] }
+    };
 
-<!-- Past Events -->
-<div id="pastEvents" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Past Event Card 1 -->
-<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
-<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
-<span class="text-green-400 text-xs font-black uppercase tracking-widest mb-2">Oct 24, 2024</span>
-<h3 class="text-white text-2xl font-bold leading-tight">Global Sustainability Summit</h3>
-<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Keynote on circular economies and policy frameworks.</p>
-<button onclick="openEventModal('sustainability')" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">View Moments</button>
-</div>
-</div>
-<!-- Past Event Card 2 -->
-<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
-<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
-<span class="text-green-400 text-xs font-black uppercase tracking-widest mb-2">Sep 15, 2024</span>
-<h3 class="text-white text-2xl font-bold leading-tight">Innovation Showcase 2024</h3>
-<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Showcasing breakthrough technologies from our labs.</p>
-<button onclick="openEventModal('innovation')" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">View Moments</button>
-</div>
-</div>
-<!-- Past Event Card 3 -->
-<div class="group relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
-<img class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
-<span class="text-green-400 text-xs font-black uppercase tracking-widest mb-2">Aug 08, 2024</span>
-<h3 class="text-white text-2xl font-bold leading-tight">Research Excellence Awards</h3>
-<p class="text-slate-300 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Celebrating outstanding contributions to research.</p>
-<button onclick="openEventModal('awards')" class="mt-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">View Moments</button>
-</div>
-</div>
-</div>
-</section>
-<!-- 2. Newsletter Section -->
-<!-- Event Moments Modal -->
-<div id="eventModal" class="fixed inset-0 bg-black/80 hidden z-50 overflow-y-auto">
-<div class="min-h-screen flex items-center justify-center p-4">
-<div class="bg-white dark:bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-<!-- Modal Header -->
-<div class="p-6 border-b border-slate-200 dark:border-slate-800">
-<div class="flex items-center justify-between">
-<h2 id="modalTitle" class="text-2xl font-bold">Event Moments</h2>
-<button onclick="closeEventModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<div class="mt-2">
-<p id="modalDate" class="text-slate-500 dark:text-slate-400"></p>
-<p id="modalDescription" class="text-slate-600 dark:text-slate-300 mt-1"></p>
-</div>
-</div>
+    // In-memory store populated after fetch
+    let UPCOMING_DATA = {};
+    let PAST_DATA = {};
 
-<!-- Modal Content -->
-<div class="p-6">
-<!-- Image/Video Gallery -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-<div id="galleryContainer" class="contents">
-<!-- Gallery items will be populated by JavaScript -->
-</div>
-</div>
-
-<!-- Event Details -->
-<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-<h3 class="font-semibold mb-2">Event Highlights</h3>
-<ul id="eventHighlights" class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
-<!-- Highlights will be populated by JavaScript -->
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-<!-- NEWSLETTER SECTION -->
-
-<section class="mb-24 py-16 bg-slate-50 dark:bg-slate-900/50 rounded-3xl px-8 lg:px-16 border border-slate-200 dark:border-slate-800">
-
-<div class="text-center mb-16">
-<h2 class="text-3xl font-extrabold tracking-tight mb-4">ASPIRE Newsletters</h2>
-<p class="text-slate-500 dark:text-slate-400">
-Quarterly insights from our leading researchers and labs.
-</p>
-</div>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-
-<!-- Newsletter 1 -->
-<div class="flex flex-col group">
-
-<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
-<img src="https://iitbresearchpark.com/wp-content/uploads/2026/01/1-1086x1536.jpg" loading="lazy"
-alt="ASPIRE Newsletter Issue 04"
-class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-</div>
-
-<h3 class="text-lg font-bold mb-1">
-The Innoverse Grid
-</h3>
-
-<span class="text-xs text-slate-500 mb-3">
-Volume 3 • January 2026
-</span>
-
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-From Engagement to Impact – showcasing outcomes, global partnerships, and the evolving momentum at IIT Bombay’s Research Park.
-</p>
-
-<button class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
-<span class="material-symbols-outlined !text-lg">download</span>
-Download PDF
-</button>
-
-</div>
-
-
-<!-- Newsletter 2 -->
-<div class="flex flex-col group">
-
-<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
-<img  src="https://iitbresearchpark.com/wp-content/uploads/2025/11/cover-1086x1536.jpg"
-alt="ASPIRE Newsletter Issue 03" loading="lazy"
-class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-</div>
-
-<h3 class="text-lg font-bold mb-1">
-The Innoverse Grid
-</h3>
-
-<span class="text-xs text-slate-500 mb-3">
-Volume 02 • Nov 2025
-</span>
-
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-Deepening the Dialogue – strengthening industry–academia collaborations, spotlighting active engagements, and expanding ASPIRE’s innovation ecosystem.
-</p>
-
-<button class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
-<span class="material-symbols-outlined !text-lg">download</span>
-Download PDF
-</button>
-
-</div>
-
-
-<!-- Newsletter 3 -->
-<div class="flex flex-col group">
-
-<div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
-<img src="https://iitbresearchpark.com/wp-content/uploads/2025/06/Newsletter_Volume1_Page1-1086x1536.png"
-alt="ASPIRE Newsletter Issue 02" loading="lazy"
-class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-</div>
-
-<h3 class="text-lg font-bold mb-1">
-The Innoverse Grid
-</h3>
-
-<span class="text-xs text-slate-500 mb-3">
-Volume 01 • June 2025
-</span>
-
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-ASPIRE’s inaugural volume of its official newsletter — a gateway into groundbreaking innovations, dynamic partnerships, and the pulse of progress at IIT Bombay’s Research Park.
-</p>
-
-<button class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
-<span class="material-symbols-outlined !text-lg">download</span>
-Download PDF
-</button>
-
-</div>
-
-</div>
-
-</section>
-<!-- 3. Media Mentions Section -->
-<section class="mb-24">
-<h2 class="text-3xl font-extrabold tracking-tight mb-12">Press &amp; Media</h2>
-<!-- Top Split Screen -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card 1 -->
-<article class="flex flex-col group bg-white dark:bg-brand-bg rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800">
-<div class="aspect-video w-full overflow-hidden">
-<div class="w-full h-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern sustainable architecture with glass and greenery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5A8-0shQysYcM2tc9xUYJ9Gj6xO_rI0uPPV5_jZGjBMyQcKnNcmJHENJujEAi_ZQnBSiiYzXLX8F_V3-xRP7afujBiV9Kl6XBVSurjtq12YTxquR6Xj8E4c1Zr80wfVyjFOMafXjnUvGBtMyXxTYHNT_t7lObvadEueLXy3wo8VJvTghkmfRl_um3583SPGPPFAowNj4UFPcwBoDdaJx_uPCgviCAleHS1SovMWbXLcMziVmk5lGN5zhzPqFmjxwRL2eUtCKkVw');"></div>
-</div>
-<div class="p-6 flex flex-col flex-1">
-<div class="flex items-center gap-2 mb-3">
-<span class="text-[10px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded">Press</span>
-<span class="text-slate-400 text-xs font-medium">12.18.2025</span>
-</div>
-<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
-                            ASPIRE Launches New Renewable Energy Initiative for Urban Centers
-                        </h3>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                            Our latest multi-disciplinary initiative aims to bridge the gap between theoretical physics and practical green energy solutions for high-density metropolitan areas.
-                        </p>
-<div class="mt-auto">
-<a class="inline-flex items-center text-primary text-sm font-bold group-hover:gap-2 transition-all" href="#">
-                                Read More 
-                                <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
-</a>
-</div>
-</div>
-</article>
-
-<!-- Card 2 -->
-<article class="flex flex-col group bg-white dark:bg-brand-bg rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800">
-<div class="aspect-video w-full overflow-hidden">
-<div class="w-full h-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern sustainable architecture with glass and greenery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5A8-0shQysYcM2tc9xUYJ9Gj6xO_rI0uPPV5_jZGjBMyQcKnNcmJHENJujEAi_ZQnBSiiYzXLX8F_V3-xRP7afujBiV9Kl6XBVSurjtq12YTxquR6Xj8E4c1Zr80wfVyjFOMafXjnUvGBtMyXxTYHNT_t7lObvadEueLXy3wo8VJvTghkmfRl_um3583SPGPPFAowNj4UFPcwBoDdaJx_uPCgviCAleHS1SovMWbXLcMziVmk5lGN5zhzPqFmjxwRL2eUtCKkVw');"></div>
-</div>
-<div class="p-6 flex flex-col flex-1">
-<div class="flex items-center gap-2 mb-3">
-<span class="text-[10px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded">Press</span>
-<span class="text-slate-400 text-xs font-medium">12.18.2025</span>
-</div>
-<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
-                            ASPIRE Launches New Renewable Energy Initiative for Urban Centers
-                        </h3>
-<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                            Our latest multi-disciplinary initiative aims to bridge the gap between theoretical physics and practical green energy solutions for high-density metropolitan areas.
-                        </p>
-<div class="mt-auto">
-<a class="inline-flex items-center text-primary text-sm font-bold group-hover:gap-2 transition-all" href="#">
-                                Read More 
-                                <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
-</a>
-</div>
-</div>
-</article>
-</div>
-
-</section>
-<!-- 4. Brand Resources Section -->
-<section class="relative overflow-hidden bg-slate-900 rounded-3xl p-12 lg:p-24 text-center">
-<!-- Background Decoration -->
-<div class="relative z-10 max-w-2xl mx-auto">
-<span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Visual Identity</span>
-<h2 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-8">Brand Kit.</h2>
-<p class="text-slate-400 text-lg mb-12">
-                    Access high-resolution logos, typography guidelines, and institutional colors for official partnerships and media coverage.
-                </p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-<button class="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full text-lg font-black transition-all transform hover:scale-105">
-                        Download Kit
-                    </button>
-<a class="text-slate-300 hover:text-white font-bold text-sm underline underline-offset-8 decoration-primary/50" href="#">View Usage Guidelines</a>
-</div>
-</div>
-</section>
-</main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  const upcomingBtn = document.getElementById('upcomingBtn');
-  const pastBtn = document.getElementById('pastBtn');
-  const upcomingEvents = document.getElementById('upcomingEvents');
-  const pastEvents = document.getElementById('pastEvents');
-  const modal = document.getElementById('eventModal');
-
-  // TAB SWITCH
-  upcomingBtn.addEventListener('click', function() {
-    upcomingEvents.classList.remove('hidden');
-    pastEvents.classList.add('hidden');
-
-    upcomingBtn.classList.add('bg-primary','text-white');
-    upcomingBtn.classList.remove('text-slate-500');
-
-    pastBtn.classList.remove('bg-primary','text-white');
-    pastBtn.classList.add('text-slate-500');
-  });
-
-  pastBtn.addEventListener('click', function() {
-    pastEvents.classList.remove('hidden');
-    upcomingEvents.classList.add('hidden');
-
-    pastBtn.classList.add('bg-primary','text-white');
-    pastBtn.classList.remove('text-slate-500');
-
-    upcomingBtn.classList.remove('bg-primary','text-white');
-    upcomingBtn.classList.add('text-slate-500');
-  });
-
-  // MODAL CLOSE CLICK OUTSIDE
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) closeEventModal();
-  });
-
-  // ESC KEY
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-      closeEventModal();
+    // ── Helpers ─────────────────────────────────────────────────────────────
+    function formatDate(iso) {
+      if (!iso) return 'Date TBD';
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return iso;
+      return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
     }
-  });
 
-  // SWIPER INIT
-  new Swiper('.upcomingEventsSwiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 12,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.upcoming-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      640: { slidesPerView: 2 },
-  1024: { slidesPerView: 3 },
-  1280: { slidesPerView: 4 }
+    function buildEventSlide(ev, type) {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+
+      const badgeText = type === 'upcoming' ? 'Upcoming' : (type === 'past' ? 'Past' : 'Archive');
+      const badgeClass = type === 'upcoming' ? 'bg-primary text-white' : (type === 'past' ? 'bg-green-100 text-green-700' : 'bg-slate-200 text-slate-600');
+
+      const actionText = type === 'upcoming' ? 'View Details' : 'View Moments';
+      const dateText = ev.date ? formatDate(ev.date) : (ev.meta ? ev.meta.split(' • ')[0] : 'Date TBD');
+
+      // Use first image if available, else a placeholder
+      const imageUrl = (ev.images && ev.images.length > 0) ? ev.images[0] : (ev.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5A8-0shQysYcM2tc9xUYJ9Gj6xO_rI0uPPV5_jZGjBMyQcKnNcmJHENJujEAi_ZQnBSiiYzXLX8F_V3-xRP7afujBiV9Kl6XBVSurjtq12YTxquR6Xj8E4c1Zr80wfVyjFOMafXjnUvGBtMyXxTYHNT_t7lObvadEueLXy3wo8VJvTghkmfRl_um3583SPGPPFAowNj4UFPcwBoDdaJx_uPCgviCAleHS1SovMWbXLcMziVmk5lGN5zhzPqFmjxwRL2eUtCKkVw');
+
+      slide.innerHTML = `
+    <div class="group h-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition hover:shadow-md">
+      <div class="relative aspect-[4/3] overflow-hidden">
+        <span class="absolute top-2 left-2 ${badgeClass} text-[10px] font-semibold px-2 py-0.5 rounded-full shadow z-10">${badgeText}</span>
+        <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="${imageUrl}" alt="${ev.title || ''}"/>
+      </div>
+      <div class="p-3 flex flex-col flex-1">
+        <span class="text-primary text-[10px] font-medium uppercase">${dateText}</span>
+        <h3 class="text-sm font-semibold mt-1 leading-snug line-clamp-2">${ev.title || 'Untitled Event'}</h3>
+        <p class="text-slate-500 text-xs mt-1 line-clamp-2 flex-grow">${ev.description || ''}</p>
+        <div class="mt-4">
+          <button onclick="openEventModal('${ev.id}','${type}')" class="w-full bg-primary text-white text-xs py-2 rounded-md font-bold hover:bg-primary/90 transition-colors">${actionText}</button>
+        </div>
+      </div>
+    </div>`;
+      return slide;
     }
-  });
 
-});
-</script>
+    function buildNewsletterCard(nl) {
+      const div = document.createElement('div');
+      div.className = 'flex flex-col group';
+      div.innerHTML = `
+        <div class="aspect-[3/4] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 mb-5">
+          <img src="${nl.image}" alt="${nl.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+        </div>
+        <h3 class="text-lg font-bold mb-1">${nl.title}</h3>
+        <span class="text-xs text-slate-500 mb-3">${nl.volume} • ${nl.date}</span>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4 line-clamp-5">${nl.description}</p>
+        <a href="${nl.pdf}" class="flex items-center gap-2 text-sm font-bold text-primary hover:opacity-80 transition">
+          <span class="material-symbols-outlined !text-lg">download</span>
+          Download PDF
+        </a>`;
+      return div;
+    }
 
-</body></html>
+    function buildMediaCard(m) {
+      const article = document.createElement('article');
+      article.className = 'flex flex-col group bg-white dark:bg-brand-bg rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800';
+      article.innerHTML = `
+        <div class="aspect-video w-full overflow-hidden">
+          <div class="w-full h-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" style="background-image: url('${m.image}');"></div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] font-black uppercase tracking-widest text-accent bg-accent/10 px-2 py-0.5 rounded">${m.type}</span>
+            <span class="text-slate-400 text-xs font-medium">${m.date}</span>
+          </div>
+          <h3 class="text-slate-900 dark:text-white text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">${m.title}</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-5">${m.description}</p>
+          <div class="mt-auto">
+            <a href="${m.link}" class="inline-flex items-center text-primary text-sm font-bold group-hover:gap-2 transition-all">
+              Read More
+              <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+            </a>
+          </div>
+        </div>`;
+      return article;
+    }
+
+    // ── Modal Actions ─────────────────────────────────────────────────────────────
+    function openEventModal(id, type) {
+      let data = null;
+      if (type === 'upcoming') data = UPCOMING_DATA[id];
+      else if (type === 'past') data = PAST_DATA[id];
+      else data = ARCHIVE_MODAL[id];
+
+      if (!data) {
+        console.warn('No data found for ID:', id, 'Type:', type);
+        return;
+      }
+
+      const modal = document.getElementById('eventModal');
+      const panelUpcoming = document.getElementById('modalUpcoming');
+      const panelGallery = document.getElementById('modalGallery');
+      const badge = document.getElementById('modalBadge');
+
+      // Badge Styling
+      if (type === 'upcoming') {
+        badge.textContent = 'Upcoming';
+        badge.className = 'inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 bg-primary/10 text-primary';
+      } else if (type === 'past') {
+        badge.textContent = 'Past Event';
+        badge.className = 'inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 bg-green-100 text-green-700';
+      } else {
+        badge.textContent = 'Archive';
+        badge.className = 'inline-block text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 bg-slate-200 text-slate-600';
+      }
+
+      document.getElementById('modalTitle').textContent = data.title || 'Untitled Event';
+      document.getElementById('modalMeta').textContent = data.meta || (data.date ? formatDate(data.date) : '');
+
+      if (type === 'upcoming') {
+        panelUpcoming.style.display = 'block';
+        panelGallery.style.display = 'none';
+        document.getElementById('modalUpcomingDesc').textContent = data.description || '';
+        document.getElementById('modalUpcomingDate').textContent = formatDate(data.date);
+        document.getElementById('modalUpcomingTime').textContent = data.time || 'TBD';
+        document.getElementById('modalUpcomingVenue').textContent = data.venue || data.organizer || '—';
+        document.getElementById('modalUpcomingOrg').textContent = data.organizer || '—';
+
+        const rsvpLink = document.getElementById('rsvpLinkHere');
+        if (data.rsvp) {
+          rsvpLink.href = data.rsvp;
+          rsvpLink.style.display = 'inline-flex';
+        } else {
+          rsvpLink.style.display = 'none';
+        }
+
+        // Handle Dynamic Action Buttons
+        const actionContainer = document.getElementById('modalUpcomingActions');
+        actionContainer.innerHTML = '';
+        if (data.hasButtons && data.buttons && data.buttons.length > 0) {
+          data.buttons.forEach((btnText, idx) => {
+            const btn = document.createElement('button');
+            btn.className = idx === 0
+              ? 'flex-1 bg-primary text-white py-3 rounded-xl font-bold hover:shadow-lg transition'
+              : 'flex-1 border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary/5 transition';
+            btn.textContent = btnText;
+            // Optionally add click handlers or links if needed, for now just buttons as requested
+            actionContainer.appendChild(btn);
+          });
+        }
+      } else {
+        panelGallery.style.display = 'block';
+        panelUpcoming.style.display = 'none';
+
+        const wrapper = document.getElementById('modalSwiperWrapper');
+        wrapper.innerHTML = '';
+        const imgs = data.images || (data.image ? [data.image] : []);
+        imgs.forEach(function (src) {
+          const slide = document.createElement('div'); slide.className = 'swiper-slide';
+          const img = document.createElement('img'); img.src = src; img.alt = data.title || '';
+          slide.appendChild(img); wrapper.appendChild(slide);
+        });
+
+        document.getElementById('modalGalleryDesc').textContent = data.description || '';
+        const ul = document.getElementById('modalHighlights');
+        ul.innerHTML = '';
+        (data.highlights || []).forEach(function (h) {
+          const li = document.createElement('li'); li.textContent = h; ul.appendChild(li);
+        });
+
+        if (modalGallerySwiper) { modalGallerySwiper.destroy(true, true); modalGallerySwiper = null; }
+        setTimeout(function () {
+          modalGallerySwiper = new Swiper('.modal-gallery-swiper', {
+            slidesPerView: 1, spaceBetween: 12,
+            loop: imgs.length > 1,
+            navigation: { prevEl: '#mgPrev', nextEl: '#mgNext' },
+            pagination: {
+              el: '#mgPagination', clickable: true,
+              bulletClass: 'inline-block w-2 h-2 rounded-full bg-slate-300 cursor-pointer transition-all',
+              bulletActiveClass: '!bg-primary !w-4'
+            }
+          });
+        }, 50);
+      }
+
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeEventModal() {
+      document.getElementById('eventModal').style.display = 'none';
+      document.body.style.overflow = '';
+      if (modalGallerySwiper) { modalGallerySwiper.destroy(true, true); modalGallerySwiper = null; }
+    }
+
+    // ── Main Entry ──────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', async function () {
+      const upcomingBtn = document.getElementById('upcomingBtn');
+      const pastBtn = document.getElementById('pastBtn');
+      const archivesBtn = document.getElementById('archivesBtn');
+      const upcomingEl = document.getElementById('upcomingEvents');
+      const pastEl = document.getElementById('pastEvents');
+      const archivesEl = document.getElementById('archivesEvents');
+      const modal = document.getElementById('eventModal');
+      const allBtns = [upcomingBtn, pastBtn, archivesBtn];
+
+      function showSection(activeBtn, activeEl) {
+        allBtns.forEach(b => {
+          b.classList.remove('bg-primary', 'text-white', 'shadow');
+          b.classList.add('text-slate-500');
+        });
+        activeBtn.classList.add('bg-primary', 'text-white', 'shadow');
+        activeBtn.classList.remove('text-slate-500');
+        upcomingEl.style.display = 'none';
+        pastEl.style.display = 'none';
+        archivesEl.style.display = 'none';
+        activeEl.style.display = 'block';
+
+        // Trigger resize event to force Swiper recalculation for newly visible container
+        window.dispatchEvent(new Event('resize'));
+      }
+
+      upcomingBtn.addEventListener('click', () => showSection(upcomingBtn, upcomingEl));
+      pastBtn.addEventListener('click', () => showSection(pastBtn, pastEl));
+      archivesBtn.addEventListener('click', () => showSection(archivesBtn, archivesEl));
+
+      modal.addEventListener('click', e => { if (e.target === modal) closeEventModal(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.style.display !== 'none') closeEventModal();
+      });
+
+      // Fetch Data
+      try {
+        const response = await fetch('./data/events.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const json = await response.json();
+
+        // Upcoming
+        const upcomingWrapper = document.getElementById('upcomingWrapper');
+        if (json.upcoming && json.upcoming.length > 0) {
+          json.upcoming.forEach(ev => {
+            UPCOMING_DATA[ev.id] = ev;
+            upcomingWrapper.appendChild(buildEventSlide(ev, 'upcoming'));
+          });
+          new Swiper('.upcomingEventsSwiper', {
+            slidesPerView: 1.2, spaceBetween: 12, loop: json.upcoming.length > 1,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.upcoming-pagination', clickable: true },
+            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }
+          });
+        }
+
+        // Past
+        const pastWrapper = document.getElementById('pastWrapper');
+        if (json.past && json.past.length > 0) {
+          json.past.forEach(ev => {
+            PAST_DATA[ev.id] = ev;
+            pastWrapper.appendChild(buildEventSlide(ev, 'past'));
+          });
+          new Swiper('.pastEventsSwiper', {
+            slidesPerView: 1.2, spaceBetween: 12, loop: json.past.length > 1,
+            pagination: { el: '.past-pagination', clickable: true },
+            breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }
+          });
+        }
+
+        // Archives
+        const archivesWrapper = document.getElementById('archivesWrapper');
+        Object.keys(ARCHIVE_MODAL).forEach(id => {
+          const ev = { id, ...ARCHIVE_MODAL[id] };
+          archivesWrapper.appendChild(buildEventSlide(ev, 'archive'));
+        });
+        new Swiper('.archivesEventsSwiper', {
+          slidesPerView: 1.2, spaceBetween: 12, loop: Object.keys(ARCHIVE_MODAL).length > 1,
+          pagination: { el: '.archives-pagination', clickable: true },
+          breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }
+        });
+
+        // Fetch Media Data
+        try {
+          const mediaRes = await fetch('./data/media.json');
+          if (mediaRes.ok) {
+            const mediaJson = await mediaRes.json();
+
+            // Featured
+            if (mediaJson.featured) {
+              document.getElementById('featuredMediaTitle').textContent = mediaJson.featured.title;
+              document.getElementById('featuredMediaDesc').textContent = mediaJson.featured.description;
+              document.getElementById('featuredMediaImage').src = mediaJson.featured.image;
+              document.getElementById('featuredMediaLink').href = mediaJson.featured.link;
+            }
+
+            // Carousel
+            const carouselWrapper = document.getElementById('mediaCarouselWrapper');
+            if (mediaJson.carousel) {
+              mediaJson.carousel.forEach(imgUrl => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `<img src="${imgUrl}" class="w-full h-64 lg:h-80 object-cover rounded-2xl" loading="lazy">`;
+                carouselWrapper.appendChild(slide);
+              });
+              new Swiper('.mediaCarouselSwiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                loop: mediaJson.carousel.length > 3,
+                autoplay: { delay: 4000, disableOnInteraction: false },
+                pagination: { el: '.media-carousel-pagination', clickable: true },
+                breakpoints: {
+                  640: { slidesPerView: 2, spaceBetween: 20 },
+                  1024: { slidesPerView: 3, spaceBetween: 24 }
+                }
+              });
+            }
+
+            const nlGrid = document.getElementById('newsletterGrid');
+            if (mediaJson.newsletters) {
+              mediaJson.newsletters.forEach(nl => nlGrid.appendChild(buildNewsletterCard(nl)));
+            }
+            const mGrid = document.getElementById('mediaGrid');
+            if (mediaJson.press) {
+              mediaJson.press.forEach(m => mGrid.appendChild(buildMediaCard(m)));
+            }
+          }
+        } catch (err) {
+          console.error('Error loading media data:', err);
+        }
+
+      } catch (err) {
+        console.error('Error loading events:', err);
+        // Fallback or warning if desired
+      }
+    });
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,48 +1,19 @@
 {
   "upcoming": [
     {
-      "id": "mumbai-tech-summit-2024",
+      "id": "womens-day-2026",
       "status": "upcoming",
       "organizer": "Aspire",
-      "date": "2024-12-15",
-      "title": "Mumbai Tech Summit 2024",
-      "description": "The largest gathering of tech innovators in India focusing on AI and Green Computing.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ",
+      "rsvp": "https://forms.gle/6WZpZpZpZpZpZpZpZ",
+      "date": "2026-03-30",
+      "title": "Women at the Helm – Women’s Day Leadership Dialogue March 2026",
+      "description": "On the occasion of Women’s Day, ASPIRE – IIT Bombay Research Park Foundation hosted a leadership dialogue titled “Women at the Helm – Leadership in Action: Women Shaping Research, Industry & Institutional Strategy.\brThe session brought together leaders from academia, venture capital, industry, and institutional governance to reflect on leadership within complex research and innovation ecosystems.",
+      "image": "https://iitbresearchpark.com/wp-content/uploads/2026/03/Women-In-Helm-Event-page-2048x1366.jpg",
       "hasButtons": true,
-      "buttons": ["Join Event", "Sponsor"]
-    },
-    {
-      "id": "quantum-ethics-symposium",
-      "status": "upcoming",
-      "organizer": "IIT Bombay",
-      "date": "2025-01-20",
-      "title": "Quantum Ethics Symposium",
-      "description": "Exploring the moral boundaries of quantum computing.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCqScIn-bJ8xzixkAJO8xmn2ZfpS010d53fqM9aTL2gtPzJ70MlWqmJdFIWlgGrkByDyhOLc6KgjIIni2k1KfW5BdObKAfMX__vPN5WpVm6_MX0nePCQRKR6M5V7zNL9uPv-ifKvsRBB69VDOGCFp5pCk_OuHj4sbebyydFBts475KfIJs1bN0dru7Oz9KWcNGdBc-vtor_S14Ck2786pJ-GeTwS1aveBgQ1TEEbksPaiuH6V1EawmTgN4GTdfAAmTrn219wT0Jsg",
-      "hasButtons": true,
-      "buttons": ["Join Event", "Sponsor"]
-    },
-    {
-      "id": "ai-in-academia-2025",
-      "status": "upcoming",
-      "organizer": "Aspire",
-      "date": "2025-02-10",
-      "title": "AI in Academia 2025",
-      "description": "Redefining research workflows with generative intelligence.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuASxujMRFsyAhq0l2ipvX-sAgI4oUHioAP6MKY0hlEN5_q738AAe8r-nq5g2mBd5AZoGX-f85xLHhrhOJCqLnxonDP7laTA6BrtzZ2KRSxKkt8nM5kHdbjBRo3cOD8BBAwdayEd8ukKOsMSV36Pk4_LqsjDdydPqCGfJ--jE2d0Uy3sIMYpAcmc-mXdD_fT7SKT4B7lYlvvJorJncJXkABLcu1umy4EIll3kQBr7IqmSz6-TW-FO3beI-HfQveOrfWcdp5AQiwvgg",
-      "hasButtons": true,
-      "buttons": ["Join Event", "Sponsor"]
-    },
-    {
-      "id": "future-tech-conference",
-      "status": "upcoming",
-      "organizer": "Aspire",
-      "date": "2025-03-15",
-      "title": "Future Tech Conference",
-      "description": "Exploring emerging technologies and their impact on society.",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4dumpPIa1MJZUI9_dEizJuklxbwEH8OQY8OtY6XD6ffEVmkzza0HVGdp51J-OYdDNIQsyL8FGt2J-Ht7QjEE3l3JwwIMh1w_yTRe0PB2vnO7SKIdKy4MOTjkl1AoA4Dr72RnioVuQe6PAMZjopVr9TP31T67KQD_-MwIgTVe9ANC_FwXmaFadghU24K2jDrUEbtzey7Si-sU7APvKk6o7RnC7lULGsOzfUjyCjIkYBvgRby843DfqwhGFz_XPY8s6N-gQuBmcyQ",
-      "hasButtons": true,
-      "buttons": ["Join Event", "Sponsor"]
+      "buttons": [
+        "Join Event",
+        "Sponsor"
+      ]
     }
   ],
   "past": [
