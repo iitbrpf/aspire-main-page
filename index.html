@@ -995,9 +995,13 @@ IIT Bombay campus, Powai,<br> Mumbai – 400076
       </div>
 
       <!-- MAP -->
-      <div>
-        <h3 class="text-lg font-semibold text-secondary mb-4">Location</h3>
-        <div id="map" class="w-full h-40 rounded-lg border"></div>
+      <div class="max-w-xl">
+     <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=aspire+iitb+4WQ3%2B2J8%2C+Dargah+Rd%2C+Kailash+Nagar%2C+Peru+Baug%2C+Goregaon+East%2C+Mumbai%2C+Maharashtra+400087&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        
+        </div>
+    </div>
       </div>
 
     </div>
@@ -1015,21 +1019,6 @@ IIT Bombay campus, Powai,<br> Mumbai – 400076
   </div>
 </footer>
 
-<!-- MAP -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script>
-const map = L.map('map').setView([19.1334, 72.9133], 15);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
-.addTo(map);
-
-L.marker([19.1334, 72.9133])
-.addTo(map)
-.bindPopup('ASPIRE IIT Bombay')
-.openPopup();
-</script>
 
 <script src="script.js"></script>
 <script>
