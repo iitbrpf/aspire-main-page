@@ -299,42 +299,64 @@ body {
     </div>
 </div>
 <!-- END: Announcement Banner -->
-
 <nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
-<div class="mx-auto px-6 md:px-10 lg:px-20 h-20 flex items-center justify-between">
-<!-- Logo and Main Nav Section -->
-<div class="flex items-center gap-12">
-<!-- Logo -->
-<img src="./assets/aspire-logo.png" width="200" alt="ASPIRE Logo" class="h-12 w-auto">
-<!-- Desktop Navigation Links -->
-<div class="hidden lg:flex items-center gap-8">
-<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="./events.html">Events</a>
-</div>
-</div>
-<!-- Action Area: Search and Profile -->
-<div class="flex items-center gap-4 lg:gap-6">
-<!-- Search Bar -->
-<div class="hidden md:flex items-center">
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary text-xl">search</span>
-<input class="pl-10 pr-4 py-2 bg-gray-100 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 w-48 lg:w-64 transition-all duration-300" placeholder="Search anything..." type="text"/>
-</div>
-</div>
-<!-- Search Button (Mobile/Tablet) -->
-<button class="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors">
-<span class="material-symbols-outlined">search</span>
-</button>
-<!-- Action Button -->
-<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm">
-Join Us
-</button>
-<!-- Mobile Menu Trigger -->
-<button class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
+  <div class="mx-auto px-6 md:px-10 lg:px-20 h-20 flex items-center justify-between">
+
+    <!-- LEFT -->
+    <div class="flex items-center gap-12">
+      
+      <!-- Logo -->
+      <img src="./assets/aspire-logo.png" alt="ASPIRE Logo"
+        class="h-10 md:h-12 w-auto">
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="./events.html"
+          class="text-sm font-medium text-gray-600 hover:text-primary transition">
+          Events
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="flex items-center gap-4">
+
+      <!-- Desktop Button -->
+      <a href="#"
+        class="hidden lg:inline-flex px-5 py-2 rounded-full bg-primary text-white text-sm font-medium hover:opacity-90 transition">
+        Join Us
+      </a>
+
+      <!-- Hamburger -->
+      <button id="menuBtn"
+        class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+    class="hidden lg:hidden px-6 pb-6 bg-white border-t border-gray-200">
+
+    <div class="flex flex-col gap-4 pt-4">
+
+      <a href="./events.html"
+        class="text-gray-700 font-medium hover:text-primary">
+        Events
+      </a>
+
+      <!-- Join Us inside mobile -->
+      <a href="#"
+        class="mt-2 text-center px-5 py-2 rounded-full bg-primary text-white font-medium">
+        Join Us
+      </a>
+
+    </div>
+  </div>
 </nav>
+
 
 <!-- END: Navigation -->
 <!-- BEGIN: Hero Section -->
