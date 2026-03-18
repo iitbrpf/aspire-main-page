@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brandCard: '#FFFFFF',
+        darkBlue: '#304268',
+        darkPink: '#d94f9a',
+        lightPink: '#eb989a',
+        lightGray: '#f7f7f7',
+        darkGray: '#595656',
+        lightGreen: '#7bc99f',
+        lightWhite: '#ffffff',
+        lightYellow: '#d9c292',
+
+        primary: '#c1598d',
+        secondary: '#304268',
+        accent: '#7bc99f',
+
+        background: '#ffffff',
+        surface: '#f7f7f7',
+        textPrimary: '#304268',
+        textSecondary: '#595656'
+      }
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class="bg-background text-textPrimary">
+
+<!-- FOOTER -->
+<footer class="bg-surface border-t border-gray-200">
+
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- BRAND -->
+      <div>
+        <h2 class="text-xl font-bold text-secondary mb-4">ASPIRE</h2>
+        <p class="text-sm text-textSecondary mb-6">
+At ASPIRE, the synergy of IIT Bombay’s intellectual prowess, cutting-edge R&D infrastructure, and the dynamic technology sector comes to life.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-4">
+
+  <!-- LinkedIn -->
+  <a href="#" target="_blank"
+    class="group w-10 h-10 flex items-center justify-center rounded-full bg-white border transition-all duration-300 hover:bg-[#0A66C2] hover:scale-110">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+      class="w-5 h-5 text-secondary group-hover:text-white" 
+      fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 
+      0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 
+      19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 
+      1.7-1.7 1.7.8 1.7 1.7-.8 1.7-1.7 
+      1.7zm13.5 11.3h-3v-5.6c0-1.3 0-3-1.8-3s-2.1 
+      1.4-2.1 2.9v5.7h-3v-10h2.9v1.4h.1c.4-.7 
+      1.4-1.4 2.9-1.4 3.1 0 3.7 2 3.7 
+      4.7v5.3z"/>
+    </svg>
+  </a>
+
+  <!-- X (Twitter) -->
+  <a href="#" target="_blank"
+    class="group w-10 h-10 flex items-center justify-center rounded-full bg-white border transition-all duration-300 hover:bg-black hover:scale-110">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+      class="w-5 h-5 text-secondary group-hover:text-white" 
+      fill="currentColor" viewBox="0 0 24 24">
+      <path d="M18.244 2H21l-6.5 7.43L22 22h-6.828l-5.34-6.982L3.5 
+      22H1l7.01-8.01L2 2h6.828l4.85 
+      6.33L18.244 2zm-2.396 18h1.888L7.33 
+      4H5.3l10.548 16z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="#" target="_blank"
+    class="group w-10 h-10 flex items-center justify-center rounded-full bg-white border transition-all duration-300 hover:bg-gradient-to-tr from-pink-500 to-yellow-500 hover:scale-110">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+      class="w-5 h-5 text-secondary group-hover:text-white" 
+      fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 
+      5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 
+      5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.1 
+      1.1 0 110 2.2 1.1 1.1 0 010-2.2zM12 
+      9a3 3 0 100 6 3 3 0 000-6z"/>
+    </svg>
+  </a>
+
+  <!-- YouTube -->
+  <a href="#" target="_blank"
+    class="group w-10 h-10 flex items-center justify-center rounded-full bg-white border transition-all duration-300 hover:bg-red-500 hover:scale-110">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+      class="w-5 h-5 text-secondary group-hover:text-white" 
+      fill="currentColor" viewBox="0 0 24 24">
+      <path d="M23.5 6.2s-.2-1.7-.9-2.5c-.9-1-1.9-1-2.4-1.1C16.8 
+      2.3 12 2.3 12 2.3h0s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 
+      1.1-.7.8-.9 2.5-.9 2.5S0 8.2 0 10.3v1.4c0 
+      2.1.5 4.1.5 4.1s.2 1.7.9 2.5c.9 1 2.1 
+      1 2.6 1.1 1.9.2 8 .3 8 .3s4.8 0 
+      8.2-.3c.5-.1 1.5-.1 2.4-1.1.7-.8.9-2.5.9-2.5s.5-2 
+      .5-4.1v-1.4c0-2.1-.5-4.1-.5-4.1zM9.5 
+      14.6V8.7l6.3 3-6.3 2.9z"/>
+    </svg>
+  </a>
+
+</div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div>
+        <h3 class="text-lg font-semibold text-secondary mb-4">Resources</h3>
+        <ul class="space-y-3 text-textSecondary text-sm">
+          <li><a href="#" class="hover:text-primary transition">Tenders</a></li>
+          <li><a href="#" class="hover:text-primary transition">Reports</a></li>
+          <li><a href="#" class="hover:text-primary transition">FAQs</a></li>
+          <li><a href="#" class="hover:text-primary transition">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h3 class="text-lg font-semibold text-secondary mb-4">Contact</h3>
+        <div class="text-sm text-textSecondary space-y-3">
+          <p>
+            IITB Research Park Foundation,<br>
+11th Floor, Research Park Building,<br>
+IIT Bombay campus, Powai,<br> Mumbai – 400076
+          </p>
+          <p>+91 22 2576 7000</p>
+          <p>office.aspire@iitb.ac.in</p>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div>
+        <h3 class="text-lg font-semibold text-secondary mb-4">Location</h3>
+        <div id="map" class="w-full h-40 rounded-lg border"></div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-sm text-textSecondary">
+      <p>© 2026 ASPIRE - IIT Bombay</p>
+      <div class="flex gap-6 mt-3 md:mt-0">
+        <a href="#" class="hover:text-primary">Privacy Policy</a>
+        <a href="#" class="hover:text-primary">Terms</a>
+        <a href="#" class="hover:text-primary">Sitemap</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- MAP -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+const map = L.map('map').setView([19.1334, 72.9133], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+.addTo(map);
+
+L.marker([19.1334, 72.9133])
+.addTo(map)
+.bindPopup('ASPIRE IIT Bombay')
+.openPopup();
+</script>
+
+</body>
+</html>
