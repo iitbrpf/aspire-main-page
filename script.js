@@ -4,6 +4,16 @@
 
 // About ASPIRE Slider
 const aspireData = [
+ 
+ 
+   {
+    title: "Formation of Aspire",
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/06/IMG_0067-scaled.jpg",
+    text: [
+      "In 2016, the Ministry of Education entrusted IIT Bombay with establishing the Research Park within the campus in Powai, Mumbai.",
+      "This led to the creation of ASPIRE – the IIT Bombay Research Park Foundation – a non-profit organization dedicated to catalysing innovation."
+    ]
+  },
   {
     title: "Applied Science Park for Innovation Research & Entrepreneurship (ASPIRE)",
     image: "https://iitbresearchpark.com/wp-content/uploads/2024/02/CAP_6837-1536x1023.jpg",
@@ -12,14 +22,7 @@ const aspireData = [
       "The platform provides an ecosystem where academic brilliance converges with industry expertise, bridging the gap between research and industry."
     ]
   },
-  {
-    title: "Formation of Aspire",
-    image: "https://iitbresearchpark.com/wp-content/uploads/2025/06/IMG_0067-scaled.jpg",
-    text: [
-      "In 2016, the Ministry of Education entrusted IIT Bombay with establishing the Research Park within the campus in Powai, Mumbai.",
-      "This led to the creation of ASPIRE – the IIT Bombay Research Park Foundation – a non-profit organization dedicated to catalysing innovation."
-    ]
-  },
+
   {
     title: "What We Do",
     image: "https://iitbresearchpark.com/wp-content/uploads/2024/02/CAP_6998-1536x1023.jpg",
@@ -179,7 +182,7 @@ const teamMembers = [
   {
     name: "Prof. Shireesh Kedare",
     role: "Director, IIT Bombay",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/IITB_director-e1725965730815_900x900.jpg",
     email: "",
     bio: "Prof. Shireesh Kedare "
@@ -187,90 +190,287 @@ const teamMembers = [
   {
     name: "Prof. Ravindra Gudi​",
     role: "Deputy Director (Finance & External Affairs), IIT Bombay​",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2026/01/Ravi_Gudi_900.jpeg",
     bio: "Oversees treasury operations."
   },
   {
     name: "Prof. Milind Atrey​​",
     role: "Deputy Director (Academics, Research and Translation), IIT Bombay​",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/Prof.Milind-Atrey-Dean-RD_900x900.png",
-    email: "elena@aspire.com",
+    email: "",
     bio: "Leads infrastructure planning and development."
   },
   {
     name: "Prof. Sachin Patwardhan​",
     role: "Dean (Research & Development), IIT Bombay​",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/SachinP_900x900.png",
-    email: "david@aspire.com",
+    email: "",
     bio: "Technology strategist focusing on innovation."
   },
   {
     name: "Prof. Devang Khakhar",
     role: "Professor, Department of Chemical Engineering",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
+    email: "",
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/Prof.-Devang-Khakhar-1_900X900.png",
     bio: "Driving leadership and research collaboration."
   },
   {
     name: "Dr. Nitin Kareer",
     role: "Additional Chief Secretary, Revenue & Forest Department, Government of Maharashtra",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/Nitin-Kareer-900.png",
-    email: "anna@aspire.com",
+    email: "",
     bio: "Engineering infrastructure systems."
   },
   {
     name: "Prof. Vikram Vishal",
     role: "Professor-in-charge",
-    department: ["Board of Director", "Leadership"],
+    department: ["Board of Directors", "Leadership"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_7019.jpg",
-    email: "anna@aspire.com",
+    email: "",
     bio: "Professor of Department of Earth Sciences, IIT Bombay.Adjunct Senior Lecturer Department of Civil Engineering, Monash University, Australia Associate Faculty Interdisciplinary Programme in Climate Studies, IIT Bombay"
   },
   {
     name: "Mr. Sharad Sanghi",
     role: "Chief Executive Officer, Neysa​",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/IMG_Mr_Sharad_Sanghi__900.png",
-    email: "anna@aspire.com",
+    email: "",
     bio: "Engineering infrastructure systems."
   },
   {
     name: "Ms. Rekha Koita​",
     role: "Co-Founder, Koita Foundation",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/Rekha-koita-900.png",
-    email: "anna@aspire.com",
+    email: "",
     bio: "Engineering infrastructure systems."
   },
   {
     name: "Shri. Aseemkumar Gupta",
     role: "Additional Chief Secretary, Urban Development Department, Government of Maharashtra",
-    department: ["Board of Director"],
+    department: ["Board of Directors"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/11/Dr-Aseem-Gupta_900.png",
-    email: "anna@aspire.com",
+    email: "",
     bio: "Engineering infrastructure systems."
   },
   {
     name: "Dr. Rajappa Tadepalli",
     role: "Chief Executive Officer, ASPIRE",
-    department: ["Leadership"],
+    department: ["Board of Directors", "Leadership"],
     image: "https://iitbresearchpark.com/wp-content/uploads/2025/09/CEO_Headshot_Edited_2.png",
     email: "anna@aspire.com",
     bio: "Engineering infrastructure systems."
   },
-  {
-    name: "Ms. Faiza Pirani",
-    role: "Associate (Legal)",
-    department: ["Legal"],
-    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6977.jpg",
-    email: "anna@aspire.com",
-    bio: "Engineering infrastructure systems."
+
+// HR & Administration
+
+ {
+    name: "Ms. Anju Treesa Mathew",
+    role: "Head (HR & Admin)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/12/Anju_headShot_900.png",
+    email: "anju@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+ {
+    name: "Mr. Rahul Gaikwad",
+    role: "Assistant Manager (HR & Admin)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2026/03/Rahul_Headshot.jpg",
+    email: "rahul@iitbresearchpark.com",
+    bio: ""
+  },
+
+ {
+    name: "Mr. Ravi Saha",
+    role: "Executive Assistant (HR & Admin)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2026/03/Ravi_Headshot.jpg",
+    email: "ravi@iitbresearchpark.com",
+    bio: ""
+  },
+
+  // Industry-Academia Engagement
+
+   {
+    name: "Dr. Sneha Ranade",
+    role: "Senior Manager (Industry-Academia Engagement)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_7026.jpg",
+    email: "sneha@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+     {
+    name: "Dr. Meera Vasudevan",
+    role: "Assistant Manager (Industry-Academia Engagement)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/Meera_Headshot_Edited-e1753181496421-1024x1024.png",
+    email: "meera@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+  
+     {
+    name: "Dr. Shatarupa Sinha",
+    role: "Assistant Manager (Industry-Academia Engagement)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_7027.jpg",
+    email: "shatarupa@iitbresearchpark.com",
+    bio: ""
+  },
+
+  
+     {
+    name: "Mr. Gaurav Shetty",
+    role: "Associate (Industry-Academia Engagement)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_7031.jpg",
+    email: "gaurav@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+  // Information Technology
+
+  
+     {
+    name: "Ms. Nidhi Goel",
+    role: "Manager (Information Technology)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6982.jpg",
+    email: "nidhi@iitbresearchpark.com",
+    bio: ""
+  },
+
+ 
+     {
+    name: "Mr. Vishnu Velukutty",
+    role: "Associate (Information Technology)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6985-1024x1024.jpg",
+    email: "vishnu@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+
+     {
+    name: "Mr. Sagar Sutar",
+    role: "Associate (Information Technology)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6979.jpg",
+    email: "sagar@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+     {
+    name: "Mr. Mohit Nitin Diskalkar",
+    role: "Network Engineer (Information Technology)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2026/03/Mohit_Headshot.jpg",
+    email: "mohit@iitbresearchpark.com",
+    bio: ""
+  },
+
+
+// Infrastructure
+
+
+     {
+    name: "Mr. Shahid Khan",
+    role: "Senior Manager (Infrastructure)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/09/Shahid_Headshot_Edited_900.png",
+    email: "shahid@iitbresearchpark.com",
+    bio: ""
+  },
+
+    {
+    name: "Ms. Sheetal Thakur",
+    role: "Manager (Infrastructure)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/Sheetal_Headshot.png",
+    email: "sheetal@iitbresearchpark.com",
+    bio: ""
+  },
+
+ {
+    name: "Ms. Jefeena Sali",
+    role: "Assistant Manager (Infrastructure)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6981.jpg",
+    email: "jefeena@iitbresearchpark.com",
+    bio: ""
+  },
+
+{
+    name: "Mr. Manoj Mahadev Sawant",
+    role: "Safety Officer (Infrastructure)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2026/03/Manoj_Headshot.jpg",
+    email: "manoj@iitbresearchpark.com",
+    bio: ""
+  },
+
+// Finance and Accounts
+{
+    name: "Ms. Renu Gandhi",
+    role: "Manager (Finance & Accounts)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/08/Renu_Headshot_500.png",
+    email: "renu@iitbresearchpark.com",
+    bio: ""
+  },
+
+{
+    name: "Mr. Amar Rajbhar​",
+    role: "Assistant Manager (Finance & Accounts)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2026/02/Amar-Rajbhat_Headshot_cropped.png",
+    email: "amar@iitbresearchpark.com",
+    bio: ""
   },
   {
+    name: "Mr. Satyawan Morajkar",
+    role: "Associate (Finance & Accounts)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6983.jpg",
+    email: "satyawan@iitbresearchpark.com",
+    bio: ""
+  },
+
+  {
+    name: "Ms. Pooja Chavan",
+    role: "Associate (Finance & Accounts)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6980.jpg",
+    email: "pooja@iitbresearchpark.com",
+    bio: ""
+  },
+
+   {
+    name: "Ms. Pooja Chavan",
+    role: "Associate (Finance & Accounts)",
+    department: ["Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6980.jpg",
+    email: "pooja@iitbresearchpark.com",
+    bio: ""
+  },
+
+  // Marketing & Communications
+
+ {
     name: "Ms. Deepabali Dasgupta",
     role: "Assistant Manager (Marketing & Communications)",
     department: ["Marketing & Communications"],
@@ -293,7 +493,21 @@ const teamMembers = [
     image: "https://iitbresearchpark.com/wp-content/uploads/2026/03/Mayank_Headshot-1.webp",
     email: "anna@aspire.com",
     bio: "Engineering infrastructure systems."
-  }
+  },
+
+
+
+// LEGAL
+
+  {
+    name: "Ms. Faiza Pirani",
+    role: "Associate (Legal)",
+    department: ["Legal","Aspire Members"],
+    image: "https://iitbresearchpark.com/wp-content/uploads/2025/07/CAP_6977.jpg",
+    email: "anna@aspire.com",
+    bio: "Engineering infrastructure systems."
+  },
+ 
 ];
 
 let filteredMembers = [...teamMembers];
@@ -372,7 +586,7 @@ document.querySelectorAll(".filterBtn").forEach(btn => {
     if (dept === "all") {
       filteredMembers = [...teamMembers];
       teamTitleElement.innerText = "Faces Behind ASPIRE";
-      selectedFilterElement.innerText = "All Departments";
+      selectedFilterElement.innerText = "Board of Directorss";
     } else {
       filteredMembers = teamMembers.filter(m => Array.isArray(m.department) ? m.department.includes(dept) : m.department === dept);
       teamTitleElement.innerText = dept;
