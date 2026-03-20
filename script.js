@@ -658,7 +658,7 @@ if (marqueeContainer && marqueeContent) {
       // Start sliding after a short pause
       marqueeTimeout = setTimeout(() => {
         marqueeContent.classList.add('marquee-active');
-      }, 2000);
+      }, 3000);
     } else {
       marqueeContent.classList.remove('marquee-active');
       marqueeContainer.style.textAlign = 'center';
