@@ -22,12 +22,7 @@ tailwind.config = {
 
         // Neutral Colors
         background: '#ffffff',
-        surface: '#f7f7f7',
-        text: {
-          primary: '#304268',
-          secondary: '#595656',
-          muted: '#f7f7f7',
-        },
+      
       },
       fontFamily: {
         display: ["Public Sans", "sans-serif"],

@@ -113,6 +113,9 @@ body {
 /* Marquee */
 .marquee-container {
   overflow: hidden;
+  display:flex;
+   justify-content: right;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -120,6 +123,9 @@ body {
   display: inline-flex;
   white-space: nowrap;
   will-change: transform;
+   display: flex;
+  width: max-content;
+
 }
 
 .marquee-item {
@@ -127,7 +133,7 @@ body {
 }
 
 .marquee-active {
-  animation: marquee 40s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee-active:hover,
@@ -187,8 +193,16 @@ body {
 <div class="bg-black text-white text-s py-4 px-2 font-medium overflow-hidden" data-purpose="announcement-bar">
     <div class="marquee-container">
         <div class="marquee-content">
-            <span class="marquee-item">Join Now For Bharat Innovates 2026 By IIT Bombay at Aspire - IITB Research Park Powai Mumbai.<a class="underline hover:text-lightGray-300 ml-1" href="#">Register now →</a></span>
-            <span class="marquee-item"></span>
+       <span class="marquee-item">
+       <span class="inline-flex items-center gap-1.5 rounded-md bg-lightGray px-2 py-1 text-xs font-medium text-darkBlue">
+  
+  <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+  
+  Upcoming
+</span>
+
+        Join Now For Bharat Innovates 2026 By IIT Bombay at Aspire - IITB Research Park Powai Mumbai<a class="underline hover:text-lightGray-300 ml-1" href="#">Register now →</a></span>
+            <!-- <span class="marquee-item"></span> -->
         </div>
     </div>
 </div>
@@ -277,7 +291,11 @@ Research Park brings together IIT Bombay's intellectual strength, world-class R&
 
 <!-- Stat 1 -->
 <div class="stat cursor-pointer group">
-<div class="w-8 h-1 bg-primary mb-3 rounded-full"></div>
+  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 4h12M6 4v16M6 4H5m13 0v16m0-16h1m-1 16H6m12 0h1M6 20H5M9 7h1v1H9V7Zm5 0h1v1h-1V7Zm-5 4h1v1H9v-1Zm5 0h1v1h-1v-1Zm-3 4h2a1 1 0 0 1 1 1v4h-4v-4a1 1 0 0 1 1-1Z"/>
+</svg>
+
+<!-- <div class="w-8 h-1 bg-primary mb-3 rounded-full"></div> -->
 <h3 class="text-2xl md:text-3xl font-bold stat-number text-darkBlue"></h3>
 <p class="text-xs tracking-widest uppercase text-gray-500 stat-label font-medium"></p>
 </div>

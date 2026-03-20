@@ -639,33 +639,20 @@ const marqueeContent = document.querySelector('.marquee-content');
 if (marqueeContainer && marqueeContent) {
   const items = marqueeContent.querySelectorAll('.marquee-item');
   const [firstItem, secondItem] = items;
+
   if (firstItem && secondItem) {
-    // Duplicate content for seamless looping
-    secondItem.innerHTML = firstItem.innerHTML;
+
+    let repeatedText = firstItem.innerHTML;
+
+    while (marqueeContent.scrollWidth < marqueeContainer.offsetWidth * 2) {
+      repeatedText += " &nbsp;&nbsp;&nbsp; " + firstItem.innerHTML;
+    }
+
+    firstItem.innerHTML = repeatedText;
+    secondItem.innerHTML = repeatedText;
   }
 
-  let marqueeTimeout;
-
-  const checkMarquee = () => {
-    const containerWidth = marqueeContainer.offsetWidth;
-    const itemWidth = firstItem ? firstItem.scrollWidth : 0;
-
-    if (itemWidth > containerWidth) {
-      marqueeContainer.style.textAlign = '';
-      marqueeContent.classList.remove('marquee-active');
-      clearTimeout(marqueeTimeout);
-
-      // Start sliding after a short pause
-      marqueeTimeout = setTimeout(() => {
-        marqueeContent.classList.add('marquee-active');
-      }, 3000);
-    } else {
-      marqueeContent.classList.remove('marquee-active');
-      marqueeContainer.style.textAlign = 'center';
-    }
-  };
-
-  // Check on load and on resize
-  checkMarquee();
-  window.addEventListener('resize', checkMarquee);
+  setTimeout(() => {
+    marqueeContent.classList.add('marquee-active');
+  }, 1000);
 }
